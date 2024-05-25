@@ -45,7 +45,7 @@ line-height: 1;
 
 /* Default background colour, and font size */
 .title-slide
-{ background-image: url(/Users/faisalmustafa/Library/Mobile Documents/com~apple~CloudDocs/PhD Pathway/Presentation/Systematic Literature Review/SLR Logo.png);
+{ background-image: url(images/SLR Logo.png);
                        background-size: 300px;
                        background-position: 11% 15%;
                      }
