@@ -72,7 +72,15 @@ table, th, td {
   bottom:2px;
   padding-left: 50px ;
   text-indent: -50px ;
-  padding-right: 30px;
+  padding-right: 100px;
+}
+.citation2 {
+  font-size: 15px;
+  position:absolute;
+  bottom:50px;
+  padding-left: 50px ;
+  text-indent: -50px ;
+  padding-right: 100px;
 }
 
 .subtitle {
