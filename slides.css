@@ -148,6 +148,7 @@ table.blueTable td, table.blueTable th {
 table.blueTable tbody td {
   font-size: 15px;
   text-align: left;
+  vertical-align:top;
 }
 table.blueTable thead {
     border-bottom: 1px solid #CC0033;
@@ -171,4 +172,11 @@ table.blueTable tfoot td {
   top:238.5px;
   right:-310px;
 }
+
+.topbottom {
+  position:absolute;
+  bottom:27px;
+  right:100px;
+}
+
 /* ========================================= */
