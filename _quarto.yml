@@ -7,13 +7,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: index.qdm
+        text: Table of Contents
   sidebar:
     contents:
       - text: Introduction
         href: intro.qmd
-  body-footer: |
-    This page brought to you by <https://example.com>
+      - text: Steps of SLR
+        href: steps.qmd
 
 format:
   html:

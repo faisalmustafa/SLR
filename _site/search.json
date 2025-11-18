@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "SLR",
     "section": "",
-    "text": "Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.\nThis page brought to you by https://example.com"
+    "text": "Faisal Mustafa is a lecturer at English Education Department of Universitas Syiah Kuala. He has\nThis page brought to you by https://example.com"
   },
   {
     "objectID": "about.html",
@@ -36,6 +36,50 @@
     "crumbs": [
       "Home",
       "Introduction"
+    ]
+  },
+  {
+    "objectID": "steps.html",
+    "href": "steps.html",
+    "title": "Steps in conducting a systematic literature review",
+    "section": "",
+    "text": "The systematic literature review consists of three main steps, i.e. reviewed study preparation, coding, and report writing.",
+    "crumbs": [
+      "Home",
+      "Steps of SLR"
+    ]
+  },
+  {
+    "objectID": "steps.html#reviewed-study-preparation",
+    "href": "steps.html#reviewed-study-preparation",
+    "title": "Steps in conducting a systematic literature review",
+    "section": "Reviewed study preparation",
+    "text": "Reviewed study preparation\n\nDetermining topics\nDatabase selections\nDetermining keywords and searching databases\nInitial screening\n\ninter-rater reliability\n\nRetrievel of full text\nFull text screening\n\nInter-rater reliability\n\n\nIn this step, we first need to determine",
+    "crumbs": [
+      "Home",
+      "Steps of SLR"
+    ]
+  },
+  {
+    "objectID": "steps.html#coding",
+    "href": "steps.html#coding",
+    "title": "Steps in conducting a systematic literature review",
+    "section": "Coding",
+    "text": "Coding\n\nSelecting framework and establishing codebook\nInter-coder reliability\nCoding",
+    "crumbs": [
+      "Home",
+      "Steps of SLR"
+    ]
+  },
+  {
+    "objectID": "steps.html#writing-slr-paper",
+    "href": "steps.html#writing-slr-paper",
+    "title": "Steps in conducting a systematic literature review",
+    "section": "Writing SLR paper",
+    "text": "Writing SLR paper\n\nMethod section\nResults section: Description of reviewed studies\nResults section: Primary results\nIntroduction section\nLiterature review section\nDiscussion section",
+    "crumbs": [
+      "Home",
+      "Steps of SLR"
     ]
   }
 ]
