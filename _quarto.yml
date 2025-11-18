@@ -10,7 +10,8 @@ website:
       - about.qmd
   sidebar:
     contents:
-      - text: About
+      - text: Introduction
+        href: intro.qmd
   body-footer: |
     This page brought to you by <https://example.com>
 
