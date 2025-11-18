@@ -8,6 +8,9 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+    left:
+      - text: About
 
 format:
   html:
@@ -16,6 +19,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-
