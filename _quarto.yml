@@ -9,8 +9,12 @@ website:
         text: Home
       - about.qmd
   sidebar:
-    left:
+    contents:
       - text: About
+  body-header: |
+    This page brought to you by <https://example.com>
+  margin-header: |
+    ![Logo image](/img/logo.png)
 
 format:
   html:
