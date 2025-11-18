@@ -11,10 +11,8 @@ website:
   sidebar:
     contents:
       - text: About
-  body-header: |
+  body-footer: |
     This page brought to you by <https://example.com>
-  margin-header: |
-    ![Logo image](/img/logo.png)
 
 format:
   html:
