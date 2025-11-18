@@ -2,6 +2,11 @@
 title: "SLR"
 ---
 
+<<<<<<< HEAD
 This is a Quarto website.
 a
+=======
+This is a Quarto website. 
+
+>>>>>>> 9a2f1ea3e8c79b371ef1141777d3b82419bf54b1
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
