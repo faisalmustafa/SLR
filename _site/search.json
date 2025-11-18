@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "SLR",
     "section": "",
-    "text": "Faisal Mustafa is a lecturer at English Education Department of Universitas Syiah Kuala. He has"
+    "text": "This book is a guideline for researchers who are already familiar with Systematic Literature review to some extent and want to further refine their knowledge on enhancing the quality and accuracy of their Systematic Literature Review."
   },
   {
     "objectID": "about.html",
@@ -81,5 +81,19 @@
       "Home",
       "Steps of SLR"
     ]
+  },
+  {
+    "objectID": "index.html#author",
+    "href": "index.html#author",
+    "title": "SLR",
+    "section": "Author",
+    "text": "Author\nThis practical guideline is written and provided by Faisal Mustafa, a lecturer at Universitas Syiah Kuala, Indonesia, and it is delivered as an open access resource."
+  },
+  {
+    "objectID": "index.html#how-to-cite",
+    "href": "index.html#how-to-cite",
+    "title": "SLR",
+    "section": "How to Cite",
+    "text": "How to Cite\n\nAPA 7th\nMustafa, F. (2025). A practical guide to conducting a robust systematic literature review . Github Repository. https://faisalmustafa.github.io/SLR/"
   }
 ]

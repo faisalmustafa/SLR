@@ -1,7 +1,9 @@
 ---
 title: "Steps in conducting a systematic literature review"
 format: html
-title-block-banner: true
+title-block-banner: "#4097C2"
+title-block-banner-color: white
+
 ---
 
 The systematic literature review consists of three main steps, i.e. reviewed study preparation, coding, and report writing. Each of these steps consists of several workflows.
