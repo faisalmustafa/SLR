@@ -1,2 +1,9 @@
 /* css styles */
-/* title-block-banner-color: #104e8b;
+/* title-block-banner-color: #104e8b; */
+
+.about-entity img {
+  border: 0.1;
+  border-width: thin;
+  border-style: solid;
+  border-color: #556f89;
+}
