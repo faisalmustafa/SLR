@@ -13,17 +13,19 @@ The systematic literature review consists of three main steps, i.e. reviewed stu
 - Database selections
 - Determining keywords and searching databases
 - Initial screening
-    - inter-rater reliability
+    - Inter-rater reliability
 - Retrievel of full text
 - Full text screening
     - Inter-rater reliability
 
-In this step, we first need to determine thr topic for SLR. Experienced researchers consider the significance of the SLR and the availability of reviewed studies in determining the toopics of SLR. In some of my own collaboration projects, we used SLR to define and conceptualized a new concept. Second, 
+In this step, we first need to determine the topic for SLR. Experienced researchers consider the significance of the SLR and the availability of reviewed studies in determining the toopics of SLR. In some of my own collaboration projects, we used SLR to define and conceptualized a new concept. Second, select the leading databases from which the articles to be reviewed will be extracted. In my case, since systematic literature review topics revolve around education, I would select Scopus, Web of Science and ProQuest Education. The selection of these databases need to be justified in the methodology section of your article. Third, your topic for systematic literature review is then translated into keywords to be used to search the studies related to your selected topic. The search results are extracted and duplicates are removed. Further process is more intensive, where the title and abstract of the extracted studies need to be read to determine whether the studies meet the inclusion criteria. This step is usually completed by more than one team members, and it is recommended so, adequate inter-rater reliability needs to be established at the early stage of this abstract screening process. The full texts of all included studies are retried and screened further. At this stage the quality of each study is assessed using a quality appraisal rubric, accompanied with inter-rater reliability process.
 
 ## Coding
 - Selecting framework and establishing codebook
 - Inter-coder reliability
 - Coding
+
+This can be considered the primary process of systematic literature review, which team members spend most of their time compared to other processes. In this step, first the team members have to agree on what framework will be used to organize the code. The framework is used as the primary components of the codebook. Before the real coding process starts, adequate inter-coder reliability needs to be established among the team member involved in this process. This process can take mutiple practice coding cycles. Finally, the studies to be coded are distributed among the team members to code independently based on the establihed codebook.
 
 ## Writing SLR paper
 -  Method section
@@ -32,3 +34,5 @@ In this step, we first need to determine thr topic for SLR. Experienced research
 -  Introduction section
 -  Literature review section
 -  Discussion section
+
+In writing a systematic literature review paper, the method section should be prepared during the research process described above to ensure that every detail is carefully detailed. The method section can also provide the description of the reviewed studies such as year or publication, region where research was conducted, and other relevant information. If these overview data are closely tied to the research result in the codebook, they can be provided in the result section. After completing the result section, it becomes easier to write the introduction sections. Discussion section, followed by the conclusion section, can be prepared after other sections are completed.

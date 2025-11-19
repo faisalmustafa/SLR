@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "SLR",
     "section": "",
-    "text": "This book is a guideline for researchers who are already familiar with Systematic Literature review to some extent and want to further refine their knowledge on enhancing the quality and accuracy of their Systematic Literature Review."
+    "text": "This book is a guideline for researchers who are already familiar with Systematic Literature review to some extent and want to further refine their knowledge on enhancing the quality and accuracy of their Systematic Literature Review.\n\nAuthor\nThis practical guideline is written and provided by Faisal Mustafa, a lecturer at Universitas Syiah Kuala, Indonesia, and it is delivered as an open access resource.\n\n\nHow to Cite\nMustafa, F. (2025). A practical guide to conducting a robust systematic literature review . Github Repository. https://faisalmustafa.github.io/SLR/"
   },
   {
     "objectID": "about.html",
@@ -54,7 +54,7 @@
     "href": "steps.html#reviewed-study-preparation",
     "title": "Steps in conducting a systematic literature review",
     "section": "Reviewed study preparation",
-    "text": "Reviewed study preparation\n\nDetermining topics\nDatabase selections\nDetermining keywords and searching databases\nInitial screening\n\ninter-rater reliability\n\nRetrievel of full text\nFull text screening\n\nInter-rater reliability\n\n\nIn this step, we first need to determine thr topic for SLR. Experienced researchers consider the significance of the SLR and the availability of reviewed studies in determining the toopics of SLR. In some of my own collaboration projects, we used SLR to define and conceptualized a new concept. Second,",
+    "text": "Reviewed study preparation\n\nDetermining topics\nDatabase selections\nDetermining keywords and searching databases\nInitial screening\n\nInter-rater reliability\n\nRetrievel of full text\nFull text screening\n\nInter-rater reliability\n\n\nIn this step, we first need to determine the topic for SLR. Experienced researchers consider the significance of the SLR and the availability of reviewed studies in determining the toopics of SLR. In some of my own collaboration projects, we used SLR to define and conceptualized a new concept. Second, select the leading databases from which the articles to be reviewed will be extracted. In my case, since systematic literature review topics revolve around education, I would select Scopus, Web of Science and ProQuest Education. The selection of these databases need to be justified in the methodology section of your article. Third, your topic for systematic literature review is then translated into keywords to be used to search the studies related to your selected topic. The search results are extracted and duplicates are removed. Further process is more intensive, where the title and abstract of the extracted studies need to be read to determine whether the studies meet the inclusion criteria. This step is usually completed by more than one team members, and it is recommended so, adequate inter-rater reliability needs to be established at the early stage of this abstract screening process. The full texts of all included studies are retried and screened further. At this stage the quality of each study is assessed using a quality appraisal rubric, accompanied with inter-rater reliability process.",
     "crumbs": [
       "Home",
       "Steps of SLR"
@@ -65,7 +65,7 @@
     "href": "steps.html#coding",
     "title": "Steps in conducting a systematic literature review",
     "section": "Coding",
-    "text": "Coding\n\nSelecting framework and establishing codebook\nInter-coder reliability\nCoding",
+    "text": "Coding\n\nSelecting framework and establishing codebook\nInter-coder reliability\nCoding\n\nThis can be considered the primary process of systematic literature review, which team members spend most of their time compared to other processes. In this step, first the team members have to agree on what framework will be used to organize the code. The framework is used as the primary components of the codebook. Before the real coding process starts, adequate inter-coder reliability needs to be established among the team member involved in this process. This process can take mutiple practice coding cycles. Finally, the studies to be coded are distributed among the team members to code independently based on the establihed codebook.",
     "crumbs": [
       "Home",
       "Steps of SLR"
@@ -76,7 +76,7 @@
     "href": "steps.html#writing-slr-paper",
     "title": "Steps in conducting a systematic literature review",
     "section": "Writing SLR paper",
-    "text": "Writing SLR paper\n\nMethod section\nResults section: Description of reviewed studies\nResults section: Primary results\nIntroduction section\nLiterature review section\nDiscussion section",
+    "text": "Writing SLR paper\n\nMethod section\nResults section: Description of reviewed studies\nResults section: Primary results\nIntroduction section\nLiterature review section\nDiscussion section\n\nIn writing a systematic literature review paper, the method section should be prepared during the research process described above to ensure that every detail is carefully detailed. The method section can also provide the description of the reviewed studies such as year or publication, region where research was conducted, and other relevant information. If these overview data are closely tied to the research result in the codebook, they can be provided in the result section. After completing the result section, it becomes easier to write the introduction sections. Discussion section, followed by the conclusion section, can be prepared after other sections are completed.",
     "crumbs": [
       "Home",
       "Steps of SLR"
@@ -95,5 +95,27 @@
     "title": "SLR",
     "section": "How to Cite",
     "text": "How to Cite\n\nAPA 7th\nMustafa, F. (2025). A practical guide to conducting a robust systematic literature review . Github Repository. https://faisalmustafa.github.io/SLR/"
+  },
+  {
+    "objectID": "roles.html#role-of-team-members",
+    "href": "roles.html#role-of-team-members",
+    "title": "Roles of Team Members",
+    "section": "Role of Team Members",
+    "text": "Role of Team Members",
+    "crumbs": [
+      "Home",
+      "Roles or Members"
+    ]
+  },
+  {
+    "objectID": "roles.html#advice-for-team-leaders",
+    "href": "roles.html#advice-for-team-leaders",
+    "title": "Roles of Team Members",
+    "section": "Advice for Team Leaders",
+    "text": "Advice for Team Leaders",
+    "crumbs": [
+      "Home",
+      "Roles or Members"
+    ]
   }
 ]

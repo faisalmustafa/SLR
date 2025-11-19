@@ -17,6 +17,8 @@ website:
         href: steps.qmd
       - text: Topics of SLR
         href: topics.qmd
+      - text: Roles or Members
+        href: roles.qmd
 
 format:
   html:
