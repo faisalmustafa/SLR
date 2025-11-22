@@ -2,4 +2,7 @@
 title: "Introduction"
 ---
 
-Systematic Literature Review (SLR) has become more increasingly popular among researchers.
+Systematic Literature Review (SLR) has become more increasingly popular among researchers. This type of research refers to a systematic process of obtaining reliable literature to be analyze and synthesize *accurately*. What differentiate this type of literature review to traditional one is that SLR emphasize on systematicity, which means that all process in SLR research is reproducable. 
+
+
+SLR is significant for some reasons. First, it helps summarize the results of previous studies on a particular topic. The results of studies can be summarize into several themes, which reveal what we already know about centain phenomenon. 
