@@ -12,3 +12,19 @@ header {
   border-style: solid;
   border-color: #556f89;
 }
+
+#paper_dl-btn {
+  font-size: xx-small;
+  padding: 0.2rem 0.3rem !important;
+  color: #4097c2;
+  border-color: #4097c2;
+}
+
+#down-btn {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+a:has(#paper_dl-btn) {
+  text-decoration: none !important;
+}
