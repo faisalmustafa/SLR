@@ -5,4 +5,8 @@ title-block-banner: "#4097C2"
 title-block-banner-color: white
 ---
 
-The first step of conducting systematic literature review research is determining the topic for the research. This topic can come from one of the following ..... First, when 
+The first step of conducting systematic literature review research is determining the topic for the research. This topic can come from one of the following activities or efforts. First, when you notice that there is an inconsistency in the literature about how a concept is defined, there is a potential to establish a standard conceptualization through systematic literature review research.
+
+Second, many newly emerging topics in the literature have not reviewed systematically. Therefore, there are many potentials for systematic literature review research for such topics as AI. For example, the use of AI in lesson planning, writing feedback, or speaking assessment might still be open for systematic literature review research.
+
+Finally, topics for the systematic literature review can also be explored from other previous systematic literature review. All research has shortcomings, which can provide a gap for further systematic literature review. Authors usually reveal this aspect in the discussion or conclusion section of the systematic literature review papers.
