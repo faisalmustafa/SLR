@@ -12,12 +12,3 @@ header {
   border-style: solid;
   border-color: #556f89;
 }
-
-#paper_dl-btn {
-  font-size: xx-small;
-  padding: 0.2rem 0.3rem !important;
-  display: inline-block;
-  border-radius: 10px;
-  border: 1px solid rgba(#4097c2, 0.05);
-  background: rgba(#4097c2, 0.6);
-}
