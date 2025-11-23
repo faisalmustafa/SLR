@@ -9,7 +9,7 @@ website:
         text: Home
       - href: about.qmd
         text: About this book
-      - href: index.qmd
+      - href: toc.qmd
         text: Table of Contents
   sidebar:
     contents:

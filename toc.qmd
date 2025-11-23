@@ -1,0 +1,9 @@
+---
+title: "Table of Contents"
+format: html
+listing:
+    contents: toc.yml
+    type: table
+    max-description-length: 250
+    
+---
