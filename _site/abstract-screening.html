@@ -212,7 +212,12 @@ background: #4097C2;
   <ul>
   <li><a href="#preparation---combining-lists-and-removing-duplicates" id="toc-preparation---combining-lists-and-removing-duplicates" class="nav-link active" data-scroll-target="#preparation---combining-lists-and-removing-duplicates">Preparation - Combining lists and removing duplicates</a></li>
   <li><a href="#screening-practice" id="toc-screening-practice" class="nav-link" data-scroll-target="#screening-practice">Screening practice</a></li>
-  <li><a href="#cycles-of-screening-to-achieve-reliability" id="toc-cycles-of-screening-to-achieve-reliability" class="nav-link" data-scroll-target="#cycles-of-screening-to-achieve-reliability">Cycles of screening to achieve reliability</a></li>
+  <li><a href="#cycles-of-screening-to-achieve-reliability" id="toc-cycles-of-screening-to-achieve-reliability" class="nav-link" data-scroll-target="#cycles-of-screening-to-achieve-reliability">Cycles of screening to achieve reliability</a>
+  <ul class="collapse">
+  <li><a href="#cohens-kappa---manual-calculation" id="toc-cohens-kappa---manual-calculation" class="nav-link" data-scroll-target="#cohens-kappa---manual-calculation">Cohen’s kappa - manual calculation</a></li>
+  <li><a href="#fleiss-kappa---manual-calculation" id="toc-fleiss-kappa---manual-calculation" class="nav-link" data-scroll-target="#fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</a></li>
+  <li><a href="#cohens-kappa-and-fleiss-kappa-in-r" id="toc-cohens-kappa-and-fleiss-kappa-in-r" class="nav-link" data-scroll-target="#cohens-kappa-and-fleiss-kappa-in-r">Cohen’s kappa and Fleiss’ kappa in R</a></li>
+  </ul></li>
   <li><a href="#abstract-screening" id="toc-abstract-screening" class="nav-link" data-scroll-target="#abstract-screening">Abstract screening</a></li>
   </ul>
 </nav>
@@ -230,12 +235,22 @@ background: #4097C2;
 </section>
 <section id="screening-practice" class="level2">
 <h2 class="anchored" data-anchor-id="screening-practice">Screening practice</h2>
-<p>When the list is ready, team members need to sit in a meeting to agree on how to screen the abstract and do some screening practices to have a shared understanding of this process. The team leader needs to facilitate discussion to achive this common understanding. I prefer online meeting through video conference application so that the meeting can be conducted in relax atmosphere outside working hours. Also, this type of meeting is best when team members are from different institutions. As a suggestion, inclusion and exclusion criteria are always made handy to help with the abstract screening. While article titles and keywords might help in detecting relevancy of articles, abstract must always be prioritized.</p>
+<p>When the list is ready, team members need to sit in a meeting to agree on how to screen the abstract and do some screening practices by screening several papers together to have a shared understanding of this process. The team leader needs to facilitate discussion to achieve this common understanding. I prefer online meeting through video conference application so that the meeting can be conducted in relax atmosphere outside working hours. Also, this type of meeting is best when team members are from different institutions. As a suggestion, inclusion and exclusion criteria should always be made handy to help with the abstract screening. While article titles and keywords might help in detecting relevancy of articles, abstract must always be prioritized.</p>
 </section>
 <section id="cycles-of-screening-to-achieve-reliability" class="level2">
 <h2 class="anchored" data-anchor-id="cycles-of-screening-to-achieve-reliability">Cycles of screening to achieve reliability</h2>
-<p>In this process, it is important to objectively proove that all team members have the same understanding of the inclusion and exclusion criteria.</p>
-<p>After each team member is confident with their undertanding of the screening process for the project, each member needs to screen at least 30 same articles independently.</p>
+<p>In this process, it is important to objectively prove that all team members have the same understanding of the inclusion and exclusion criteria. To determine whether the teams members have adequate agrement, each member needs to screen at least 30 same articles independently. After completing this first cycle of the screening, the screening results of each member can be compared using Cohen’s kappa (for two raters) or Fleiss’ kappa (for more than two raters).</p>
+<section id="cohens-kappa---manual-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="cohens-kappa---manual-calculation">Cohen’s kappa - manual calculation</h3>
+<p>To calculate Cohen’s kappa, the data needs to be prepared as in the following table.</p>
+<embed src="resources/pdf_images/kappa_data.pdf" width="800px" height="300px">
+</section>
+<section id="fleiss-kappa---manual-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</h3>
+</section>
+<section id="cohens-kappa-and-fleiss-kappa-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="cohens-kappa-and-fleiss-kappa-in-r">Cohen’s kappa and Fleiss’ kappa in R</h3>
+</section>
 </section>
 <section id="abstract-screening" class="level2">
 <h2 class="anchored" data-anchor-id="abstract-screening">Abstract screening</h2>
