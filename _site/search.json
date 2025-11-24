@@ -134,7 +134,7 @@
     "href": "toc.html",
     "title": "Table of Contents",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n      \n      \n        Description\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\n \n\n\n\nDescription\n\n\n\nDate\n\n\n\n\n\n\n\n\nAbout this online book\n\n\n \n\n\nLearning this type of research was quite a journey for myself, and thus I do not intend to let this process goes to waste because not all…\n\n\nNov 23, 2025\n\n\n\n\n\n\nIntroduction\n\n\n \n\n\nSystematic Literature Review (SLR) has become more increasingly popular among researchers. This type of research refers to a systematic process of…\n\n\nNov 23, 2025\n\n\n\n\n\n\nSteps in conducting a systematic literature review\n\n\n \n\n\nThe systematic literature review consists of three main steps, i.e. reviewed study preparation, coding, and report writing. Each of these steps…\n\n\nNov 23, 2025\n\n\n\n\n\n\nDetermining topics for Systematic Literature Review\n\n\n \n\n\nThe first step of conducting systematic literature review research is determining the topic for the research. This topic can come from one of the…\n\n\nNov 23, 2025\n\n\n\n\n\n\nSelecting databases for systematic literature review\n\n\n \n\n\nThe rule of thumb is that the database used needs to be indexing databases which include journals or book chapters after assessment involving…\n\n\nNov 24, 2025\n\n\n\n\n\n\nKeywords and search\n\n\n \n\n\nKeywords are very significant in systematic literature review. Incorrecly using keywords can put excessively extend the time of completing the…\n\n\nNov 24, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Description\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nDate\n\n\n\n\n\n\n\n\nAbout this online book\n\n\nLearning this type of research was quite a journey for myself, and thus I do not intend to let this process goes to waste because not all…\n\n\nNov 23, 2025\n\n\n\n\n\n\nIntroduction\n\n\nSystematic Literature Review (SLR) has become more increasingly popular among researchers. This type of research refers to a systematic process of…\n\n\nNov 23, 2025\n\n\n\n\n\n\nSteps in conducting a systematic literature review\n\n\nThe systematic literature review consists of three main steps, i.e. reviewed study preparation, coding, and report writing. Each of these steps…\n\n\nNov 23, 2025\n\n\n\n\n\n\nDetermining topics for Systematic Literature Review\n\n\nThe first step of conducting systematic literature review research is determining the topic for the research. This topic can come from one of the…\n\n\nNov 23, 2025\n\n\n\n\n\n\nSelecting databases for systematic literature review\n\n\nThe rule of thumb is that the database used needs to be indexing databases which include journals or book chapters after assessment involving…\n\n\nNov 24, 2025\n\n\n\n\n\n\nKeywords and search\n\n\nKeywords are very significant in systematic literature review. Incorrecly using keywords can put excessively extend the time of completing the…\n\n\nNov 24, 2025\n\n\n\n\n\n\nAbstract screening\n\n\nBefore the initial screening, the search results from multiple databases need to be combined. There is high possibility that the combined list to…\n\n\nNov 25, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "database.html",
@@ -211,6 +211,68 @@
     "crumbs": [
       "Home",
       "Keywords and search"
+    ]
+  },
+  {
+    "objectID": "abstract-screening.html#team-agreement",
+    "href": "abstract-screening.html#team-agreement",
+    "title": "Abstract screening",
+    "section": "Team agreement",
+    "text": "Team agreement"
+  },
+  {
+    "objectID": "abstract-screening.html#screening-practice",
+    "href": "abstract-screening.html#screening-practice",
+    "title": "Abstract screening",
+    "section": "Screening practice",
+    "text": "Screening practice\nWhen the list is ready, team members need to sit in a meeting to agree on how to screen the abstract and do some screening practices to have a shared understanding of this process. The team leader needs to facilitate discussion to achive this common understanding. I prefer online meeting through video conference application so that the meeting can be conducted in relax atmosphere outside working hours. Also, this type of meeting is best when team members are from different institutions. As a suggestion, inclusion and exclusion criteria are always made handy to help with the abstract screening. While article titles and keywords might help in detecting relevancy of articles, abstract must always be prioritized.",
+    "crumbs": [
+      "Home",
+      "Abstract screening"
+    ]
+  },
+  {
+    "objectID": "abstract-screening.html#cycles-of-screening-to-achieve-reliability",
+    "href": "abstract-screening.html#cycles-of-screening-to-achieve-reliability",
+    "title": "Abstract screening",
+    "section": "Cycles of screening to achieve reliability",
+    "text": "Cycles of screening to achieve reliability\nIn this process, it is important to objectively proove that all team members have the same understanding of the inclusion and exclusion criteria.\nAfter each team member is confident with their undertanding of the screening process for the project, each member needs to screen at least 30 same articles independently.",
+    "crumbs": [
+      "Home",
+      "Abstract screening"
+    ]
+  },
+  {
+    "objectID": "abstract-screening.html#abstract-screening",
+    "href": "abstract-screening.html#abstract-screening",
+    "title": "Abstract screening",
+    "section": "Abstract screening",
+    "text": "Abstract screening",
+    "crumbs": [
+      "Home",
+      "Abstract screening"
+    ]
+  },
+  {
+    "objectID": "abstract-screening.html",
+    "href": "abstract-screening.html",
+    "title": "Abstract screening",
+    "section": "",
+    "text": "Before the initial screening, the search results from multiple databases need to be combined. There is high possibility that the combined list to consist of duplicates. These duplicates need to be eliminated by keeping only one record of each article. Systematic literature review tools such as Cofidence and Rayyan can automatically detect duplicates using AI, but they are not free. We can also detect duplicated documents using Microsoft Excel, utilizing sorting and conditional formatting features.",
+    "crumbs": [
+      "Home",
+      "Abstract screening"
+    ]
+  },
+  {
+    "objectID": "abstract-screening.html#preparation---combining-lists-and-removing-duplicates",
+    "href": "abstract-screening.html#preparation---combining-lists-and-removing-duplicates",
+    "title": "Abstract screening",
+    "section": "",
+    "text": "Before the initial screening, the search results from multiple databases need to be combined. There is high possibility that the combined list to consist of duplicates. These duplicates need to be eliminated by keeping only one record of each article. Systematic literature review tools such as Cofidence and Rayyan can automatically detect duplicates using AI, but they are not free. We can also detect duplicated documents using Microsoft Excel, utilizing sorting and conditional formatting features.",
+    "crumbs": [
+      "Home",
+      "Abstract screening"
     ]
   }
 ]

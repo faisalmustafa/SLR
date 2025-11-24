@@ -1,6 +1,5 @@
 - title: About this online book
   path: about.html
-  image: ""
   description: >
     Learning this type of research was quite a journey for myself, and thus I do not intend to let this process goes to waste because not all academicians have a learning chance as I did. Therefore, the purpose of this book is to describe the process of Systematic Literature Review research as I learned it through reading and collaborations. Allow me to share how I learned this type of research before I describe how this book is presented.
   date: 11/23/2025
@@ -34,3 +33,9 @@
   description: >
     Keywords are very significant in systematic literature review. Incorrecly using keywords can put excessively extend the time of completing the project. If the keywords needs to be revised in the middle of a project, the team members have to start working from the beginning because more papers need to be screened. Therefore, the team members responsible for searching the databases need to play around with the keywords before finalizing them.
   date: 11/24/2025
+
+- title: Abstract screening
+  path: abstract-screening.html
+  description: >
+    Before the initial screening, the search results from multiple databases need to be combined. There is high possibility that the combined list to consist of duplicates. These duplicates need to be eliminated by keeping only one record of each article. Systematic literature review tools such as Cofidence and Rayyan can automatically detect duplicates using AI, but they are not free. We can also detect duplicated documents using Microsoft Excel, utilizing sorting and conditional formatting features.
+  date: 11/25/2025

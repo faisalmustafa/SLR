@@ -1,0 +1,20 @@
+---
+title: "Abstract screening"
+format: html
+title-block-banner: "#4097C2"
+title-block-banner-color: white
+---
+
+## Preparation - Combining lists and removing duplicates
+Before the initial screening, the search results from multiple databases need to be combined. There is high possibility that the combined list to consist of duplicates. These duplicates need to be eliminated by keeping only one record of each article. Systematic literature review tools such as Cofidence and Rayyan can automatically detect duplicates using AI, but they are not free. We can also detect duplicated documents using Microsoft Excel, utilizing sorting and conditional formatting features.
+
+## Screening practice
+When the list is ready, team members need to sit in a meeting to agree on how to screen the abstract and do some screening practices to have a shared understanding of this process. The team leader needs to facilitate discussion to achive this common understanding. I prefer online meeting through video conference application so that the meeting can be conducted in relax atmosphere outside working hours. Also, this type of meeting is best when team members are from different institutions. As a suggestion, inclusion and exclusion criteria are always made handy to help with the abstract screening. While article titles and keywords might help in detecting relevancy of articles, abstract must always be prioritized.
+
+## Cycles of screening to achieve reliability
+In this process, it is important to objectively proove that all team members have the same understanding of the inclusion and exclusion criteria. 
+
+After each team member is confident with their undertanding of the screening process for the project, each member needs to screen at least 30 same articles independently. 
+
+
+## Abstract screening

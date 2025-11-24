@@ -23,6 +23,8 @@ website:
         href: database.qmd
       - text: Keywords and search
         href: search.qmd
+      - text: Abstract screening
+        href: abstract-screening.qmd
       - text: Roles or members
         href: roles.qmd
 
