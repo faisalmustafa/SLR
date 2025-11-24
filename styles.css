@@ -11,3 +11,10 @@ header {
   border-style: solid;
   border-color: #556f89;
 }
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}

@@ -21,7 +21,9 @@ website:
         href: topics.qmd
       - text: Databases
         href: database.qmd
-      - text: Roles or Members
+      - text: Keywords and search
+        href: search.qmd
+      - text: Roles or members
         href: roles.qmd
 
 format:

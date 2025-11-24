@@ -1,0 +1,88 @@
+---
+title: "Keywords and search"
+format: html
+title-block-banner: "#4097C2"
+title-block-banner-color: white
+---
+## Keywords
+
+Keywords are very significant in systematic literature review. Incorrecly using keywords can excessively extend the time of completing the project. If the keywords need to be revised in the middle of a project, the team members have to start working from the beginning because more papers resulting from the revised keywords need to be screened. Therefore, the team members responsible for searching the databases need to play around with the keywords before finalizing them. 
+
+In general, keywords derive from the inclusion and exclusion criteria of sample selection. The sample selection depends on the reseach topic, representing the variables and context of the study. Let us use the following research topic as an example.
+
+Topic: *Challenges and proposed solutions of technology application in rural schools*
+
+The objective of this systematic literature review is to determine the challenges and proposed solutions of technology application in rural schools. Therefore, there are potentially three variables to be considered, i.e., *challenge*, *solution*, and *technology application*, and the context is *rural schools*. However, if the search is restricted to *challenges* and *solutions*, the search results will exclude many papers which do not mention these words (*challenge* and *solution*) in their titles, abstracts, and keywords because the search can only target these sections of the articles. Therefore, Let's decide to ignore these two variables. The followings are the inclusion and exclusion criteria of the sample selection after much consideration.
+
+#### Inclusion: The selected papers need to be related to technology application
+To achieve this, the keywords need to cover this term. Researchers have been using many different terms to refer to technology application in education context, such as *ICT*, *online learning*, *virtual classroom*, *distant education*, or *computer assissted learning*. These all words need to be included in the first layer of the keywords.
+
+#### Inclusion: The selected papers need to be about using technology in teaching or learning
+To ensure that the articles selected are about the use of teachnology in classroom, the abstracts need to consist of such words as *teaching* or *learning* or *classroom*. Therefore, these words should be the second layer of the keyword.
+
+#### Inclusion: The selected papers need to be about the teaching at schools
+Teaching and learning can also occur at home, but this systematic literature review deals with technology application at schools. Therefore, *school* should be in the third layer of the keywords.
+
+#### Inclusion: The context needs to be in rural schools
+Researchers have used several terms to refer to rural school in the literature such as under-resourced school, remote school, and underprivileged schools. These words need to be in the forth layer of the keywords.
+
+#### Exclusion: The selected papers should not be related to higher education
+To ensure that the search results do not include papers related to the teaching and learning at higher institutions, papers whose abstract consisting of such words as *university* or *higher education* need to be excluded. We have to use a relevant boolean operator to exclude keywords.
+
+#### Filter: The selected papers are peer-reviewed journal articles in English and published in the last 10 years
+In addition to keywords, the search results can be filtered as required. This filter can target years of publication, language, document type (article, conference paper, book chapter, etc.), subject area (social sciences, computer science, psychology, etc.), etc. Filtering needs to be adequately justified in reporting systematic literature review.
+
+## Using keywords to search the databases
+
+Finally, the keywords that I end up using are provided in the following table.
+
+<table>
+    <thead>
+        <tr>
+            <th>Layer</th>
+            <th>Operators</th>
+            <th>Keywords</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> 1 </td>
+            <td>  </td>
+            <td> "technology" OR "ICT" OR "online" OR "virtual" OR "distan\*" OR "computer\*" </td>
+            <td> The selected papers need to be related to technology application </td>
+        </tr>
+        <tr>
+            <td> 2 </td>
+            <td> AND </td>
+            <td> "learning" OR "teaching" OR "classroom\*" </td>
+            <td> The selected papers need to be about using technology in teaching or learning </td>
+        </tr>
+        <tr>
+            <td> 3 </td>
+            <td> AND </td>
+            <td> "school\*" </td>
+            <td> The selected papers need to be about the teaching at schools </td>
+        </tr>
+        <tr>
+            <td> 4 </td>
+            <td> AND </td>
+            <td> "rural" OR "under resource\*" OR "remote" OR "underprivilege\*" </td>
+            <td> The context needs to be in rural schools </td>
+        </tr>
+        <tr>
+            <td> 5 </td>
+            <td> (AND) NOT </td>
+            <td> "higher education" OR "universit\*" </td>
+            <td> The selected papers should not be related to higher education </td>
+        </tr>
+    </tbody>
+</table>
+
+*Note.* The exclusion layer needs to be posited as the last layer of the search unless there is a specific purpose of placing it earlier.
+
+Boolean operator AND means that all words need to be present in the search results. Boolean operator OR means that the search results can consist of either words or one of the words in the corresponding layer. Finally, the boolean operator AND NOT means that the search results must not consist the words in the correspoding layer. 
+
+After obtaining the search result, the result should be filtered further to follow the scope of the research. For example, the year range can be set to 2016-2025 (10 years), the document type to include only journal articles, and the publication is in English only.
+
+After completing the search, the search results can be exported to either xlsx or csv format for further process. These two formats can be opened in Microsoft Excel or other Spreedsheet supporting application, which we will use to eliminate dulicates and screen the abstract.

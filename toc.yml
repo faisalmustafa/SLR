@@ -28,3 +28,9 @@
   description: >
     The rule of thumb is that the database used needs to be indexing databases which include journals or book chapters after assessment involving management and content quality. Google Scholar includes any academic publication without any assessment, and thus they are not elligible to be selected for systematic literature review research. Another indexing platform is DOAJ, which indexes journals after an assessment; however, the assessment tend to focus only on journal management, not the quality of research and reporting. Thus, DOAJ is also not elligible for systematic literature review paper. One of a good example is Scopus, because it includes journals and book chapters after a series of assessment by expert team with well-established selection criteria targetting management and content quality, even extended to journal standing (i.e., citedness of journal articles in Scopus and its editor reputation).
   date: 11/24/2025
+
+- title: Keywords and search
+  path: search.html
+  description: >
+    Keywords are very significant in systematic literature review. Incorrecly using keywords can put excessively extend the time of completing the project. If the keywords needs to be revised in the middle of a project, the team members have to start working from the beginning because more papers need to be screened. Therefore, the team members responsible for searching the databases need to play around with the keywords before finalizing them.
+  date: 11/24/2025

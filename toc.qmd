@@ -4,6 +4,6 @@ format: html
 listing:
     contents: toc.yml
     type: table
-    max-description-length: 250
-    
+    max-description-length: 150
+
 ---
