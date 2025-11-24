@@ -12,14 +12,33 @@ Before the initial screening, the search results from multiple databases need to
 When the list is ready, team members need to sit in a meeting to agree on how to screen the abstract and do some screening practices by screening several papers together to have a shared understanding of this process. The team leader needs to facilitate discussion to achieve this common understanding. I prefer online meeting through video conference application so that the meeting can be conducted in relax atmosphere outside working hours. Also, this type of meeting is best when team members are from different institutions. As a suggestion, inclusion and exclusion criteria should always be made handy to help with the abstract screening. While article titles and keywords might help in detecting relevancy of articles, abstract must always be prioritized.
 
 ## Cycles of screening to achieve reliability
-In this process, it is important to objectively prove that all team members have the same understanding of the inclusion and exclusion criteria. To determine whether the teams members have adequate agrement,  each member needs to screen at least 30 same articles independently. After completing this first cycle of the screening, the screening results of each member can be compared using Cohen's kappa (for two raters) or Fleiss' kappa (for more than two raters). 
-
-### Cohen's kappa - manual calculation
-To calculate Cohen's kappa, the data needs to be prepared as in the following table.
+In this process, it is important to objectively prove that all team members have the same understanding of the inclusion and exclusion criteria. To determine whether the teams members have adequate agrement,  each member needs to screen at least 30 same articles independently. After completing this first cycle of the screening, the screening results of each member can be compared using Cohen's kappa (for two raters) or Fleiss' kappa (for more than two raters). I this book, I will demonstrate how both kappas are calculated manually and in R, the statistical software that I am familiar with. You can explore how it is done in the application of your choice if you prefer. We will use this data for the calculation.
 
 ```{=html}
 <embed src="/resources/pdf_images/kappa_data.pdf" width="800px" height="300px" />
 ```
+
+### Cohen's kappa - manual calculation
+For this calculation, we will use only Rater_1 and Rater_2 because Cohen's kappa is used to calculate inter-rater reliability when only two raters are involved. To calculate Cohen's kappa, the data needs to be prepared as in the following table.
+
+|                        | Included (Rater_2) | Excluded (Rater_2) |  Total  |
+| ---------------------- | ------------------ | ------------------ | ------- |
+| **Included (Rater_1)** |         11         |         6          | **17**  |
+| **Excluded (Rater_1)** |         7          |         6          | **13**  |
+| **Total**              |       **18**       |       **12**       | ***30***|
+
+
+The formula for kappa is: $$ \kappa = \frac{p_e - p_o}{1 - p_e} $$
+
+where  $p_o$ refers to percentage of agreement and $p_e$ represents the expected percentage of agreement.
+
+$p_o$ is calculated by adding the number of articles that both raters rate as included (11) and those they both rate as excluded (6) and divided it with the total number of articles.
+
+$$ p_o = \frac{(11 + 6)}{30} = \frac{17}{30}=0.567 $$
+
+$p_e$ is calculated by combining the probability that both raters would randomly arrive at the rating "included" and the probablility that both raters would randomly arrive at the rating "excluded".
+
+
 
 ### Fleiss' kappa - manual calculation
 

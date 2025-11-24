@@ -86,6 +86,35 @@ background: #4097C2;
       }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -239,11 +268,52 @@ background: #4097C2;
 </section>
 <section id="cycles-of-screening-to-achieve-reliability" class="level2">
 <h2 class="anchored" data-anchor-id="cycles-of-screening-to-achieve-reliability">Cycles of screening to achieve reliability</h2>
-<p>In this process, it is important to objectively prove that all team members have the same understanding of the inclusion and exclusion criteria. To determine whether the teams members have adequate agrement, each member needs to screen at least 30 same articles independently. After completing this first cycle of the screening, the screening results of each member can be compared using Cohen’s kappa (for two raters) or Fleiss’ kappa (for more than two raters).</p>
+<p>In this process, it is important to objectively prove that all team members have the same understanding of the inclusion and exclusion criteria. To determine whether the teams members have adequate agrement, each member needs to screen at least 30 same articles independently. After completing this first cycle of the screening, the screening results of each member can be compared using Cohen’s kappa (for two raters) or Fleiss’ kappa (for more than two raters). I this book, I will demonstrate how both kappas are calculated manually and in R, the statistical software that I am familiar with. You can explore how it is done in the application of your choice if you prefer. We will use this data for the calculation.</p>
+<embed src="./resources/pdf_images/kappa_data.pdf" width="800px" height="300px">
 <section id="cohens-kappa---manual-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="cohens-kappa---manual-calculation">Cohen’s kappa - manual calculation</h3>
-<p>To calculate Cohen’s kappa, the data needs to be prepared as in the following table.</p>
-<embed src="resources/pdf_images/kappa_data.pdf" width="800px" height="300px">
+<p>For this calculation, we will use only Rater_1 and Rater_2 because Cohen’s kappa is used to calculate inter-rater reliability when only two raters are involved. To calculate Cohen’s kappa, the data needs to be prepared as in the following table.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Included (Rater_2)</th>
+<th>Excluded (Rater_2)</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Included (Rater_1)</strong></td>
+<td>11</td>
+<td>6</td>
+<td><strong>17</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Excluded (Rater_1)</strong></td>
+<td>7</td>
+<td>6</td>
+<td><strong>13</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>18</strong></td>
+<td><strong>12</strong></td>
+<td><strong><em>30</em></strong></td>
+</tr>
+</tbody>
+</table>
+<p>The formula for kappa is: <span class="math display">\[ \kappa = \frac{p_e - p_o}{1 - p_e} \]</span></p>
+<p>where <span class="math inline">\(p_o\)</span> refers to percentage of agreement and <span class="math inline">\(p_e\)</span> represents the expected percentage of agreement.</p>
+<p><span class="math inline">\(p_o\)</span> is calculated by adding the number of articles that both raters rate as included (11) and those they both rate as excluded (6) and divided it with the total number of articles.</p>
+<p><span class="math display">\[ p_o = \frac{(11 + 6)}{30} = \frac{17}{30}=0.567 \]</span></p>
+<p><span class="math inline">\(p_e\)</span> is calculated by combining the probability that both raters would randomly arrive at the rating “included” and the probablility that both raters would randomly arrive at the rating “excluded”.</p>
 </section>
 <section id="fleiss-kappa---manual-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</h3>
