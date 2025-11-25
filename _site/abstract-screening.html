@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -281,6 +301,7 @@ window.Quarto = {
   <li><a href="#cohens-kappa---manual-calculation" id="toc-cohens-kappa---manual-calculation" class="nav-link" data-scroll-target="#cohens-kappa---manual-calculation">Cohen’s kappa - manual calculation</a></li>
   <li><a href="#fleiss-kappa---manual-calculation" id="toc-fleiss-kappa---manual-calculation" class="nav-link" data-scroll-target="#fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</a></li>
   <li><a href="#cohens-kappa-and-fleiss-kappa-in-r" id="toc-cohens-kappa-and-fleiss-kappa-in-r" class="nav-link" data-scroll-target="#cohens-kappa-and-fleiss-kappa-in-r">Cohen’s kappa and Fleiss’ kappa in R</a></li>
+  <li><a href="#interpreting-kappa-and-moving-forward" id="toc-interpreting-kappa-and-moving-forward" class="nav-link" data-scroll-target="#interpreting-kappa-and-moving-forward">Interpreting kappa and moving forward</a></li>
   </ul></li>
   <li><a href="#abstract-screening" id="toc-abstract-screening" class="nav-link" data-scroll-target="#abstract-screening">Abstract screening</a></li>
   </ul>
@@ -377,7 +398,7 @@ p_o = \frac{1}{120 . (3)} \left( 151 + 127 - 120 \right) = 0.438
 <p><span class="math display">\[
 p_e =\left( \frac{\text{sum of included}}{N . n} \right)^2 . \left( \frac{\text{sum of excluded}}{N . n}\right)^2
 \]</span> <span class="math display">\[
-p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0.525^2 + 0.475^2 = 0.501
+p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0.525^2 + 0.475^2 = 0.5012
 \]</span></p>
 <p>Now that we have obtained the values for <span class="math inline">\(p_o\)</span> and <span class="math inline">\(p_e\)</span>, we can fit them into the Fleiss’ kappa formula.</p>
 <p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.4389 - 0.5012}{1 - 0.5012} = -0.125\]</span></p>
@@ -423,14 +444,58 @@ p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0
 </div>
 </div>
 </section>
+<section id="interpreting-kappa-and-moving-forward" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-kappa-and-moving-forward">Interpreting kappa and moving forward</h3>
+<p>Many researchers refer to <span class="citation" data-cites="landis1977">Landis &amp; Koch (<a href="#ref-landis1977" role="doc-biblioref">1977</a>)</span> <a href="./resources/papers/landis1977.pdf"> <img src="download-icon.png" alt="W3Schools" width="25" height="25"></a> to interpret kappa coefficient. The <span class="citation" data-cites="landis1977">Landis &amp; Koch (<a href="#ref-landis1977" role="doc-biblioref">1977</a>)</span>’s table requires kappa of at least 0.6 (substantial) in order to move forward to screen the rest of the abstract independently. Otherwise, the the team members need to have a meeting to discuss their disagreement to reach consensus and screen other 30 same articles, and the process continues untill adequate kappa coefficient is obtained.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Kappa</th>
+<th>Level of agreement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&gt;0.8</td>
+<td>Almost perfect</td>
+</tr>
+<tr class="even">
+<td>&gt;0.6</td>
+<td>Substantial</td>
+</tr>
+<tr class="odd">
+<td>&gt;0.4</td>
+<td>Moderate</td>
+</tr>
+<tr class="even">
+<td>&gt;0.2</td>
+<td>Fair</td>
+</tr>
+<tr class="odd">
+<td>&gt;0</td>
+<td>Slight</td>
+</tr>
+<tr class="even">
+<td>&lt;0</td>
+<td>No agreement</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="abstract-screening" class="level2">
 <h2 class="anchored" data-anchor-id="abstract-screening">Abstract screening</h2>
+<p>tHi sis</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-landis1977" class="csl-entry" role="listitem">
+Landis, J. R., &amp; Koch, G. G. (1977). The measurement of observer agreement for categorical data. <em>Biometrics</em>, <em>33</em>(1), 159–174. <a href="https://doi.org/10.2307/2529310">https://doi.org/10.2307/2529310</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

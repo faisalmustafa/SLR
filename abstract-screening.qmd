@@ -1,6 +1,8 @@
 ---
 title: "Abstract screening"
 format: html
+bibliography: references.bib
+csl: apa.csl
 title-block-banner: "#4097C2"
 title-block-banner-color: white
 ---
@@ -84,7 +86,7 @@ $$
 p_e =\left( \frac{\text{sum of included}}{N . n} \right)^2 . \left( \frac{\text{sum of excluded}}{N . n}\right)^2
 $$
 $$
-p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0.525^2 + 0.475^2 = 0.501
+p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0.525^2 + 0.475^2 = 0.5012
 $$
 
 Now that we have obtained the values for $p_o$ and $p_e$, we can fit them into the Fleiss' kappa formula.
@@ -116,5 +118,18 @@ To calculate Fleiss' kappa, we will use the same package, but the columns 2-5 ar
 irr::kappam.fleiss(kappa_data[,2:5])
 ```
 
+### Interpreting kappa and moving forward
+Many researchers refer to @landis1977 <a href="/resources/papers/landis1977.pdf"> <img src="download-icon.png" alt="W3Schools" width="25" height="25"></a> to interpret kappa coefficient. The @landis1977's table requires kappa of at least 0.6 (substantial) in order to move forward to screen the rest of the abstract independently. Otherwise, the the team members need to have a meeting to discuss their disagreement to reach consensus and screen other 30 same articles, and the process continues untill adequate kappa coefficient is obtained.
+
+| Kappa | Level of agreement |
+| ----- | ------------------ |
+|  >0.8 | Almost perfect     |
+|  >0.6 | Substantial        |
+|  >0.4 | Moderate           |
+|  >0.2 | Fair               |
+|  >0   | Slight             |
+|  <0   | No agreement       |
+
 
 ## Abstract screening
+
