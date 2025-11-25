@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -291,43 +326,68 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td><strong>Included (Rater_1)</strong></td>
-<td>11</td>
-<td>6</td>
-<td><span class="orange"> 17</span></td>
+<td>9</td>
+<td>3</td>
+<td><span class="orange"> 12</span></td>
 </tr>
 <tr class="even">
 <td><strong>Excluded (Rater_1)</strong></td>
+<td>11</td>
 <td>7</td>
-<td>6</td>
-<td><span class="purple"> 13</span></td>
+<td><span class="purple"> 18</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Total</strong></td>
-<td><span class="orange">18 </span></td>
-<td><span class="purple">12</span></td>
+<td><span class="orange">20 </span></td>
+<td><span class="purple">10</span></td>
 <td><strong>30</strong></td>
 </tr>
 </tbody>
 </table>
 <p>The formula for kappa is: <span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} \]</span></p>
 <p>where <span class="math inline">\(p_o\)</span> refers to percentage of agreement and <span class="math inline">\(p_e\)</span> represents the expected percentage of agreement.</p>
-<p><span class="math inline">\(p_o\)</span> is calculated by adding the number of articles that both raters rate as included (11) and those they both rate as excluded (6) and divided it with the total number of articles.</p>
-<p><span class="math display">\[ p_o = \frac{(11 + 6)}{30} = \frac{17}{30}=0.567 \]</span></p>
+<p><span class="math inline">\(p_o\)</span> is calculated by adding the number of articles that both raters rate as included (9) and those they both rate as excluded (7) and divided it with the total number of articles.</p>
+<p><span class="math display">\[ p_o = \frac{(9 + 7)}{30} = \frac{16}{30}=0.533 \]</span></p>
 <p><span class="math inline">\(p_e\)</span> is calculated by combining the probability that both raters would randomly arrive at the rating “included” and the probablility that both raters would randomly arrive at the rating “excluded”.</p>
 <p>The probability that both raters would randomly arrive at the rating “included” is calculated by multiplying percentage of first row total and that of first column total (look at the numbers in <span class="orange">orange </span>).</p>
-<p><span class="math display">\[ \text{Expected to include} = \frac{17}{30} . \frac{18}{30} = 0.34 \]</span></p>
+<p><span class="math display">\[ \text{Expected to include} = \frac{12}{30} . \frac{20}{30} = 0.267 \]</span></p>
 <p>The probability that both raters would randomly arrive at the rating “excluded” is calculated by multiplying percentage of second row total and that of second column total (look at the numbers in <span class="purple"> purple </span>).</p>
-<p><span class="math display">\[ \text{Expected to exclude} = \frac{13}{30} . \frac{12}{30} = 0.17 \]</span></p>
+<p><span class="math display">\[ \text{Expected to exclude} = \frac{18}{30} . \frac{10}{30} = 0.2 \]</span></p>
 <p>Therefore <span class="math inline">\(p_e\)</span> can be calculated as follows:</p>
-<p><span class="math display">\[p_e = 0.34 + 0.17 = 0.54\]</span></p>
+<p><span class="math display">\[p_e = 0.267 + 0.2 = 0.467\]</span></p>
 <p>Now we are ready to calculate the Cohen kappa:</p>
-<p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.57 - 0.54}{1 - 0.54} = -0.065\]</span></p>
+<p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.533 - 0.467}{1 - 0.467} = 0.12\]</span></p>
 </section>
 <section id="fleiss-kappa---manual-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</h3>
 </section>
 <section id="cohens-kappa-and-fleiss-kappa-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="cohens-kappa-and-fleiss-kappa-in-r">Cohen’s kappa and Fleiss’ kappa in R</h3>
+<p>Calculating kappa is straightforward using R. We will use <em>psych</em> package to perform the calculation. First, let’s reproduce the data I used in this material.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">22</span>) <span class="co">#this is to ensure that the data generated is the same as mine</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>kappa_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Article_ID =</span> <span class="fu">paste0</span>(<span class="st">"Article_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Rater_1 =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Included"</span>, <span class="st">"Excluded"</span>), <span class="dv">30</span>, <span class="at">replace =</span> T),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Rater_2 =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Included"</span>, <span class="st">"Excluded"</span>), <span class="dv">30</span>, <span class="at">replace =</span> T),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Rater_3 =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Included"</span>, <span class="st">"Excluded"</span>), <span class="dv">30</span>, <span class="at">replace =</span> T),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Rater_4 =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Included"</span>, <span class="st">"Excluded"</span>), <span class="dv">30</span>, <span class="at">replace =</span> T))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Furthermore, install *psych package if you do not have it yet and run the calculation:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("psych")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">cohen.kappa</span>(kappa_data[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call: cohen.kappa1(x = x, w = w, n.obs = n.obs, alpha = alpha, levels = levels, 
+    w.exp = w.exp)
+
+Cohen Kappa and Weighted Kappa correlation coefficients and confidence boundaries 
+                 lower estimate upper
+unweighted kappa -0.18     0.12  0.43
+weighted kappa   -0.18     0.12  0.43
+
+ Number of subjects = 30 </code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="abstract-screening" class="level2">

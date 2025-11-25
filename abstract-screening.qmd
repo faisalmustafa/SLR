@@ -23,39 +23,56 @@ For this calculation, we will use only Rater_1 and Rater_2 because Cohen's kappa
 
 |                        | Included (Rater_2) | Excluded (Rater_2) |  Total  |
 | ---------------------- | ------------------ | ------------------ | ------- |
-| **Included (Rater_1)** |         11         |         6          | <span class = orange> 17</span>  |
-| **Excluded (Rater_1)** |         7          |         6          | <span class = purple> 13</span>  |
-| **Total**              |       <span class = orange>18 </span>       |       <span class = purple>12</span>       | **30**|
+| **Included (Rater_1)** |         9         |         3          | <span class = orange> 12</span>  |
+| **Excluded (Rater_1)** |         11          |         7          | <span class = purple> 18</span>  |
+| **Total**              |       <span class = orange>20 </span>       |       <span class = purple>10</span>       | **30**|
 
 
 The formula for kappa is: $$ \kappa = \frac{p_o - p_e}{1 - p_e} $$
 
 where  $p_o$ refers to percentage of agreement and $p_e$ represents the expected percentage of agreement.
 
-$p_o$ is calculated by adding the number of articles that both raters rate as included (11) and those they both rate as excluded (6) and divided it with the total number of articles.
+$p_o$ is calculated by adding the number of articles that both raters rate as included (9) and those they both rate as excluded (7) and divided it with the total number of articles.
 
-$$ p_o = \frac{(11 + 6)}{30} = \frac{17}{30}=0.567 $$
+$$ p_o = \frac{(9 + 7)}{30} = \frac{16}{30}=0.533 $$
 
 $p_e$ is calculated by combining the probability that both raters would randomly arrive at the rating "included" and the probablility that both raters would randomly arrive at the rating "excluded".
 
 The probability that both raters would randomly arrive at the rating "included" is calculated by multiplying percentage of first row total and that of first column total (look at the numbers in <span class = orange>orange </span>).
 
-$$ \text{Expected to include} = \frac{17}{30} . \frac{18}{30} = 0.34 $$
+$$ \text{Expected to include} = \frac{12}{30} . \frac{20}{30} = 0.267 $$
 
 The probability that both raters would randomly arrive at the rating "excluded" is calculated by multiplying percentage of second row total and that of second column total (look at the numbers in <span class = purple> purple </span>).
 
-$$ \text{Expected to exclude} = \frac{13}{30} . \frac{12}{30} = 0.17 $$
+$$ \text{Expected to exclude} = \frac{18}{30} . \frac{10}{30} = 0.2 $$
 
 Therefore $p_e$ can be calculated as follows:
 
-$$p_e = 0.34 + 0.17 = 0.54$$
+$$p_e = 0.267 + 0.2 = 0.467$$
 
 Now we are ready to calculate the Cohen kappa:
 
-$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.57 - 0.54}{1 - 0.54} = -0.065$$
+$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.533 - 0.467}{1 - 0.467} = 0.12$$
 
 ### Fleiss' kappa - manual calculation
 
 ### Cohen's kappa and Fleiss' kappa in R
+Calculating kappa is straightforward using R. We will use *psych* package to perform the calculation. First, let's reproduce the data I used in this material.
+
+```{r}
+set.seed(22) #this is to ensure that the data generated is the same as mine
+kappa_data <- data.frame(Article_ID = paste0("Article_", 1:30),
+                         Rater_1 = sample(c("Included", "Excluded"), 30, replace = T),
+                         Rater_2 = sample(c("Included", "Excluded"), 30, replace = T),
+                         Rater_3 = sample(c("Included", "Excluded"), 30, replace = T),
+                         Rater_4 = sample(c("Included", "Excluded"), 30, replace = T))
+```
+
+Furthermore, install *psych package if you do not have it yet and run the calculation:
+
+```{r}
+#install.packages("psych")
+psych::cohen.kappa(kappa_data[,2:3])
+```
 
 ## Abstract screening
