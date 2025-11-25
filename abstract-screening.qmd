@@ -55,6 +55,38 @@ Now we are ready to calculate the Cohen kappa:
 $$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.533 - 0.467}{1 - 0.467} = 0.12$$
 
 ### Fleiss' kappa - manual calculation
+To calculate Fleiss's kappa manually, we need to add two columns to record the total number of rater who rate each paper as "included" and "excluded" and other two columns for the square of the previous two columns.
+
+```{=html}
+<embed src="/resources/pdf_images/kappa_data2.pdf" width="800px" height="300px" />
+```
+
+The kappa formula is the same but $p_o$ and $p_e$ are calculated differently.
+
+$$
+p_o = \frac{1}{N . n . (n - 1)} \left(\sum_{i = 1}^{N}\sum_{j = 1}^{k}n^2_{ij} - N . n\right) \text{and } p_e = \sum{}{}p^2_j
+$$
+
+where N is number of article, n is number of rater, i represents articles and j represents raters.
+
+Now let me walk you through on using $p_o$ formula.
+
+$$
+p_o = \frac{1}{30 . 4 . (4 - 1)} \left( \text{sum of Included}^2 \text{+ sum of Excluded}^2 - 30 . 4 \right)
+$$
+$$
+p_o = \frac{1}{120 . (3)} \left( 151 + 127 - 120 \right) = 0.438
+$$
+
+Now we can calculate $p_e$. First allow me to translate the formula into a more intuitive version.
+
+$$
+p_e =\left( \frac{\text{sum of included}}{N . n} \right)^2 . \left( \frac{\text{sum of excluded}}{N . n}\right)^2
+$$
+$$
+p_e = 
+$$
+
 
 ### Cohen's kappa and Fleiss' kappa in R
 Calculating kappa is straightforward using R. We will use *psych* package to perform the calculation. First, let's reproduce the data I used in this material.

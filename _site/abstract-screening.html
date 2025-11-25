@@ -360,6 +360,23 @@ window.Quarto = {
 </section>
 <section id="fleiss-kappa---manual-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</h3>
+<p>To calculate Fleiss’s kappa manually, we need to add two columns to record the total number of rater who rate each paper as “included” and “excluded” and other two columns for the square of the previous two columns.</p>
+<embed src="./resources/pdf_images/kappa_data2.pdf" width="800px" height="300px">
+<p>The kappa formula is the same but <span class="math inline">\(p_o\)</span> and <span class="math inline">\(p_e\)</span> are calculated differently.</p>
+<p><span class="math display">\[
+p_o = \frac{1}{N . n . (n - 1)} \left(\sum_{i = 1}^{N}\sum_{j = 1}^{k}n^2_{ij} - N . n\right) \text{and } p_e = \sum{}{}p^2_j
+\]</span></p>
+<p>where N is number of article, n is number of rater, i represents articles and j represents raters.</p>
+<p>Now let me walk you through on using <span class="math inline">\(p_o\)</span> formula.</p>
+<p><span class="math display">\[
+p_o = \frac{1}{30 . 4 . (4 - 1)} \left( \text{sum of Included}^2 \text{+ sum of Excluded}^2 - 30 . 4 \right)
+\]</span> <span class="math display">\[
+p_o = \frac{1}{120 . (3)} \left( 151 + 127 - 120 \right) = 0.438
+\]</span></p>
+<p>Now we can calculate <span class="math inline">\(p_e\)</span>. First allow me to translate the formula into a more intuitive version.</p>
+<p><span class="math display">\[
+p_e =\left( \frac{\text{sum of included}}{N . n} \right)^2 . \left( \frac{\text{sum of excluded}}{N . n}\right)^2
+\]</span></p>
 </section>
 <section id="cohens-kappa-and-fleiss-kappa-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="cohens-kappa-and-fleiss-kappa-in-r">Cohen’s kappa and Fleiss’ kappa in R</h3>
