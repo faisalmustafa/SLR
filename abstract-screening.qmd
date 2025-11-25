@@ -59,7 +59,7 @@ $$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.533 - 0.467}{1 - 0.467} = 0.12$$
 ### Cohen's kappa and Fleiss' kappa in R
 Calculating kappa is straightforward using R. We will use *psych* package to perform the calculation. First, let's reproduce the data I used in this material.
 
-```{r}
+```{r cache = TRUE}
 set.seed(22) #this is to ensure that the data generated is the same as mine
 kappa_data <- data.frame(Article_ID = paste0("Article_", 1:30),
                          Rater_1 = sample(c("Included", "Excluded"), 30, replace = T),
@@ -68,9 +68,9 @@ kappa_data <- data.frame(Article_ID = paste0("Article_", 1:30),
                          Rater_4 = sample(c("Included", "Excluded"), 30, replace = T))
 ```
 
-Furthermore, install *psych package if you do not have it yet and run the calculation:
+Furthermore, install *psych package if you do not have it yet and run the calculation. We unly use the data in column 2 and 3, referring to Rater_1 and Rater_2 for this calculation because Cohen's kappa is used when only two raters are incolved. Please look for unweighted kappa for the result.
 
-```{r}
+```{r cache = TRUE}
 #install.packages("psych")
 psych::cohen.kappa(kappa_data[,2:3])
 ```
