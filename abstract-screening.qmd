@@ -23,12 +23,12 @@ For this calculation, we will use only Rater_1 and Rater_2 because Cohen's kappa
 
 |                        | Included (Rater_2) | Excluded (Rater_2) |  Total  |
 | ---------------------- | ------------------ | ------------------ | ------- |
-| **Included (Rater_1)** |         11         |         6          | **17**  |
-| **Excluded (Rater_1)** |         7          |         6          | **13**  |
-| **Total**              |       **18**       |       **12**       | ***30***|
+| **Included (Rater_1)** |         11         |         6          | <span class = orange> 17</span>  |
+| **Excluded (Rater_1)** |         7          |         6          | <span class = purple> 13</span>  |
+| **Total**              |       <span class = orange>18 </span>       |       <span class = purple>12</span>       | **30**|
 
 
-The formula for kappa is: $$ \kappa = \frac{p_e - p_o}{1 - p_e} $$
+The formula for kappa is: $$ \kappa = \frac{p_o - p_e}{1 - p_e} $$
 
 where  $p_o$ refers to percentage of agreement and $p_e$ represents the expected percentage of agreement.
 
@@ -38,7 +38,21 @@ $$ p_o = \frac{(11 + 6)}{30} = \frac{17}{30}=0.567 $$
 
 $p_e$ is calculated by combining the probability that both raters would randomly arrive at the rating "included" and the probablility that both raters would randomly arrive at the rating "excluded".
 
+The probability that both raters would randomly arrive at the rating "included" is calculated by multiplying percentage of first row total and that of first column total (look at the numbers in <span class = orange>orange </span>).
 
+$$ \text{Expected to include} = \frac{17}{30} . \frac{18}{30} = 0.34 $$
+
+The probability that both raters would randomly arrive at the rating "excluded" is calculated by multiplying percentage of second row total and that of second column total (look at the numbers in <span class = purple> purple </span>).
+
+$$ \text{Expected to exclude} = \frac{13}{30} . \frac{12}{30} = 0.17 $$
+
+Therefore $p_e$ can be calculated as follows:
+
+$$p_e = 0.34 + 0.17 = 0.54$$
+
+Now we are ready to calculate the Cohen kappa:
+
+$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.57 - 0.54}{1 - 0.54} = -0.065$$
 
 ### Fleiss' kappa - manual calculation
 

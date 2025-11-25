@@ -22,3 +22,13 @@ td {
 .center {
   text-align: center;
 }
+
+.orange {
+  font-weight: 600;
+  color: orange;
+}
+
+.purple {
+  font-weight: 600;
+  color: purple;
+}

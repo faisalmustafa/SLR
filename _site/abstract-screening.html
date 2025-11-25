@@ -293,27 +293,35 @@ window.Quarto = {
 <td><strong>Included (Rater_1)</strong></td>
 <td>11</td>
 <td>6</td>
-<td><strong>17</strong></td>
+<td><span class="orange"> 17</span></td>
 </tr>
 <tr class="even">
 <td><strong>Excluded (Rater_1)</strong></td>
 <td>7</td>
 <td>6</td>
-<td><strong>13</strong></td>
+<td><span class="purple"> 13</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Total</strong></td>
-<td><strong>18</strong></td>
-<td><strong>12</strong></td>
-<td><strong><em>30</em></strong></td>
+<td><span class="orange">18 </span></td>
+<td><span class="purple">12</span></td>
+<td><strong>30</strong></td>
 </tr>
 </tbody>
 </table>
-<p>The formula for kappa is: <span class="math display">\[ \kappa = \frac{p_e - p_o}{1 - p_e} \]</span></p>
+<p>The formula for kappa is: <span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} \]</span></p>
 <p>where <span class="math inline">\(p_o\)</span> refers to percentage of agreement and <span class="math inline">\(p_e\)</span> represents the expected percentage of agreement.</p>
 <p><span class="math inline">\(p_o\)</span> is calculated by adding the number of articles that both raters rate as included (11) and those they both rate as excluded (6) and divided it with the total number of articles.</p>
 <p><span class="math display">\[ p_o = \frac{(11 + 6)}{30} = \frac{17}{30}=0.567 \]</span></p>
 <p><span class="math inline">\(p_e\)</span> is calculated by combining the probability that both raters would randomly arrive at the rating “included” and the probablility that both raters would randomly arrive at the rating “excluded”.</p>
+<p>The probability that both raters would randomly arrive at the rating “included” is calculated by multiplying percentage of first row total and that of first column total (look at the numbers in <span class="orange">orange </span>).</p>
+<p><span class="math display">\[ \text{Expected to include} = \frac{17}{30} . \frac{18}{30} = 0.34 \]</span></p>
+<p>The probability that both raters would randomly arrive at the rating “excluded” is calculated by multiplying percentage of second row total and that of second column total (look at the numbers in <span class="purple"> purple </span>).</p>
+<p><span class="math display">\[ \text{Expected to exclude} = \frac{13}{30} . \frac{12}{30} = 0.17 \]</span></p>
+<p>Therefore <span class="math inline">\(p_e\)</span> can be calculated as follows:</p>
+<p><span class="math display">\[p_e = 0.34 + 0.17 = 0.54\]</span></p>
+<p>Now we are ready to calculate the Cohen kappa:</p>
+<p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.57 - 0.54}{1 - 0.54} = -0.065\]</span></p>
 </section>
 <section id="fleiss-kappa---manual-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</h3>
