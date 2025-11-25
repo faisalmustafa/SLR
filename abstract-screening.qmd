@@ -34,13 +34,13 @@ where  $p_o$ refers to percentage of agreement and $p_e$ represents the expected
 
 $p_o$ is calculated by adding the number of articles that both raters rate as included (9) and those they both rate as excluded (7) and divided it with the total number of articles.
 
-$$ p_o = \frac{(9 + 7)}{30} = \frac{16}{30}=0.533 $$
+$$ p_o = \frac{(9 + 7)}{30} = \frac{16}{30}=0.5333 $$
 
 $p_e$ is calculated by combining the probability that both raters would randomly arrive at the rating "included" and the probablility that both raters would randomly arrive at the rating "excluded".
 
 The probability that both raters would randomly arrive at the rating "included" is calculated by multiplying percentage of first row total and that of first column total (look at the numbers in <span class = orange>orange </span>).
 
-$$ \text{Expected to include} = \frac{12}{30} . \frac{20}{30} = 0.267 $$
+$$ \text{Expected to include} = \frac{12}{30} . \frac{20}{30} = 0.2667 $$
 
 The probability that both raters would randomly arrive at the rating "excluded" is calculated by multiplying percentage of second row total and that of second column total (look at the numbers in <span class = purple> purple </span>).
 
@@ -48,11 +48,11 @@ $$ \text{Expected to exclude} = \frac{18}{30} . \frac{10}{30} = 0.2 $$
 
 Therefore $p_e$ can be calculated as follows:
 
-$$p_e = 0.267 + 0.2 = 0.467$$
+$$p_e = 0.2667 + 0.2 = 0.467$$
 
 Now we are ready to calculate the Cohen kappa:
 
-$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.533 - 0.467}{1 - 0.467} = 0.12$$
+$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.5333 - 0.4667}{1 - 0.4667} = 0.124$$
 
 ### Fleiss' kappa - manual calculation
 To calculate Fleiss's kappa manually, we need to add two columns to record the total number of rater who rate each paper as "included" and "excluded" and other two columns for the square of the previous two columns.
@@ -84,12 +84,15 @@ $$
 p_e =\left( \frac{\text{sum of included}}{N . n} \right)^2 . \left( \frac{\text{sum of excluded}}{N . n}\right)^2
 $$
 $$
-p_e = 
+p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0.525^2 + 0.475^2 = 0.501
 $$
 
+Now that we have obtained the values for $p_o$ and $p_e$, we can fit them into the Fleiss' kappa formula.
+
+$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.4389 - 0.5012}{1 - 0.5012} = -0.125$$
 
 ### Cohen's kappa and Fleiss' kappa in R
-Calculating kappa is straightforward using R. We will use *psych* package to perform the calculation. First, let's reproduce the data I used in this material.
+Calculating kappa is straightforward using R. We will use *irr* package to perform the calculation. First, let's reproduce the data I used in this material.
 
 ```{r cache = TRUE}
 set.seed(22) #this is to ensure that the data generated is the same as mine
@@ -100,11 +103,18 @@ kappa_data <- data.frame(Article_ID = paste0("Article_", 1:30),
                          Rater_4 = sample(c("Included", "Excluded"), 30, replace = T))
 ```
 
-Furthermore, install *psych package if you do not have it yet and run the calculation. We unly use the data in column 2 and 3, referring to Rater_1 and Rater_2 for this calculation because Cohen's kappa is used when only two raters are incolved. Please look for unweighted kappa for the result.
+Furthermore, install *irr* package if you do not have it yet and run the calculation. We unly use the data in column 2 and 3, referring to Rater_1 and Rater_2 for this calculation because Cohen's kappa is used when only two raters are incolved.
 
 ```{r cache = TRUE}
-#install.packages("psych")
-psych::cohen.kappa(kappa_data[,2:3])
+#install.packages("irr")
+irr::kappa2(kappa_data[,2:3], weight = "unweighted")
 ```
+
+To calculate Fleiss' kappa, we will use the same package, but the columns 2-5 are targetted because we include the four raters.
+
+```{r cache = TRUE}
+irr::kappam.fleiss(kappa_data[,2:5])
+```
+
 
 ## Abstract screening

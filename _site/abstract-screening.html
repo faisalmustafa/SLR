@@ -347,16 +347,16 @@ window.Quarto = {
 <p>The formula for kappa is: <span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} \]</span></p>
 <p>where <span class="math inline">\(p_o\)</span> refers to percentage of agreement and <span class="math inline">\(p_e\)</span> represents the expected percentage of agreement.</p>
 <p><span class="math inline">\(p_o\)</span> is calculated by adding the number of articles that both raters rate as included (9) and those they both rate as excluded (7) and divided it with the total number of articles.</p>
-<p><span class="math display">\[ p_o = \frac{(9 + 7)}{30} = \frac{16}{30}=0.533 \]</span></p>
+<p><span class="math display">\[ p_o = \frac{(9 + 7)}{30} = \frac{16}{30}=0.5333 \]</span></p>
 <p><span class="math inline">\(p_e\)</span> is calculated by combining the probability that both raters would randomly arrive at the rating “included” and the probablility that both raters would randomly arrive at the rating “excluded”.</p>
 <p>The probability that both raters would randomly arrive at the rating “included” is calculated by multiplying percentage of first row total and that of first column total (look at the numbers in <span class="orange">orange </span>).</p>
-<p><span class="math display">\[ \text{Expected to include} = \frac{12}{30} . \frac{20}{30} = 0.267 \]</span></p>
+<p><span class="math display">\[ \text{Expected to include} = \frac{12}{30} . \frac{20}{30} = 0.2667 \]</span></p>
 <p>The probability that both raters would randomly arrive at the rating “excluded” is calculated by multiplying percentage of second row total and that of second column total (look at the numbers in <span class="purple"> purple </span>).</p>
 <p><span class="math display">\[ \text{Expected to exclude} = \frac{18}{30} . \frac{10}{30} = 0.2 \]</span></p>
 <p>Therefore <span class="math inline">\(p_e\)</span> can be calculated as follows:</p>
-<p><span class="math display">\[p_e = 0.267 + 0.2 = 0.467\]</span></p>
+<p><span class="math display">\[p_e = 0.2667 + 0.2 = 0.467\]</span></p>
 <p>Now we are ready to calculate the Cohen kappa:</p>
-<p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.533 - 0.467}{1 - 0.467} = 0.12\]</span></p>
+<p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.5333 - 0.4667}{1 - 0.4667} = 0.124\]</span></p>
 </section>
 <section id="fleiss-kappa---manual-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="fleiss-kappa---manual-calculation">Fleiss’ kappa - manual calculation</h3>
@@ -376,11 +376,15 @@ p_o = \frac{1}{120 . (3)} \left( 151 + 127 - 120 \right) = 0.438
 <p>Now we can calculate <span class="math inline">\(p_e\)</span>. First allow me to translate the formula into a more intuitive version.</p>
 <p><span class="math display">\[
 p_e =\left( \frac{\text{sum of included}}{N . n} \right)^2 . \left( \frac{\text{sum of excluded}}{N . n}\right)^2
+\]</span> <span class="math display">\[
+p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0.525^2 + 0.475^2 = 0.501
 \]</span></p>
+<p>Now that we have obtained the values for <span class="math inline">\(p_o\)</span> and <span class="math inline">\(p_e\)</span>, we can fit them into the Fleiss’ kappa formula.</p>
+<p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.4389 - 0.5012}{1 - 0.5012} = -0.125\]</span></p>
 </section>
 <section id="cohens-kappa-and-fleiss-kappa-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="cohens-kappa-and-fleiss-kappa-in-r">Cohen’s kappa and Fleiss’ kappa in R</h3>
-<p>Calculating kappa is straightforward using R. We will use <em>psych</em> package to perform the calculation. First, let’s reproduce the data I used in this material.</p>
+<p>Calculating kappa is straightforward using R. We will use <em>irr</em> package to perform the calculation. First, let’s reproduce the data I used in this material.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">22</span>) <span class="co">#this is to ensure that the data generated is the same as mine</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>kappa_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Article_ID =</span> <span class="fu">paste0</span>(<span class="st">"Article_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>),</span>
@@ -389,20 +393,33 @@ p_e =\left( \frac{\text{sum of included}}{N . n} \right)^2 . \left( \frac{\text{
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Rater_3 =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Included"</span>, <span class="st">"Excluded"</span>), <span class="dv">30</span>, <span class="at">replace =</span> T),</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">Rater_4 =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Included"</span>, <span class="st">"Excluded"</span>), <span class="dv">30</span>, <span class="at">replace =</span> T))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Furthermore, install *psych package if you do not have it yet and run the calculation. We unly use the data in column 2 and 3, referring to Rater_1 and Rater_2 for this calculation because Cohen’s kappa is used when only two raters are incolved. Please look for unweighted kappa for the result.</p>
+<p>Furthermore, install <em>irr</em> package if you do not have it yet and run the calculation. We unly use the data in column 2 and 3, referring to Rater_1 and Rater_2 for this calculation because Cohen’s kappa is used when only two raters are incolved.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("psych")</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">cohen.kappa</span>(kappa_data[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("irr")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>irr<span class="sc">::</span><span class="fu">kappa2</span>(kappa_data[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">weight =</span> <span class="st">"unweighted"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Call: cohen.kappa1(x = x, w = w, n.obs = n.obs, alpha = alpha, levels = levels, 
-    w.exp = w.exp)
+<pre><code> Cohen's Kappa for 2 Raters (Weights: unweighted)
 
-Cohen Kappa and Weighted Kappa correlation coefficients and confidence boundaries 
-                 lower estimate upper
-unweighted kappa -0.18     0.12  0.43
-weighted kappa   -0.18     0.12  0.43
+ Subjects = 30 
+   Raters = 2 
+    Kappa = 0.125 
 
- Number of subjects = 30 </code></pre>
+        z = 0.791 
+  p-value = 0.429 </code></pre>
+</div>
+</div>
+<p>To calculate Fleiss’ kappa, we will use the same package, but the columns 2-5 are targetted because we include the four raters.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>irr<span class="sc">::</span><span class="fu">kappam.fleiss</span>(kappa_data[,<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Fleiss' Kappa for m Raters
+
+ Subjects = 30 
+   Raters = 4 
+    Kappa = -0.125 
+
+        z = -1.68 
+  p-value = 0.0934 </code></pre>
 </div>
 </div>
 </section>
