@@ -27,6 +27,8 @@ website:
         href: abstract-screening.qmd
       - text: Full text retrieval
         href: retrieval.qmd
+      - text: Full text screening
+        href: pdf-screening.qmd
       - text: Roles or members
         href: roles.qmd
 
