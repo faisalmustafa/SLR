@@ -104,7 +104,7 @@
     "text": "Role of Team Members",
     "crumbs": [
       "Home",
-      "Roles or Members"
+      "Roles or members"
     ]
   },
   {
@@ -115,7 +115,7 @@
     "text": "Advice for Team Leaders",
     "crumbs": [
       "Home",
-      "Roles or Members"
+      "Roles or members"
     ]
   },
   {
@@ -328,6 +328,17 @@
     "crumbs": [
       "Home",
       "Full text retrieval"
+    ]
+  },
+  {
+    "objectID": "pdf-screening.html",
+    "href": "pdf-screening.html",
+    "title": "Full text screening",
+    "section": "",
+    "text": "This second screening phase is the most important phase to eliminate articles which fall outside the focus of the study. The",
+    "crumbs": [
+      "Home",
+      "Full text screening"
     ]
   }
 ]
