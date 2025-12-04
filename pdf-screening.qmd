@@ -9,7 +9,7 @@ csl: apa.csl
 
 This second screening phase is the most important phase to eliminate articles which fall outside the focus of the study. The objective of full text screening is to determine if the articles meet the inclusion and exclusion criteria by scanning the full text. Therefore, I propose that the screening process is combined with quality appraisal.
 
-Quality appraisal is the process of assessing the quality of a publication. Some rubrics for quality appraisal have been developed in previous studies. Some rubrics target the quality of research reported in the publication, and the others focus on the quyality of reporting. In our recent research, we attempted to combine these two spectrum to create our own quality appraisal rubric [see @nguyen2026]. The rubric is provided in the following.
+Quality appraisal is the process of assessing the quality of a publication. Some rubrics for quality appraisal have been developed in previous studies. Some rubrics target the quality of research reported in the publication, and the others focus on the quality of reporting. In our recent research, we attempted to combine these two spectrum to create our own quality appraisal rubric [see @nguyen2026]. The rubric is provided in the following.
 
 <table style="width:100%">
   <tr>
@@ -103,3 +103,6 @@ Quality appraisal is the process of assessing the quality of a publication. Some
     <td> </td>
   </tr>
 </table>
+
+The advantage of doing quality appraisal in the full-text screening is that like *killing two birds with one stone*. Completing the rubric requires scanning many parts of the articles, so any articles which do not fall into the criteria will be spotted. Therefore, no additional effort is necessary to exclude the articles after completing the quality appraisal rubric. 
+
