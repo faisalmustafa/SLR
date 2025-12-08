@@ -1,0 +1,1 @@
+# Email form for comments/feedback: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server#how
