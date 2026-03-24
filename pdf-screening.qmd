@@ -106,3 +106,7 @@ Quality appraisal is the process of assessing the quality of a publication. Some
 
 The advantage of doing quality appraisal in the full-text screening is that like *killing two birds with one stone*. Completing the rubric requires scanning many parts of the articles, so any articles which do not fall into the criteria will be spotted. Therefore, no additional effort is necessary to exclude the articles after completing the quality appraisal rubric. 
 
+## Reliability of full text screening and quality appraisal
+
+When the full text screening is conducted by more than one team members, which is recommended, the team members should practice screening one or two papers together then complete at least 10 papers individually. To ensure all team members understand the inclusion/exclusion criteria and rubric, an inter-rater reliability needs to be calculated from these 10 articles. For this purpose, the excluded article can be scored 0.
+

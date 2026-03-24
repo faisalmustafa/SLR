@@ -280,6 +280,18 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./retrieval.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Full text retrieval</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pdf-screening.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Full text screening</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./roles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Roles or members</span></a>
   </div>
@@ -324,7 +336,7 @@ window.Quarto = {
 </section>
 <section id="cycles-of-screening-to-achieve-reliability" class="level2">
 <h2 class="anchored" data-anchor-id="cycles-of-screening-to-achieve-reliability">Cycles of screening to achieve reliability</h2>
-<p>In this process, it is important to objectively prove that all team members have the same understanding of the inclusion and exclusion criteria. To determine whether the teams members have adequate agrement, each member needs to screen at least 30 same articles independently. After completing this first cycle of the screening, the screening results of each member can be compared using Cohen’s kappa (for two raters) or Fleiss’ kappa (for more than two raters). I this book, I will demonstrate how both kappas are calculated manually and in R, the statistical software that I am familiar with. You can explore how it is done in the application of your choice if you prefer. We will use this data for the calculation.</p>
+<p>In this process, it is important to objectively prove that all team members have the same understanding of the inclusion and exclusion criteria. To determine whether the teams members have adequate agrement, each member needs to screen at least 30 same articles independently. After completing this first cycle of the screening, the screening results of each member can be compared using Cohen’s kappa (for two raters) or Fleiss’ kappa (for more than two raters). See <span class="citation" data-cites="cole2024">Cole (<a href="#ref-cole2024" role="doc-biblioref">2024</a>)</span> <a href="./resources/papers/cole2024.pdf"> <img src="download-icon.png" alt="W3Schools" width="25" height="25"></a> for further reading about reliability in qualitative research. I this book, I will demonstrate how both kappas are calculated manually and in R, the statistical software that I am familiar with. You can explore how it is done in the application of your choice if you prefer. We will use this data for the calculation.</p>
 <embed src="./resources/pdf_images/kappa_data.pdf" width="800px" height="300px">
 <section id="cohens-kappa---manual-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="cohens-kappa---manual-calculation">Cohen’s kappa - manual calculation</h3>
@@ -492,6 +504,9 @@ p_e = \left( \frac{63}{30 . 4} \right)^2 . \left( \frac{57}{30 . 4}\right)^2 = 0
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-cole2024" class="csl-entry" role="listitem">
+Cole, R. (2024). Inter-rater reliability methods in qualitative case study research. <em>Sociological Methods &amp; Research</em>, <em>53</em>(4), 1944–1975. <a href="https://doi.org/10.1177/00491241231156971">https://doi.org/10.1177/00491241231156971</a>
+</div>
 <div id="ref-landis1977" class="csl-entry" role="listitem">
 Landis, J. R., &amp; Koch, G. G. (1977). The measurement of observer agreement for categorical data. <em>Biometrics</em>, <em>33</em>(1), 159–174. <a href="https://doi.org/10.2307/2529310">https://doi.org/10.2307/2529310</a>
 </div>
