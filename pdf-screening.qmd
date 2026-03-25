@@ -145,4 +145,15 @@ irr::icc(icc_data[,2:4], model = "twoway",
   type = "agreement", unit = "single")
 ```
 
-The results show that the ICC is 0.237, which is very low.
+The results show that the ICC is 0.237, which is very low. The interpretation of ICC provided by @koo2016 <a href="/resources/papers/koo2016.pdf"> <img src="download-icon.png" alt="Koo and Li(2016)" width="25" height="25"></a> is given in the following table.
+
+
+| ICC | Level of reliability |
+| ----- | ------------------ |
+|  >0.90 | Excellent reliability               |
+|  0.75 - 0.90 | Good reliability           |
+|  0.5 - 0.75 | Moderate reliability        |
+|  < 0.5 | Poor reliability     |
+
+
+
