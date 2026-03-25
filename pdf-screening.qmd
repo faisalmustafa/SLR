@@ -110,3 +110,39 @@ The advantage of doing quality appraisal in the full-text screening is that like
 
 When the full text screening is conducted by more than one team members, which is recommended, the team members should practice screening one or two papers together then complete at least 10 papers individually. To ensure all team members understand the inclusion/exclusion criteria and rubric, an inter-rater reliability needs to be calculated from these 10 articles. For this purpose, the excluded article can be scored 0.
 
+For this purpose, Intraclass Correlation Coefficient (ICC) is a common method to calculate the inter-rater reliability for numerical data. In addition, ICC can be used with two or more raters. The formula used to calculate this type of inter-rater reliability is:
+
+$$ \text{ICC}_{(2,1)} = \frac{MS_b - MS_e}{MS_b + (n_j - 1)MS_e + n_j(MS_j - MS_e)/n} $$
+
+Where: <br>
+$\text{ICC}_{(2,1)}$ = Two-way random effects model of ICC <br>
+$MS_b$ = the variance between subjects <br>
+$MS_e$ = the variance due to the interaction of judge by subject <br>
+$MS_j$ = the variances due to the judges <br>
+$_j$ = judges / raters 
+
+I have attempted to calculate this type of inter-rater reliability in Microsoft Excel using this formula, but it is too complex for a manual calculation. R has a specific package developed and maintained by Matthias Gamer and his colleagues to calculate ICC.
+
+## Calculating Intraclass Correlation Coefficient (ICC) in R
+
+To show an example of how to calculate ICC using R, let's generate a random scores for the quality appraisal.
+
+```{r cache = TRUE}
+set.seed(22) #this is to ensure that the data generated is the same as mine
+icc_data <- data.frame(Article_ID = paste0("Article_", 1:10),
+                         Rater_1 = sample(0:14, size = 10, replace = T),
+                         Rater_2 = sample(0:14, size = 10, replace = T),
+                         Rater_3 = sample(0:14, size = 10, replace = T))
+
+icc_data
+```
+
+Based on the randomly generated data above, the ICC can be calculated using the following code. Install ```irr``` package if you have not done so. If you are not yet familiar with R, read ....
+
+```{r cache = TRUE}
+#install.packages("irr")
+irr::icc(icc_data[,2:4], model = "twoway",
+  type = "agreement", unit = "single")
+```
+
+The results show that the ICC is 0.237, which is very low.
