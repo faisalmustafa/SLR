@@ -706,13 +706,49 @@ Article_6    10</code></pre>
  
 ******************************************************************* </code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>factoextra<span class="sc">::</span><span class="fu">fviz_nbclust</span>(res.nbclust)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Among all indices: 
+===================
+* 1 proposed  -Inf as the best number of clusters
+* 1 proposed  -8762008161747459 as the best number of clusters
+* 6 proposed  0 as the best number of clusters
+* 1 proposed  0.2901 as the best number of clusters
+* 1 proposed  0.4604 as the best number of clusters
+* 1 proposed  0.7058 as the best number of clusters
+* 1 proposed  0.8094 as the best number of clusters
+* 1 proposed  1 as the best number of clusters
+* 1 proposed  1.4564 as the best number of clusters
+* 1 proposed  2 as the best number of clusters
+* 1 proposed  3 as the best number of clusters
+* 1 proposed  6 as the best number of clusters
+* 1 proposed  9 as the best number of clusters
+* 2 proposed  10 as the best number of clusters
+* 1 proposed  165.633 as the best number of clusters
+* 1 proposed  228.1667 as the best number of clusters
+* 1 proposed  313.2405 as the best number of clusters
+* 1 proposed  8762008161747361 as the best number of clusters
+* 1 proposed  Inf as the best number of clusters
+* 1 proposed  NA's as the best number of clusters
+
+Conclusion
+=========================
+* According to the majority rule, the best number of clusters is  0 .</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pdf-screening_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>Please ignore most of the output shown above and focus on the last part of the output. Based on this part, we can choose 3 as the optimal number of cluster because we can categorize them into high quality, medium quality, and low quality.</p>
 <p>Now we can start the cluster analysis the data using <code>stats</code> and <code>factoextra</code> package.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>res.dist <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">dist</span>(cluster_data_final, <span class="at">method =</span> <span class="st">"euclidean"</span>) <span class="co"># Compute the dissimilarity matrix</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>res.hc <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">hclust</span>(<span class="at">d =</span> res.dist, <span class="at">method =</span> <span class="st">"complete"</span>) <span class="co"># Compute Linkage</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>factoextra<span class="sc">::</span><span class="fu">fviz_dend</span>(res.hc, <span class="at">cex =</span> <span class="fl">0.5</span>) <span class="co"># Create dendrogram</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>res.dist <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">dist</span>(cluster_data_final, <span class="at">method =</span> <span class="st">"euclidean"</span>) <span class="co"># Compute the dissimilarity matrix</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>res.hc <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">hclust</span>(<span class="at">d =</span> res.dist, <span class="at">method =</span> <span class="st">"complete"</span>) <span class="co"># Compute Linkage</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>factoextra<span class="sc">::</span><span class="fu">fviz_dend</span>(res.hc, <span class="at">cex =</span> <span class="fl">0.5</span>) <span class="co"># Create dendrogram</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -723,9 +759,9 @@ Article_6    10</code></pre>
 </div>
 <p>Now we can incorporate the number of clusters (k) into the data and inspect the number of articles assigned into each cluster.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>grp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cutree</span>(res.hc, <span class="at">k =</span> <span class="dv">3</span>)) <span class="co"># Cut the dendrogram into 3 groups</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> grp[,<span class="dv">1</span>] <span class="co">#Extract group ID</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(grp) <span class="co"># Check article per group</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>grp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cutree</span>(res.hc, <span class="at">k =</span> <span class="dv">3</span>)) <span class="co"># Cut the dendrogram into 3 groups</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> grp[,<span class="dv">1</span>] <span class="co">#Extract group ID</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(grp) <span class="co"># Check article per group</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>cutree(res.hc, k = 3)
  1  2  3 
@@ -735,25 +771,11 @@ Article_6    10</code></pre>
 <p>If the number of articles for each cluster seems <em>undesirable</em> for you. You can try other methods of how distance between each cluster is measured. In the above example, I use <code>complete</code> for the method, you can try <code>ward.D2</code> or others such as <code>ward.D</code>, <code>single</code>, <code>average</code>, <code>mcquitty</code>, <code>median</code>, <code>centroid</code>, <code>kmeans</code>. You can explore further to understand how each method measures the distance.</p>
 <p>We can now write the cluster number (1, 2, or 3) into the data. To determine which cluster is high, medium, and low quality, we need calculate the <code>mean</code> of the total score for each cluster.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="ot">&lt;-</span> <span class="fu">cbind</span>(cluster_data_final, group)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cluster_data_complete)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"cluster"</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cluster_data_complete)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="ot">&lt;-</span> <span class="fu">cbind</span>(cluster_data_final, group)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cluster_data_complete)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"cluster"</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cluster_data_complete)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          total cluster
 Article_1     6       1
@@ -766,11 +788,11 @@ Article_6    10       2</code></pre>
 </div>
 <p>We can now see the mean for each cluster based on the <code>total</code> column.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cluster) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Min =</span> <span class="fu">min</span>(total),</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Max =</span> <span class="fu">max</span>(total),</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Mean =</span> <span class="fu">mean</span>(total, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cluster) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Min =</span> <span class="fu">min</span>(total),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Max =</span> <span class="fu">max</span>(total),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Mean =</span> <span class="fu">mean</span>(total, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
   cluster   Min   Max  Mean
@@ -780,7 +802,7 @@ Article_6    10       2</code></pre>
 3       3     2     5  4.15</code></pre>
 </div>
 </div>
-<p>The output above shows that the highest mean is cluster <b>2</b>, followed by cluster <b>1</b> and cluster <b>3</b>. Therefore, cluster 1 represents <code>medium</code> quality papers, cluster 2 <code>high</code> quality paper, and cluster 3 <code>low</code> quality papers. Now we can make a decision regarding which cluster will be kept for the analysis. We can choose high quality papers or high and medium quality papers, depending on the nature of our research.</p>
+<p>The output above shows that the highest mean is cluster <b>2</b>, followed by cluster <b>1</b> and cluster <b>3</b>. Therefore, cluster 1 represents <code>medium</code> quality papers, cluster 2 <code>high</code> quality paper, and cluster 3 <code>low</code> quality papers. Now we can make a decision regarding which cluster will be kept for the analysis. We can choose high quality papers or high and medium quality papers, depending on the nature of our research. This decision can be reported in PRISMA chart, which we will learn in another chapter.</p>
 
 
 

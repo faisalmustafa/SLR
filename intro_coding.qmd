@@ -1,0 +1,9 @@
+---
+title: "Introduction to coding qualitative data"
+format: html
+title-block-banner: "#4097C2"
+title-block-banner-color: white
+---
+## What is coding
+
+Coding is a process of assigning themes to parts of texts to be able to present the text 

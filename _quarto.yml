@@ -29,6 +29,8 @@ website:
         href: retrieval.qmd
       - text: Full text screening
         href: pdf-screening.qmd
+      - text: Introduction to coding qualitative data
+        href: intro_coding.qmd
       - text: Roles or members
         href: roles.qmd
 

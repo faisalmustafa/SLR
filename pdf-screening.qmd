@@ -201,6 +201,7 @@ Now we should determine the optimal number of cluster. In this case, we will cal
 res.nbclust <- NbClust::NbClust(cluster_data_final, distance = "euclidean",
                        min.nc = 2, max.nc = 10, 
                        method = "complete", index ="all")
+factoextra::fviz_nbclust(res.nbclust)
 ```
 
 Please ignore most of the output shown above and focus on the last part of the output. Based on this part, we can choose 3 as the optimal number of cluster because we can categorize them into high quality, medium quality, and low quality.  
