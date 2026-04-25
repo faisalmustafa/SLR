@@ -157,3 +157,48 @@ The results show that the ICC is 0.237, which is very low. The interpretation of
 
 ## Clustering papers based on quality
 After the score based on the quality appraisal rubric is assigned for each paper on the list, these papers can be grouped into several quality category after removing papers assigned score 0. One of the ways to perform this categorization is using Agglomerative Clustering technique. In one of my project, I categorized the quality into (1) very high, (2) high, (3) medium, (4) low, (5) very low. Since the total numbers of articles was high, we only picked papers with very high and high quality to be included in our analysis. Let me now demonstrate how to conduct the clustering analysis in R.
+
+Do demonstrate how each paper is assigned into corresponding cluster, we create randomly generate data consisting of 150 papers.
+
+```{r cache = TRUE}
+set.seed(22) #this is to ensure that the data generated is the same as mine
+cluster_data <- data.frame(Article_ID = paste0("Article_", 1:150),
+                         "1" = sample(c(0,1), size = 150, replace = T),
+                         "2" = sample(c(0,1), size = 150, replace = T),
+                         "3" = sample(c(0,1), size = 150, replace = T),
+                         "4" = sample(c(0,1), size = 150, replace = T),
+                         "5" = sample(c(0,1), size = 150, replace = T),
+                         "6" = sample(c(0,1), size = 150, replace = T),
+                         "7" = sample(c(0,1), size = 150, replace = T),
+                         "8" = sample(c(0,1), size = 150, replace = T),
+                         "9" = sample(c(0,1), size = 150, replace = T),
+                         "10" = sample(c(0,1), size = 150, replace = T),
+                         "11" = sample(c(0,1), size = 150, replace = T),
+                         "12" = sample(c(0,1), size = 150, replace = T),
+                         "13" = sample(c(0,1), size = 150, replace = T),
+                         "14" = sample(c(0,1), size = 150, replace = T)
+                         )
+
+head(cluster_data)
+```
+
+Because the data included in the analysis should not include Article ID, we need to change the Article ID column into row name.
+
+```{r cache = TRUE}
+#install.packages('tibble', repos='http://cran.us.r-project.org')
+library(dplyr)
+library(tibble)
+cluster_data_final <- cluster_data %>% 
+  remove_rownames %>% column_to_rownames(var="Article_ID")
+
+```
+
+Now we should determine the optimal number of cluster.
+
+```{r cache = TRUE}
+res.nbclust <- NbClust::NbClust(cluster_data_final, distance = "euclidean",
+                       min.nc = 2, max.nc = 10, 
+                       method = "complete", index ="all")
+```
+
+Based on the result above, the optimal number of cluster is 3, so we can categorize them into high quality, medium quality, and low quality.

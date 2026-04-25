@@ -606,6 +606,109 @@ The quality of research
 <section id="clustering-papers-based-on-quality" class="level2">
 <h2 class="anchored" data-anchor-id="clustering-papers-based-on-quality">Clustering papers based on quality</h2>
 <p>After the score based on the quality appraisal rubric is assigned for each paper on the list, these papers can be grouped into several quality category after removing papers assigned score 0. One of the ways to perform this categorization is using Agglomerative Clustering technique. In one of my project, I categorized the quality into (1) very high, (2) high, (3) medium, (4) low, (5) very low. Since the total numbers of articles was high, we only picked papers with very high and high quality to be included in our analysis. Let me now demonstrate how to conduct the clustering analysis in R.</p>
+<p>Do demonstrate how each paper is assigned into corresponding cluster, we create randomly generate data consisting of 150 papers.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">22</span>) <span class="co">#this is to ensure that the data generated is the same as mine</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cluster_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Article_ID =</span> <span class="fu">paste0</span>(<span class="st">"Article_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">150</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"1"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"2"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"3"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"4"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"5"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"6"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"7"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"8"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"9"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"10"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"11"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"12"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"13"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"14"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">150</span>, <span class="at">replace =</span> T)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                         )</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cluster_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Article_ID X1 X2 X3 X4 X5 X6 X7 X8 X9 X10 X11 X12 X13 X14
+1  Article_1  1  0  1  0  0  1  0  0  1   1   1   0   0   0
+2  Article_2  0  1  0  1  1  1  1  1  0   1   0   1   1   1
+3  Article_3  1  0  0  0  1  1  1  0  0   1   1   1   1   1
+4  Article_4  1  0  0  1  0  1  1  0  1   1   1   1   0   1
+5  Article_5  1  1  0  1  1  0  0  1  0   0   0   1   0   1
+6  Article_6  1  1  1  0  1  1  0  0  1   1   0   1   1   1</code></pre>
+</div>
+</div>
+<p>Because the data included in the analysis should not include Article ID, we need to change the Article ID column into row name.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages('tibble', repos='http://cran.us.r-project.org')</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cluster_data_final <span class="ot">&lt;-</span> cluster_data <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  remove_rownames <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="at">var=</span><span class="st">"Article_ID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now we should determine the optimal number of cluster.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>res.nbclust <span class="ot">&lt;-</span> NbClust<span class="sc">::</span><span class="fu">NbClust</span>(cluster_data_final, <span class="at">distance =</span> <span class="st">"euclidean"</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">min.nc =</span> <span class="dv">2</span>, <span class="at">max.nc =</span> <span class="dv">10</span>, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">method =</span> <span class="st">"complete"</span>, <span class="at">index =</span><span class="st">"all"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pdf-screening_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>*** : The Hubert index is a graphical method of determining the number of clusters.
+                In the plot of Hubert index, we seek a significant knee that corresponds to a 
+                significant increase of the value of the measure i.e the significant peak in Hubert
+                index second differences plot. 
+ </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pdf-screening_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>*** : The D index is a graphical method of determining the number of clusters. 
+                In the plot of D index, we seek a significant knee (the significant peak in Dindex
+                second differences plot) that corresponds to a significant increase of the value of
+                the measure. 
+ 
+******************************************************************* 
+* Among all indices:                                                
+* 6 proposed 2 as the best number of clusters 
+* 10 proposed 3 as the best number of clusters 
+* 1 proposed 6 as the best number of clusters 
+* 1 proposed 7 as the best number of clusters 
+* 2 proposed 8 as the best number of clusters 
+* 3 proposed 10 as the best number of clusters 
+
+                   ***** Conclusion *****                            
+ 
+* According to the majority rule, the best number of clusters is  3 
+ 
+ 
+******************************************************************* </code></pre>
+</div>
+</div>
+<p>Based on the result above, the optimal number of cluster is 3, so we can categorize them into high quality, medium quality, and low quality.</p>
 
 
 
