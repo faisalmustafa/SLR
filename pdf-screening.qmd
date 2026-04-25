@@ -127,7 +127,7 @@ I have attempted to calculate this type of inter-rater reliability in Microsoft 
 
 To show an example of how to calculate ICC using R, let's generate a random scores for the quality appraisal.
 
-```{r cache = TRUE}
+```{r cache = TRUE, warning = 'hide'}
 set.seed(22) #this is to ensure that the data generated is the same as mine
 icc_data <- data.frame(Article_ID = paste0("Article_", 1:10),
                          Rater_1 = sample(0:14, size = 10, replace = T),
@@ -139,7 +139,7 @@ icc_data
 
 Based on the randomly generated data above, the ICC can be calculated using the following code. Install ```irr``` package if you have not done so. If you are not yet familiar with R, read ....
 
-```{r cache = TRUE}
+```{r cache = TRUE, warning = 'hide'}
 #install.packages("irr")
 irr::icc(icc_data[,2:4], model = "twoway",
   type = "agreement", unit = "single")
@@ -156,11 +156,11 @@ The results show that the ICC is 0.237, which is very low. The interpretation of
 |  < 0.5 | Poor reliability     |
 
 ## Clustering papers based on quality
-After the score based on the quality appraisal rubric is assigned for each paper on the list, these papers can be grouped into several quality category after removing papers assigned score 0. One of the ways to perform this categorization is using Agglomerative Clustering technique. In one of my project, I categorized the quality into (1) very high, (2) high, (3) medium, (4) low, (5) very low. Since the total numbers of articles was high, we only picked papers with very high and high quality to be included in our analysis. Let me now demonstrate how to conduct the clustering analysis in R.
+After the score based on the quality appraisal rubric is assigned for each paper on the list, these papers can be grouped into several quality category after removing papers assigned score 0. One of the ways to perform this categorization is using Clustering technique. In one of my project, I categorized the quality into (1) very high, (2) high, (3) medium, (4) low, (5) very low. Since the total numbers of articles was high, we only picked papers with very high and high quality to be included in our analysis. Let me now demonstrate how to conduct the clustering analysis in R.
 
 Do demonstrate how each paper is assigned into corresponding cluster, we create randomly generate data consisting of 150 papers.
 
-```{r cache = TRUE}
+```{r cache = TRUE, warning = 'hide'}
 set.seed(22) #this is to ensure that the data generated is the same as mine
 cluster_data <- data.frame(Article_ID = paste0("Article_", 1:150),
                          "1" = sample(c(0,1), size = 150, replace = T),
@@ -182,23 +182,63 @@ cluster_data <- data.frame(Article_ID = paste0("Article_", 1:150),
 head(cluster_data)
 ```
 
-Because the data included in the analysis should not include Article ID, we need to change the Article ID column into row name.
+First, we need to add a `total` column to the data above. Second, because the data included in the analysis should not include Article ID, we need to change the Article ID column into row name.
 
-```{r cache = TRUE}
+```{r cache = TRUE, warning = 'hide'}
 #install.packages('tibble', repos='http://cran.us.r-project.org')
 library(dplyr)
 library(tibble)
-cluster_data_final <- cluster_data %>% 
-  remove_rownames %>% column_to_rownames(var="Article_ID")
-
+cluster_data_final <- cluster_data %>%
+  mutate(total = rowSums(across(where(is.numeric)))) %>%
+  remove_rownames %>% column_to_rownames(var="Article_ID") %>%
+  select(total)
+head(cluster_data_final)
 ```
 
-Now we should determine the optimal number of cluster.
+Now we should determine the optimal number of cluster. In this case, we will calculate the number of cluster based on 30 indices, and we can choose the suggested number of clusters which makes sense to our case. 
 
-```{r cache = TRUE}
+```{r cache = FALSE, warning = 'hide'}
 res.nbclust <- NbClust::NbClust(cluster_data_final, distance = "euclidean",
                        min.nc = 2, max.nc = 10, 
                        method = "complete", index ="all")
 ```
 
-Based on the result above, the optimal number of cluster is 3, so we can categorize them into high quality, medium quality, and low quality.
+Please ignore most of the output shown above and focus on the last part of the output. Based on this part, we can choose 3 as the optimal number of cluster because we can categorize them into high quality, medium quality, and low quality.  
+
+Now we can start the cluster analysis the data using  `stats` and `factoextra` package.
+
+```{r cache = FALSE, warning = 'hide'}
+res.dist <- stats::dist(cluster_data_final, method = "euclidean") # Compute the dissimilarity matrix
+res.hc <- stats::hclust(d = res.dist, method = "complete") # Compute Linkage
+factoextra::fviz_dend(res.hc, cex = 0.5) # Create dendrogram
+```
+
+Now we can incorporate the number of clusters (k) into the data and inspect the number of articles assigned into each cluster.
+
+```{r cache = FALSE, warning = 'hide'}
+grp <- as.data.frame(cutree(res.hc, k = 3)) # Cut the dendrogram into 3 groups
+group <- grp[,1] #Extract group ID
+table(grp) # Check article per group
+```
+
+If the number of articles for each cluster seems <em>undesirable</em> for you. You can try other methods of how distance between each cluster is measured. In the above example, I use `complete` for the method, you can try `ward.D2` or others such as `ward.D`, `single`, `average`, `mcquitty`, `median`, `centroid`, `kmeans`. You can explore further to understand how each method measures the distance.
+
+We can now write the cluster number (1, 2, or 3) into the data. To determine which cluster is high, medium, and low quality, we need calculate the `mean` of the total score for each cluster.
+
+```{r cache = FALSE, warning = 'hide'}
+library(dplyr)
+cluster_data_complete <- cbind(cluster_data_final, group)
+
+colnames(cluster_data_complete)[2] <- "cluster"
+head(cluster_data_complete)
+```
+
+We can now see the mean for each cluster based on the `total` column.
+
+```{r cache = FALSE, warning = 'hide'}
+library(dplyr)
+cluster_data_complete %>% group_by(cluster) %>% 
+  summarize(Min = min(total),
+            Max = max(total),
+            Mean = mean(total, na.rm=TRUE))
+```
