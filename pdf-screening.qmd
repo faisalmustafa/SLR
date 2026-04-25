@@ -197,7 +197,7 @@ head(cluster_data_final)
 
 Now we should determine the optimal number of cluster. In this case, we will calculate the number of cluster based on 30 indices, and we can choose the suggested number of clusters which makes sense to our case. 
 
-```{r cache = FALSE, warning = 'hide'}
+```{r cache = TRUE, warning = 'hide'}
 res.nbclust <- NbClust::NbClust(cluster_data_final, distance = "euclidean",
                        min.nc = 2, max.nc = 10, 
                        method = "complete", index ="all")
@@ -207,7 +207,7 @@ Please ignore most of the output shown above and focus on the last part of the o
 
 Now we can start the cluster analysis the data using  `stats` and `factoextra` package.
 
-```{r cache = FALSE, warning = 'hide'}
+```{r cache = TRUE, warning = 'hide'}
 res.dist <- stats::dist(cluster_data_final, method = "euclidean") # Compute the dissimilarity matrix
 res.hc <- stats::hclust(d = res.dist, method = "complete") # Compute Linkage
 factoextra::fviz_dend(res.hc, cex = 0.5) # Create dendrogram
@@ -215,7 +215,7 @@ factoextra::fviz_dend(res.hc, cex = 0.5) # Create dendrogram
 
 Now we can incorporate the number of clusters (k) into the data and inspect the number of articles assigned into each cluster.
 
-```{r cache = FALSE, warning = 'hide'}
+```{r cache = TRUE, warning = 'hide'}
 grp <- as.data.frame(cutree(res.hc, k = 3)) # Cut the dendrogram into 3 groups
 group <- grp[,1] #Extract group ID
 table(grp) # Check article per group
@@ -225,7 +225,7 @@ If the number of articles for each cluster seems <em>undesirable</em> for you. Y
 
 We can now write the cluster number (1, 2, or 3) into the data. To determine which cluster is high, medium, and low quality, we need calculate the `mean` of the total score for each cluster.
 
-```{r cache = FALSE, warning = 'hide'}
+```{r cache = TRUE, warning = 'hide'}
 library(dplyr)
 cluster_data_complete <- cbind(cluster_data_final, group)
 
@@ -235,10 +235,12 @@ head(cluster_data_complete)
 
 We can now see the mean for each cluster based on the `total` column.
 
-```{r cache = FALSE, warning = 'hide'}
+```{r cache = TRUE, warning = 'hide'}
 library(dplyr)
 cluster_data_complete %>% group_by(cluster) %>% 
   summarize(Min = min(total),
             Max = max(total),
             Mean = mean(total, na.rm=TRUE))
 ```
+
+The output above shows that the highest mean is cluster <b>2</b>, followed by cluster <b>1</b> and cluster <b>3</b>. Therefore, cluster 1 represents `medium` quality papers, cluster 2 `high` quality paper, and cluster 3 `low` quality papers. Now we can make a decision regarding which cluster will be kept for the analysis. We can choose high quality papers or high and medium quality papers, depending on the nature of our research. This decision can be reported in PRISMA chart, which we will learn in another chapter.
