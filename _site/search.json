@@ -346,7 +346,7 @@
     "href": "pdf-screening.html#reliability-of-full-text-screening-and-quality-appraisal",
     "title": "Full text screening",
     "section": "Reliability of full text screening and quality appraisal",
-    "text": "Reliability of full text screening and quality appraisal\nWhen the full text screening is conducted by more than one team members, which is recommended, the team members should practice screening one or two papers together then complete at least 10 papers individually. To ensure all team members understand the inclusion/exclusion criteria and rubric, an inter-rater reliability needs to be calculated from these 10 articles. For this purpose, the excluded article can be scored 0.\nFor this purpose, Intraclass Correlation Coefficient (ICC) is a common method to calculate the inter-rater reliability for numerical data. In addition, ICC can be used with two or more raters. The formula used to calculate this type of inter-rater reliability is:\n\\[ \\text{ICC}_{(2,1)} = \\frac{MS_b - MS_e}{MS_b + (n_j - 1)MS_e + n_j(MS_j - MS_e)/n} \\]\nWhere:  \\(\\text{ICC}_{(2,1)}\\) = Two-way random effects model of ICC  \\(MS_b\\) = the variance between subjects  \\(MS_e\\) = the variance due to the interaction of judge by subject  \\(MS_j\\) = the variances due to the judges  \\(_j\\) = judges / raters\nI have attempted to calculate this type of inter-rater reliability in Microsoft Excel using this formula, but it is too complex for a manual calculation. R has a specific package developed and maintained by Matthias Gamer and his colleagues to calculate ICC.",
+    "text": "Reliability of full text screening and quality appraisal\nWhen the full text screening is conducted by more than one team members, which is recommended, the team members should practice screening one or two papers together then complete at least 10 papers individually. To ensure all team members understand the inclusion/exclusion criteria and rubric, an inter-rater reliability needs to be calculated from these 10 articles. For this purpose, the excluded article can be scored 0. If the inter-rater reliability obtained is still undesirable, the team needs to discuss and repeat the cycle (screening practice –&gt; screening at least 10 papers –&gt; calculate inter-rater reliabilit) until a desirable inter-rater reliability level is reached.\nFor this purpose, Intraclass Correlation Coefficient (ICC) is a common method to calculate the inter-rater reliability for numerical data. In addition, ICC can be used with two or more raters. The formula used to calculate this type of inter-rater reliability is:\n\\[ \\text{ICC}_{(2,1)} = \\frac{MS_b - MS_e}{MS_b + (n_j - 1)MS_e + n_j(MS_j - MS_e)/n} \\]\nWhere:  \\(\\text{ICC}_{(2,1)}\\) = Two-way random effects model of ICC  \\(MS_b\\) = the variance between subjects  \\(MS_e\\) = the variance due to the interaction of judge by subject  \\(MS_j\\) = the variances due to the judges  \\(_j\\) = judges / raters\nI have attempted to calculate this type of inter-rater reliability in Microsoft Excel using this formula, but it is too complex for a manual calculation. R has a specific package developed and maintained by Matthias Gamer and his colleagues to calculate ICC.",
     "crumbs": [
       "Home",
       "Full text screening"
@@ -358,6 +358,50 @@
     "title": "Full text screening",
     "section": "Calculating Intraclass Correlation Coefficient (ICC) in R",
     "text": "Calculating Intraclass Correlation Coefficient (ICC) in R\nTo show an example of how to calculate ICC using R, let’s generate a random scores for the quality appraisal.\n\nset.seed(22) #this is to ensure that the data generated is the same as mine\nicc_data &lt;- data.frame(Article_ID = paste0(\"Article_\", 1:10),\n                         Rater_1 = sample(0:14, size = 10, replace = T),\n                         Rater_2 = sample(0:14, size = 10, replace = T),\n                         Rater_3 = sample(0:14, size = 10, replace = T))\n\nicc_data\n\n   Article_ID Rater_1 Rater_2 Rater_3\n1   Article_1       5      10       5\n2   Article_2       8       2       1\n3   Article_3       7       3       0\n4   Article_4       9       9      13\n5   Article_5      13       7       4\n6   Article_6      11      13       3\n7   Article_7      11      14      10\n8   Article_8      10       3       0\n9   Article_9       0       0       7\n10 Article_10       4      12       2\n\n\nBased on the randomly generated data above, the ICC can be calculated using the following code. Install irr package if you have not done so. If you are not yet familiar with R, read ….\n\n#install.packages(\"irr\")\nirr::icc(icc_data[,2:4], model = \"twoway\",\n  type = \"agreement\", unit = \"single\")\n\n Single Score Intraclass Correlation\n\n   Model: twoway \n   Type : agreement \n\n   Subjects = 10 \n     Raters = 3 \n   ICC(A,1) = 0.237\n\n F-Test, H0: r0 = 0 ; H1: r0 &gt; 0 \n    F(9,20) = 2.04 , p = 0.0883 \n\n 95%-Confidence Interval for ICC Population Values:\n  -0.092 &lt; ICC &lt; 0.66\n\n\nThe results show that the ICC is 0.237, which is very low. The interpretation of ICC provided by Koo & Li (2016)   is given in the following table.\n\n\n\nICC\nLevel of reliability\n\n\n\n\n&gt;0.90\nExcellent reliability\n\n\n0.75 - 0.90\nGood reliability\n\n\n0.5 - 0.75\nModerate reliability\n\n\n&lt; 0.5\nPoor reliability",
+    "crumbs": [
+      "Home",
+      "Full text screening"
+    ]
+  },
+  {
+    "objectID": "roles.html",
+    "href": "roles.html",
+    "title": "Roles of Team Members",
+    "section": "",
+    "text": "The role of each researcher involved in a systematic listerature review project needs to be determined at the start of the project. These roles should be communicated explicitely with anyone involved, and they have to agree with their roles. This decision has to be recorded in a project progress document. This document keep the records of every decision made before, during, and after the project completion.",
+    "crumbs": [
+      "Home",
+      "Roles or members"
+    ]
+  },
+  {
+    "objectID": "roles.html#team-leader",
+    "href": "roles.html#team-leader",
+    "title": "Roles of Team Members",
+    "section": "Team Leader",
+    "text": "Team Leader\nThe pace and quality of the project depends to a great extent on the team leader. In most cases, the team leader determine",
+    "crumbs": [
+      "Home",
+      "Roles or members"
+    ]
+  },
+  {
+    "objectID": "roles.html#team-members",
+    "href": "roles.html#team-members",
+    "title": "Roles of Team Members",
+    "section": "Team Members",
+    "text": "Team Members",
+    "crumbs": [
+      "Home",
+      "Roles or members"
+    ]
+  },
+  {
+    "objectID": "pdf-screening.html#clustering-papers-based-on-quality",
+    "href": "pdf-screening.html#clustering-papers-based-on-quality",
+    "title": "Full text screening",
+    "section": "Clustering papers based on quality",
+    "text": "Clustering papers based on quality\nAfter the score based on the quality appraisal rubric is assigned for each paper on the list, these papers can be grouped into several quality category after removing papers assigned score 0. One of the ways to perform this categorization is using Agglomerative Clustering technique. In one of my project, I categorized the quality into (1) very high, (2) high, (3) medium, (4) low, (5) very low. Since the total numbers of articles was high, we only picked papers with very high and high quality to be included in our analysis. Let me now demonstrate how to conduct the clustering analysis in R.",
     "crumbs": [
       "Home",
       "Full text screening"

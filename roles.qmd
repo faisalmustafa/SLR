@@ -5,10 +5,9 @@ title-block-banner: "#4097C2"
 title-block-banner-color: white
 ---
 
+The role of each researcher involved in a systematic listerature review project needs to be determined at the start of the project. These roles should be communicated explicitely with anyone involved, and they have to agree with their roles. This decision has to be recorded in a project progress document. This document keep the records of every decision made before, during, and after the project completion.
 
-## Role of Team Leader
+## Team Leader
+The pace and quality of the project depends to a great extent on the team leader. In most cases, the team leader determine
 
-
-## Role of Team Members
-
-## Advice for Team Leaders
+## Team Members

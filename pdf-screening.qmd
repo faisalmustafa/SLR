@@ -108,7 +108,7 @@ The advantage of doing quality appraisal in the full-text screening is that like
 
 ## Reliability of full text screening and quality appraisal
 
-When the full text screening is conducted by more than one team members, which is recommended, the team members should practice screening one or two papers together then complete at least 10 papers individually. To ensure all team members understand the inclusion/exclusion criteria and rubric, an inter-rater reliability needs to be calculated from these 10 articles. For this purpose, the excluded article can be scored 0.
+When the full text screening is conducted by more than one team members, which is recommended, the team members should practice screening one or two papers together then complete at least 10 papers individually. To ensure all team members understand the inclusion/exclusion criteria and rubric, an inter-rater reliability needs to be calculated from these 10 articles. For this purpose, the excluded article can be scored 0. If the inter-rater reliability obtained is still undesirable, the team needs to discuss and repeat the cycle (screening practice --> screening at least 10 papers --> calculate inter-rater reliabilit) until a desirable inter-rater reliability level is reached.
 
 For this purpose, Intraclass Correlation Coefficient (ICC) is a common method to calculate the inter-rater reliability for numerical data. In addition, ICC can be used with two or more raters. The formula used to calculate this type of inter-rater reliability is:
 
@@ -155,5 +155,5 @@ The results show that the ICC is 0.237, which is very low. The interpretation of
 |  0.5 - 0.75 | Moderate reliability        |
 |  < 0.5 | Poor reliability     |
 
-
-
+## Clustering papers based on quality
+After the score based on the quality appraisal rubric is assigned for each paper on the list, these papers can be grouped into several quality category after removing papers assigned score 0. One of the ways to perform this categorization is using Agglomerative Clustering technique. In one of my project, I categorized the quality into (1) very high, (2) high, (3) medium, (4) low, (5) very low. Since the total numbers of articles was high, we only picked papers with very high and high quality to be included in our analysis. Let me now demonstrate how to conduct the clustering analysis in R.
