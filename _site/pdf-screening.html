@@ -746,8 +746,9 @@ Attaching package: 'dendextend'</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dend <span class="ot">&lt;-</span> cluster_data_final[<span class="dv">1</span>] <span class="sc">%&gt;%</span> scale <span class="sc">%&gt;%</span> dist <span class="sc">%&gt;%</span> </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  hclust <span class="sc">%&gt;%</span> as.dendrogram <span class="sc">%&gt;%</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"branches_k_color"</span>, <span class="at">k=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">set</span>(<span class="st">"branches_lwd"</span>, <span class="fl">1.2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"labels_cex"</span>, .<span class="dv">5</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"branches_k_color"</span>, <span class="at">k=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">set</span>(<span class="st">"branches_lwd"</span>, <span class="fl">1.5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"branches_col"</span>, <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"orange"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"labels_cex"</span>, .<span class="dv">5</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required namespace: colorspace</code></pre>
 </div>
@@ -755,7 +756,7 @@ Attaching package: 'dendextend'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pdf-screening_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1152"></p>
+<p><img src="pdf-screening_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1440"></p>
 </figure>
 </div>
 </div>
