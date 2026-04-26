@@ -12,7 +12,7 @@ Teacher A: <br>
 I found it difficult to improve my teaching skills because <mark style = "background-color: Lime">professional development is offered more frequently in cities</mark>, and we do not have access to funding to participate in this program because we teach in a rural school. <mark style = "background-color: orange">Our school is very very far from cities</mark>. Sometimes, <mark style = "background-color: Goldenrod">I tried to learn how to use technology such as Quizizz from YouTube videos</mark>. <mark style = "background-color: yellow">I was very interested to try that in my class</mark>, but <mark style = "background-color: pink">there is no projector in my school</mark>, and <mark style = "background-color: pink">students are not allowed to bring their own smartphone</mark> because the school does not want students to play games or access prohibited websites in schools. <mark style = "background-color: pink">Some of the students even do not have any smartphone</mark>. Even if we are able ask some students to bring their smartphone to be used under strict supervision, <mark style = "background-color: Turquoise">the internet connection is not always fast enough</mark>.
 
 Teacher B:<br>
-For me, I like to do everything perfect, which according to my fellow teachers makes me too busy everyday. I agree with them and in fact I do not have time to participate in any professional development. <mark style = "background-color: Lime">There was a very important two-week training on using technology in teaching English in one of the schools around my area</mark>. I heard this training was administered by lecturers from Universitas Syiah Kuala as a part of their community services responsibility. But, I was so busy marking my students' exam very very carefully that <mark style = "background-color: orange">I did not have time to participate in this training</mark>. As you may guess, I very rarely use technology in teaching because <mark style = "background-color: plum">it makes everything so complicated</mark>. I would have to prepare the materials based on this technology, I have to ensure that students have devices to use this technology, <mark style = "background-color: Magenta">the electricity is sometimes off<mark>, <mark style = "background-color: Turquoise">the internet connection is too slow</mark>, and many more challenges. <mark style = "background-color: yellow">I understand that my students will be more motivated if I use technology</mark>, as what other teachers have shared.
+For me, I like to do everything perfect, which according to my fellow teachers makes me too busy everyday. I agree with them and in fact I do not have time to participate in any professional development. <mark style = "background-color: Lime">There was a very important two-week training on using technology in teaching English in one of the schools around my area</mark>. I heard this training was administered by lecturers from Universitas Syiah Kuala as a part of their community services responsibility. But, I was so busy marking my students' exam very very carefully that <mark style = "background-color: orange">I did not have time to participate in this training</mark>. As you may guess, I very rarely use technology in teaching because <mark style = "background-color: plum">it makes everything so complicated</mark>. I would have to prepare the materials based on this technology, I have to ensure that students have devices to use this technology, <mark style = "background-color: LightCoral">the electricity is sometimes off<mark>, <mark style = "background-color: Turquoise">the internet connection is too slow</mark>, and many more challenges. <mark style = "background-color: yellow">I understand that my students will be more motivated if I use technology</mark>, as what other teachers have shared.
 
 :::{.column-page-right}
 ```{mermaid}
@@ -36,20 +36,21 @@ flowchart LR
   A(Challenges)
   A --> B(Professional development)
   B --> C(Distance)
-  C --> D[<span style='background-color:____; font-weight: bold'>Our school is very very far from cities</span>]
+  C --> D[<span style='background-color:orange; font-weight: bold'>Our school is very very far from cities</span>]
   B --> E(Lack of time)
-  E --> F[<span style='background-color:____; font-weight: bold'>I did not have time to participate in this training</span>]
+  E --> F[<span style='background-color:orange; font-weight: bold'>I did not have time to participate in this training</span>]
   A --> G(Lack of technology devices)
-  G --> H[<span style='background-color:____; font-weight: bold'>there is no projector in my school</span>]
-  G --> I[<span style='background-color:____; font-weight: bold'>students are not allowed to bring their own smartphone</span>]
-  G --> J[<span style='background-color:____; font-weight: bold'>Some of the students even do not have any smartphone</span>]
+  G --> H[<span style='background-color:pink; font-weight: bold'>there is no projector in my school</span>]
+  G --> I[<span style='background-color:pink; font-weight: bold'>students are not allowed to bring their own smartphone</span>]
+  G --> J[<span style='background-color:pink; font-weight: bold'>Some of the students even do not have any smartphone</span>]
   A --> K(Teacher negative perception)
-  K --> L[<span style='background-color:____; font-weight: bold'>it makes everything so complicated</span>]
+  K --> L[<span style='background-color:plum; font-weight: bold'>it makes everything so complicated</span>]
   A --> M(Electricity problem)
-  M --> N[<span style='background-color:Magenta; font-weight: bold'>the electricity is sometimes off</span>]
+  M --> N[<span style='background-color:LightCoral; font-weight: bold'>the electricity is sometimes off</span>]
   A --> O(Unreliable internet)
   O --> P[<span style='background-color:Turquoise; font-weight: bold'>the internet connection is too slow</span>]
   O --> Q[<span style='background-color:Turquoise; font-weight: bold'>the internet connection is not always fast enough</span>]
   
 ```
 :::
+
