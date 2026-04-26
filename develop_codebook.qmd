@@ -1,0 +1,15 @@
+---
+title: "Step 1 in Coding: Developing codebooks"
+format: html
+title-block-banner: "#4097C2"
+title-block-banner-color: white
+bibliography: references.bib
+csl: apa.csl
+---
+
+Among other categorization, there are two types of coding, which shape how codebooks are developed, i.e., inductive coding and deductive coding. In inductive analysis, the codebook is developed based on what we find in the data, as the showcase in  <a href="/intro_coding.html" style="text-decoration:none"> Chapter 10</a>, and deductive coding uses a pre-determined framework or an existing theory as the codebook.
+
+## Developing codebooks from the data
+To develop the codebook from the data, the research team members who are involved in coding the data need to code together several papers, field notes, interview transcripts, or other materials to be able to develop exhausted themes for the codebook. According to @Hennink2022 <a href="/resources/papers/hennink2022.pdf" target = "_blank"> <img src="download-icon.png" alt="Hennink and Kaiser (2022)" width="25" height="25"></a> and @Lu2024 <a href="/resources/papers/lu2024.pdf" target = "_blank"> <img src="download-icon.png" alt="Lu et al. (2024)" width="25" height="25"></a>, the theme saturation is usually reached after coding on average 10-13 interviews. Obviously, two interviews as in our showcase in <a href="/intro_coding.html" style="text-decoration:none"> Chapter 10</a> are not adequate.
+
+## Developing codebooks based on predetermined framework

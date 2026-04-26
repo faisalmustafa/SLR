@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Table of Contents – SLR</title>
+<title>Step 1 in Coding: Developing codebooks – SLR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,65 +88,24 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<style>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-description","listing-date"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: white;
       }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+
+      .quarto-title-block .quarto-title-banner {
+        color: white;
+background: #4097C2;
+      }
+</style>
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -136,7 +113,7 @@ window.Quarto = {
 <body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -159,7 +136,7 @@ window.Quarto = {
 <span class="menu-text">About this book</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./toc.html" aria-current="page"> 
+    <a class="nav-link" href="./toc.html"> 
 <span class="menu-text">Table of Contents</span></a>
   </li>  
 </ul>
@@ -173,14 +150,30 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Table of Contents</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./develop_codebook.html">Developing codebooks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Step 1 in Coding: Developing codebooks</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -241,7 +234,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./develop_codebook.html" class="sidebar-item-text sidebar-link">
+  <a href="./develop_codebook.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Developing codebooks</span></a>
   </div>
 </li>
@@ -256,228 +249,43 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#developing-codebooks-from-the-data" id="toc-developing-codebooks-from-the-data" class="nav-link active" data-scroll-target="#developing-codebooks-from-the-data">Developing codebooks from the data</a></li>
+  <li><a href="#developing-codebooks-based-on-predetermined-framework" id="toc-developing-codebooks-based-on-predetermined-framework" class="nav-link" data-scroll-target="#developing-codebooks-based-on-predetermined-framework">Developing codebooks based on predetermined framework</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Table of Contents</h1>
+
+
+
+
+<p>Among other categorization, there are two types of coding, which shape how codebooks are developed, i.e., inductive coding and deductive coding. In inductive analysis, the codebook is developed based on what we find in the data, as the showcase in <a href="./intro_coding.html" style="text-decoration:none"> Chapter 10</a>, and deductive coding uses a pre-determined framework or an existing theory as the codebook.</p>
+<section id="developing-codebooks-from-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="developing-codebooks-from-the-data">Developing codebooks from the data</h2>
+<p>To develop the codebook from the data, the research team members who are involved in coding the data need to code together several papers, field notes, interview transcripts, or other materials to be able to develop exhausted themes for the codebook. According to <span class="citation" data-cites="Hennink2022">Hennink &amp; Kaiser (<a href="#ref-Hennink2022" role="doc-biblioref">2022</a>)</span> <a href="./resources/papers/hennink2022.pdf" target="_blank"> <img src="download-icon.png" alt="Hennink and Kaiser (2022)" width="25" height="25"></a> and <span class="citation" data-cites="Lu2024">Lu et al. (<a href="#ref-Lu2024" role="doc-biblioref">2024</a>)</span> <a href="./resources/papers/lu2024.pdf" target="_blank"> <img src="download-icon.png" alt="Lu et al. (2024)" width="25" height="25"></a>, the theme saturation is usually reached after coding on average 10-13 interviews. Obviously, two interviews as in our showcase in <a href="./intro_coding.html" style="text-decoration:none"> Chapter 10</a> are not adequate.</p>
+</section>
+<section id="developing-codebooks-based-on-predetermined-framework" class="level2">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Developing codebooks based on predetermined framework</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Hennink2022" class="csl-entry" role="listitem">
+Hennink, M., &amp; Kaiser, B. N. (2022). Sample sizes for saturation in qualitative research: A systematic review of empirical tests. <em>Social Science &amp; Medicine</em>, <em>292</em>, 114523. <a href="https://doi.org/10.1016/j.socscimed.2021.114523">https://doi.org/10.1016/j.socscimed.2021.114523</a>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title-sort" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-description" data-direction="asc">
-        Description
-      </option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<div id="ref-Lu2024" class="csl-entry" role="listitem">
+Lu, Y., Jian, M., Muhamad, N. S., &amp; Hizam-Hanafiah, Mohd. (2024). Data saturation in qualitative research: A literature review in entrepreneurship study from 2004–2024. <em>Journal of Infrastructure, Policy and Development</em>, <em>8</em>(12). <a href="https://doi.org/10.24294/jipd.v8i12.9753">https://doi.org/10.24294/jipd.v8i12.9753</a>
 </div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-
-<th>
-<a class="sort" data-sort="listing-description" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Description</a>
-</th>
-
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1763816400000" data-listing-title-sort="About this online book">
-<td>
-<a href="about.html" class="title listing-title">About this online book</a>
-</td>
-<td>
-<span class="listing-description">Learning this type of research was quite a journey for myself, and thus I do not intend to let this process goes to waste because not all…</span>
-</td>
-<td>
-<span class="listing-date">Nov 23, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1763816400000" data-listing-title-sort="Introduction">
-<td>
-<a href="intro.html" class="title listing-title">Introduction</a>
-</td>
-<td>
-<span class="listing-description">Systematic Literature Review (SLR) has become more increasingly popular among researchers. This type of research refers to a systematic process of…</span>
-</td>
-<td>
-<span class="listing-date">Nov 23, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1763816400000" data-listing-title-sort="Steps in conducting a systematic literature review">
-<td>
-<a href="steps.html" class="title listing-title">Steps in conducting a systematic literature review</a>
-</td>
-<td>
-<span class="listing-description">The systematic literature review consists of three main steps, i.e.&nbsp;reviewed study preparation, coding, and report writing. Each of these steps…</span>
-</td>
-<td>
-<span class="listing-date">Nov 23, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="3" data-listing-date-sort="1763816400000" data-listing-title-sort="Determining topics for Systematic Literature Review">
-<td>
-<a href="topics.html" class="title listing-title">Determining topics for Systematic Literature Review</a>
-</td>
-<td>
-<span class="listing-description">The first step of conducting systematic literature review research is determining the topic for the research. This topic can come from one of the…</span>
-</td>
-<td>
-<span class="listing-date">Nov 23, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="4" data-listing-date-sort="1763902800000" data-listing-title-sort="Selecting databases for systematic literature review">
-<td>
-<a href="database.html" class="title listing-title">Selecting databases for systematic literature review</a>
-</td>
-<td>
-<span class="listing-description">The rule of thumb is that the database used needs to be indexing databases which include journals or book chapters after assessment involving…</span>
-</td>
-<td>
-<span class="listing-date">Nov 24, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="5" data-listing-date-sort="1763902800000" data-listing-title-sort="Keywords and search">
-<td>
-<a href="search.html" class="title listing-title">Keywords and search</a>
-</td>
-<td>
-<span class="listing-description">Keywords are very significant in systematic literature review. Incorrecly using keywords can put excessively extend the time of completing the…</span>
-</td>
-<td>
-<span class="listing-date">Nov 24, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="6" data-listing-date-sort="1763989200000" data-listing-title-sort="Abstract screening">
-<td>
-<a href="abstract-screening.html" class="title listing-title">Abstract screening</a>
-</td>
-<td>
-<span class="listing-description">Before the initial screening, the search results from multiple databases need to be combined. There is high possibility that the combined list to…</span>
-</td>
-<td>
-<span class="listing-date">Nov 25, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="7" data-listing-date-sort="1764594000000" data-listing-title-sort="Full text retrieval">
-<td>
-<a href="retrieval.html" class="title listing-title">Full text retrieval</a>
-</td>
-<td>
-<span class="listing-description">Full text retrieval process should be straightforward if your institution have adequate subscription. As previously mentioned, the researcher team…</span>
-</td>
-<td>
-<span class="listing-date">Dec 2, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="8" data-listing-date-sort="1764594000000" data-listing-title-sort="Full text screening">
-<td>
-<a href="pdf-screening.html" class="title listing-title">Full text screening</a>
-</td>
-<td>
-<span class="listing-description">This second screening phase is the most important phase to eliminate articles which fall outside the focus of the study. The objective of full text…</span>
-</td>
-<td>
-<span class="listing-date">Dec 2, 2025</span>
-</td>
-
-</tr>
-
-<tr data-index="9" data-listing-date-sort="1777125600000" data-listing-title-sort="Introduction to coding qualitative data">
-<td>
-<a href="intro_coding.html" class="title listing-title">Introduction to coding qualitative data</a>
-</td>
-<td>
-<span class="listing-description">Text data such as interview transcrips and research papers consist of a bunch of statements. Coding is a process of assigning themes to parts of…</span>
-</td>
-<td>
-<span class="listing-date">Apr 26, 2026</span>
-</td>
-
-</tr>
-
-<tr data-index="10" data-listing-date-sort="1777125600000" data-listing-title-sort="Developing codebooks">
-<td>
-<a href="develop_codebook.html" class="title listing-title">Developing codebooks</a>
-</td>
-<td>
-<span class="listing-description">&nbsp;</span>
-</td>
-<td>
-<span class="listing-date">Apr 26, 2026</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
