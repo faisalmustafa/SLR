@@ -205,9 +205,10 @@ res.nbclust <- NbClust::NbClust(cluster_data_final, distance = "euclidean",
 
 Please ignore most of the output shown above and focus on the last part of the output. Based on this part, we can choose 3 as the optimal number of cluster because we can categorize them into high quality, medium quality, and low quality.  
 
-Now we can start the cluster analysis the data using  `stats` and `dendextend` package. `factoextra` is also common, in place of `dendextend`, but it did not work well when I tried it. It previously worked it the past.
+Now we can start the cluster analysis using  `stats` and `dendextend` package. `factoextra` is also common, in place of `dendextend`, but it did not work well when I tried it. It previously worked it the past.
 
-```{r cache = FALSE, warning = 'hide', fig.width = 10, fig.height = 6}
+```{r cache = FALSE, warning = 'hide', message = 'hide', fig.width = 10, fig.height = 4}
+#| column: screen-inset-shaded
 res.dist <- stats::dist(cluster_data_final, method = "euclidean") # Compute the dissimilarity matrix
 res.hc <- stats::hclust(d = res.dist, method = "complete") # Compute Linkage
 library(dendextend)

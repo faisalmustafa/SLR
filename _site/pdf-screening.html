@@ -319,7 +319,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
@@ -609,7 +609,7 @@ The quality of research
 </tbody>
 </table>
 </section>
-<section id="clustering-papers-based-on-quality" class="level2">
+<section id="clustering-papers-based-on-quality" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="clustering-papers-based-on-quality">Clustering papers based on quality</h2>
 <p>After the score based on the quality appraisal rubric is assigned for each paper on the list, these papers can be grouped into several quality category after removing papers assigned score 0. One of the ways to perform this categorization is using Clustering technique. In one of my project, I categorized the quality into (1) very high, (2) high, (3) medium, (4) low, (5) very low. Since the total numbers of articles was high, we only picked papers with very high and high quality to be included in our analysis. Let me now demonstrate how to conduct the clustering analysis in R.</p>
 <p>Do demonstrate how each paper is assigned into corresponding cluster, we create randomly generate data consisting of 150 papers.</p>
@@ -714,58 +714,30 @@ Article_6    10</code></pre>
 </div>
 </div>
 <p>Please ignore most of the output shown above and focus on the last part of the output. Based on this part, we can choose 3 as the optimal number of cluster because we can categorize them into high quality, medium quality, and low quality.</p>
-<p>Now we can start the cluster analysis the data using <code>stats</code> and <code>dendextend</code> package. <code>factoextra</code> is also common, in place of <code>dendextend</code>, but it did not work well when I tried it. It previously worked it the past.</p>
-<div class="cell">
+<p>Now we can start the cluster analysis using <code>stats</code> and <code>dendextend</code> package. <code>factoextra</code> is also common, in place of <code>dendextend</code>, but it did not work well when I tried it. It previously worked it the past.</p>
+<div class="cell page-columns page-full">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>res.dist <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">dist</span>(cluster_data_final, <span class="at">method =</span> <span class="st">"euclidean"</span>) <span class="co"># Compute the dissimilarity matrix</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>res.hc <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">hclust</span>(<span class="at">d =</span> res.dist, <span class="at">method =</span> <span class="st">"complete"</span>) <span class="co"># Compute Linkage</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dendextend)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
----------------------
-Welcome to dendextend version 1.19.1
-Type citation('dendextend') for how to cite the package.
-
-Type browseVignettes(package = 'dendextend') for the package vignette.
-The github page is: https://github.com/talgalili/dendextend/
-
-Suggestions and bug-reports can be submitted at: https://github.com/talgalili/dendextend/issues
-You may ask questions at stackoverflow, use the r and dendextend tags: 
-     https://stackoverflow.com/questions/tagged/dendextend
-
-    To suppress this message use:  suppressPackageStartupMessages(library(dendextend))
----------------------</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dendextend'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:stats':
-
-    cutree</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dend <span class="ot">&lt;-</span> cluster_data_final[<span class="dv">1</span>] <span class="sc">%&gt;%</span> scale <span class="sc">%&gt;%</span> dist <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  hclust <span class="sc">%&gt;%</span> as.dendrogram <span class="sc">%&gt;%</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"branches_k_color"</span>, <span class="at">k=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">set</span>(<span class="st">"branches_lwd"</span>, <span class="fl">1.5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"branches_col"</span>, <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"orange"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"labels_cex"</span>, .<span class="dv">5</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required namespace: colorspace</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dend)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="pdf-screening_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dendextend)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>dend <span class="ot">&lt;-</span> cluster_data_final[<span class="dv">1</span>] <span class="sc">%&gt;%</span> scale <span class="sc">%&gt;%</span> dist <span class="sc">%&gt;%</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  hclust <span class="sc">%&gt;%</span> as.dendrogram <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"branches_k_color"</span>, <span class="at">k=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">set</span>(<span class="st">"branches_lwd"</span>, <span class="fl">1.5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"branches_col"</span>, <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"orange"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set</span>(<span class="st">"labels_cex"</span>, .<span class="dv">5</span>) </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dend)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display page-columns page-full">
+<div class="page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="pdf-screening_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img column-screen-inset-shaded" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Now we can incorporate the number of clusters (k) into the data and inspect the number of articles assigned into each cluster.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>grp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cutree</span>(res.hc, <span class="at">k =</span> <span class="dv">3</span>)) <span class="co"># Cut the dendrogram into 3 groups</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> grp[,<span class="dv">1</span>] <span class="co">#Extract group ID</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(grp) <span class="co"># Check article per group</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>grp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cutree</span>(res.hc, <span class="at">k =</span> <span class="dv">3</span>)) <span class="co"># Cut the dendrogram into 3 groups</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span> grp[,<span class="dv">1</span>] <span class="co">#Extract group ID</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(grp) <span class="co"># Check article per group</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>cutree(res.hc, k = 3)
  1  2  3 
@@ -775,11 +747,11 @@ Attaching package: 'dendextend'</code></pre>
 <p>If the number of articles for each cluster seems <em>undesirable</em> for you. You can try other methods of how distance between each cluster is measured. In the above example, I use <code>complete</code> for the method, you can try <code>ward.D2</code> or others such as <code>ward.D</code>, <code>single</code>, <code>average</code>, <code>mcquitty</code>, <code>median</code>, <code>centroid</code>, <code>kmeans</code>. You can explore further to understand how each method measures the distance.</p>
 <p>We can now write the cluster number (1, 2, or 3) into the data. To determine which cluster is high, medium, and low quality, we need calculate the <code>mean</code> of the total score for each cluster.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="ot">&lt;-</span> <span class="fu">cbind</span>(cluster_data_final, group)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cluster_data_complete)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"cluster"</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cluster_data_complete)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="ot">&lt;-</span> <span class="fu">cbind</span>(cluster_data_final, group)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cluster_data_complete)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"cluster"</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cluster_data_complete)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          total cluster
 Article_1     6       1
@@ -792,11 +764,11 @@ Article_6    10       2</code></pre>
 </div>
 <p>We can now see the mean for each cluster based on the <code>total</code> column.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cluster) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Min =</span> <span class="fu">min</span>(total),</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Max =</span> <span class="fu">max</span>(total),</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Mean =</span> <span class="fu">mean</span>(total, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>cluster_data_complete <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cluster) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Min =</span> <span class="fu">min</span>(total),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Max =</span> <span class="fu">max</span>(total),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Mean =</span> <span class="fu">mean</span>(total, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
   cluster   Min   Max  Mean
