@@ -208,7 +208,7 @@ Please ignore most of the output shown above and focus on the last part of the o
 Now we can start the cluster analysis using  `stats` and `dendextend` package. `factoextra` is also common, in place of `dendextend`, but it did not work well when I tried it. It previously worked it the past.
 
 ```{r cache = TRUE, warning = 'hide', message = 'hide', fig.width = 13, fig.height = 6}
-#| column: page-inset-left
+#| column: page
 res.dist <- stats::dist(cluster_data_final, method = "euclidean") # Compute the dissimilarity matrix
 res.hc <- stats::hclust(d = res.dist, method = "complete") # Compute Linkage
 library(dendextend)
