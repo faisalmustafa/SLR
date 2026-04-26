@@ -58,3 +58,9 @@ flowchart LR
 ```
 :::
 
+After the transcripts are coded, they can be systematically summarized by looking at the diagram. The sample of report is presented below.
+
+<div style = 'margin-left: 30px; margin-right: 30px; text-indent: 50px; text-align: justify;   text-justify: inter-word; font-family:"Times New Roman", Times, serif'>
+Based on the result of data analysis, we found that there are more challenges of technology application in teaching than its opportinities. The opportunites include teacher's positive perception of technology application, availability of professional development, and teacher's willingness to independently learn how to use technology. Meanwhile, the challenges cover lack of professional development. Eventhough professional development programs have been offered, these teachers could not attend them due to distance and lack of time. Other challenges include lack of technology devices, electricity problems, and unreliable internet connection. In addition, one of the teachers perceived the use of technology negatively.
+</div>
+
