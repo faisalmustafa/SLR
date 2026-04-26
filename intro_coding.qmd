@@ -14,6 +14,7 @@ I found it difficult to improve my teaching skills because <mark style = "backgr
 Teacher B:<br>
 For me, I like to do everything perfect, which according to my fellow teachers makes me too busy everyday. I agree with them and in fact I do not have time to participate in any professional development. <mark style = "background-color: Lime">There was a very important two-week training on using technology in teaching English in one of the schools around my area</mark>. I heard this training was administered by lecturers from Universitas Syiah Kuala as a part of their community services responsibility. But, I was so busy marking my students' exam very very carefully that <mark style = "background-color: orange">I did not have time to participate in this training</mark>. As you may guess, I very rarely use technology in teaching because <mark style = "background-color: plum">it makes everything so complicated</mark>. I would have to prepare the materials based on this technology, I have to ensure that students have devices to use this technology, <mark style = "background-color: Magenta">the electricity is sometimes off<mark>, <mark style = "background-color: Turquoise">the internet connection is too slow</mark>, and many more challenges. <mark style = "background-color: yellow">I understand that my students will be more motivated if I use technology</mark>, as what other teachers have shared.
 
+:::{.column-page}
 ```{mermaid}
 flowchart LR
   A(Opportunities)
@@ -26,6 +27,7 @@ flowchart LR
   A --> H(Independent learning)
   H --> I[<span style='background-color:Goldenrod; font-weight: bold'>I tried to learn how to use technology such as Quizizz from YouTube videos</span>]
 ```
+:::
 
 :::{.column-page}
 ```{mermaid}
