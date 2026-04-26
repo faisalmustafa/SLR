@@ -12,4 +12,16 @@ Among other categorization, there are two types of coding, which shape how codeb
 ## Developing codebooks from the data
 To develop the codebook from the data, the research team members who are involved in coding the data need to code together several papers, field notes, interview transcripts, or other materials to be able to develop exhausted themes for the codebook. According to @Hennink2022 <a href="/resources/papers/hennink2022.pdf" target = "_blank"> <img src="download-icon.png" alt="Hennink and Kaiser (2022)" width="25" height="25"></a> and @Lu2024 <a href="/resources/papers/lu2024.pdf" target = "_blank"> <img src="download-icon.png" alt="Lu et al. (2024)" width="25" height="25"></a>, the theme saturation is usually reached after coding on average 10-13 interviews. Obviously, two interviews as in our showcase in <a href="/intro_coding.html" style="text-decoration:none"> Chapter 10</a> are not adequate.
 
+Before the codebook development as described in the previous paragraph, the team needs to create coding protocol, which include:
+<ol>
+    <li> Breaking down the research questions into several parts if possible </li>
+    <li> Determine what part of the text is intended for coding. In coding a paper, whether the team only code result section, and whether the discussion section is also included. If the answer to the research question cannot be found in the result section, which section should be read next. </li>
+    <li> The same information might appears in several parts of the text. So the team needs to decide which part should be prioritized, or whether the same information should be coded multiple times. </li>
+    <li> Some information might be represented by one phrase or one clause, so the team needs to decide whether to code only this phrase or clause, or whether to code the whole sentence.</li>
+</ol>
+
+This protocol can be revisited and revised during the coding because the same protocol will be used when each team member codes the rest of the data independently. In addition, this protocol needs to be reported in the systematic literature review paper for transparency and replicability.
+
 ## Developing codebooks based on predetermined framework
+
+## References
