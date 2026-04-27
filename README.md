@@ -1,3 +1,5 @@
+<img src="https://faisalmustafa.github.io/SLR-Book/cover.png" syle="width:200px;margin: 0px 5px 0px 0px; float:right;" alt="Book cover" id="img1">
+<div>
 Learning about Systematic Literature Reviews was quite a journey for myself, and thus I do not intend to let this process goes to waste. Therefore, the purpose of this book is to describe the process of Systematic Literature Review research as I learned it through reading and collaborations. Allow me to share how I learned this type of research before I describe how this book is presented.
 
 The process goes back to late 2022 when I started by PhD at the UNSW Sydney in Summer Semester 2023. I only had a chance to meet my supervisors briefly once before they both went on their summer holiday. I was adviced to review the literature using NVIVO to decide whether I needed to change the focus of my research. I started by learning NVIVO through a 12 hour NVIVO tutorial, which in my case was adequate to start my literature review. I sent a report to my supervisors after one month. I received comments from my supervisors and one of them indicated that my work had a potential for publication. I started reading more and watching more vidoes on conducting systematic literature review research. I finally published the result of this systematic literature review research in a reputable journal as my first systematic literature review paper.
@@ -9,3 +11,5 @@ Finally, I was involved to work in an extensive systematic literature review pro
 This online version book reflects my own understanding of what systematic literature review research is and how to make it entirely systematic, reliable, accurate, and reproducable. Therefore, there are not many citations used in this book because I did not refer to sources when writing it, unless they were very necessary or when readers need to read some texts to understand the point that I was making. Since the book emphasizes on practicality, the language used was not always academic; thus, you can find casual expressions used very often in this book. I hope you don’t mind.
 
 The book is still a work in progress and can be accessed here: https://faisalmustafa.github.io/SLR-Book/
+
+</div>
