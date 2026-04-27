@@ -1,4 +1,4 @@
-<img src="https://faisalmustafa.github.io/SLR-Book/cover.png" syle="width:200px;margin: 0px 5px 0px 0px; float:right;" alt="Book cover" id="img1">
+<img src="https://faisalmustafa.github.io/SLR-Book/cover.png" float="right" width="200px" alt="Book cover" id="img1">
 <div>
 Learning about Systematic Literature Reviews was quite a journey for myself, and thus I do not intend to let this process goes to waste. Therefore, the purpose of this book is to describe the process of Systematic Literature Review research as I learned it through reading and collaborations. Allow me to share how I learned this type of research before I describe how this book is presented.
 
