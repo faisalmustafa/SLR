@@ -20,4 +20,4 @@ This book is a guideline for researchers who are already familiar with Systemati
 This practical guideline is written and provided by Faisal Mustafa, a lecturer at Universitas Syiah Kuala, Indonesia, and it is delivered as an open access resource.
 
 ### How to Cite
-Mustafa, F. (2025). <em>A practical guide to conducting a robust systematic literature review research</em>. Github Repository. https://faisalmustafa.github.io/SLR/
+Mustafa, F. (2025). <em>A practical guide to conducting a robust systematic literature review research</em>. Github. https://faisalmustafa.github.io/SLR-Book/
