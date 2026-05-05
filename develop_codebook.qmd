@@ -23,7 +23,56 @@ Before the codebook development as described in the previous paragraph, the team
 This protocol can be revisited and revised during the coding because the same protocol will be used when each team member codes the rest of the data independently. In addition, this protocol needs to be reported in the systematic literature review paper for transparency and replicability.
 
 ## Developing codebooks based on predetermined framework
-Developing codebooks from an established framework gives some benefit to researchers. For example, one of the most frequently used framework in education is Cultural Historical Activity Theory (CHAT). This framework has ... dimensions or what quantitative researchers call "constructs". These dimensions have been defined and described comprehensively and thus they can be used as the codebook. To put demonstrate this, I will present all the dimensions, with brief definition, in the following table. For further details in this framework and other framework, please read @bingham2024, particularly Chapter 6. Due to copywrite restriction, I cannot provide access to this book.
+Developing codebooks from an established framework gives some benefit to researchers. For example, one of the most frequently used framework in education is Cultural Historical Activity Theory (CHAT). This framework has seven dimensions or what quantitative researchers call "constructs". These dimensions have been defined and described comprehensively and thus they can be used as the codebook. To put demonstrate this, I will present all the dimensions, with brief definition, in the following table. For further details with this framework and some other frameworks, please read @bingham2024, particularly Chapter 6. Due to copywrite restrictions, I cannot provide access to this book. The table below is based on the summary of works authored by @cong-lem2022 <a href="/resources/papers/cong-lem2022.pdf" target = "_blank"> <img src="download-icon.png" alt="Cong-Lem (2022)" width="25" height="25"></a> and @grimalt-alvaro2021 <a href="/resources/papers/grimalt-alvaro2021.pdf" target = "_blank"> <img src="download-icon.png" alt="Grimalt-Alvaro and Ametller(2022)" width="25" height="25"></a>.
+
+```{=html}
+<table>
+    <thead>
+        <tr>
+            <th> Dimensions </th>
+            <th> Description </th>
+            <th> Example<sup>*</sup> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Subject </td>
+            <td> Individuals who perform the activity</td>
+            <td> Teachers </td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td> ... </td>
+            <td> ... </td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td> ... </td>
+            <td> ... </td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td> ... </td>
+            <td> ... </td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td> ... </td>
+            <td> ... </td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td> ... </td>
+            <td> ... </td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td> ... </td>
+            <td> ... </td>
+        </tr>
+    </tbody>
+</table> 
+```
 
 ## Developing codebooks by combining two frameworks
 
