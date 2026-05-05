@@ -78,7 +78,7 @@ or problem space at which the activity is directed. </td>
 The ... between one dimension and another in CHAT framework is represented in the following figure.
 
 ```{=html}
-<img scr = "/resources/papers/CHAT.webp">
+<img src = "/resources/papers/CHAT.webp">
 ```
 
 ## Developing codebooks by combining two frameworks
