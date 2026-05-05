@@ -42,8 +42,9 @@ Developing codebooks from an established framework gives some benefit to researc
         </tr>
         <tr>
             <td> Object </td>
-            <td> The shared motive of the activity </td>
-            <td> Teachers, community of teachers </td>
+            <td> The goal or motive of the activity. The raw material
+or problem space at which the activity is directed. </td>
+            <td> Student learning experience </td>
         </tr>
         <tr>
             <td> Mediational tools </td>
@@ -68,11 +69,16 @@ Developing codebooks from an established framework gives some benefit to researc
         <tr>
             <td> Outcome </td>
             <td> The transformed reality, the results and product, which can be of an ideal nature </td>
-            <td> The classroom in which participant teachers carried out
-their science lessons with 12–16-year-old students. </td>
+            <td> Students who have positive learning experience </td>
         </tr>
     </tbody>
 </table> 
+```
+
+The ... between one dimension and another in CHAT framework is represented in the following figure.
+
+```{=html}
+<img scr = "/resources/papers/CHAT.webp">
 ```
 
 ## Developing codebooks by combining two frameworks
