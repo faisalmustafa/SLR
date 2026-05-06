@@ -34,6 +34,8 @@ Developing codebooks from an established framework gives some benefit to researc
             <th> Example<sup>*</sup> </th>
         </tr>
     </thead>
+    <tfoot><tr><td colspan="3"><sup>*</sup>This example is based on a topic related to chassroom instruction.</td></tr></tfoot>
+
     <tbody>
         <tr>
             <td> Subject </td>
@@ -74,15 +76,33 @@ or problem space at which the activity is directed. </td>
     </tbody>
 </table> 
 ```
+<br>
+The relationship between one dimension and another in CHAT framework is represented in the following figure.<br><br>
 
-The ... between one dimension and another in CHAT framework is represented in the following figure.
+<img style ="display: block; margin-left: auto; margin-right: auto; width: 70%" src = "/resources/images/CHAT.webp">
+<br>
+To conclude, using CHAT framework to analyze the data, the seven dimensions can be converted into the codebook. These dimentions can be imported to the software used for coding such as NVIVO. The following figure illustrates this codebook.
 
-<img src = "/resources/papers/CHAT.webp">
+:::{.column-page-right}
+```{mermaid}
+flowchart LR
+  A(Research Question 1)
+  A --> B(Subject)
+  A --> C(Object)
+  A --> D(Mediational tools)
+  A --> E(Rules)
+  A --> F(Community)
+  A --> G(Division of labour)
+  A --> H(Outcome)
+```
+:::
+<br>
+In the coding process, each relevant statement is assigned into one of the dimensions in the codebook above. Using the coding software, these statements need to selected, dragged, and dropped into these dimensions. If we need to analyze the data a bit more detail, we can use another framework to supplement this CHAT framework. 
 
 ## Developing codebooks by combining two frameworks
 
 ## Developing codebooks by mixing inductive and deductive approaches
 
-##
+
 
 
