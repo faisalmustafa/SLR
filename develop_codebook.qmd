@@ -49,7 +49,7 @@ or problem space at which the activity is directed. </td>
             <td> Student learning experience </td>
         </tr>
         <tr>
-            <td> Mediational tools </td>
+            <td> Mediating tools </td>
             <td> Tools (physical or psychological) used to perform the activity </td>
             <td> pedagogy and concept (psychological), chalk and projector (physical) </td>
         </tr>
@@ -89,7 +89,7 @@ flowchart LR
   A(Research Question 1)
   A --> B(Subject)
   A --> C(Object)
-  A --> D(Mediational tools)
+  A --> D(Mediating tools)
   A --> E(Rules)
   A --> F(Community)
   A --> G(Division of labour)
@@ -100,9 +100,52 @@ flowchart LR
 In the coding process, each relevant statement is assigned into one of the dimensions in the codebook above. Using the coding software, these statements need to selected, dragged, and dropped into these dimensions. If we need to analyze the data a bit more detail, we can use another framework to supplement this CHAT framework. 
 
 ## Developing codebooks by combining two frameworks
+Some researchers, probably also depending on research questions or their research target, consider the research findings are still very general when only one framework is used. Therefore, they bring in one more framework as a complementary framework.
+
+In the case of CHAT framework as the primary framework, we can group the coded statements in each CHAT dimension into several themes, and these themes are borrowed from, for example, three dimensions of @bronfenbrenner2001 <a href="/resources/papers/bronfenbrenner2001.pdf" target = "_blank"> <img src="download-icon.png" alt="Bronfenbrenner (2001)" width="25" height="25"></a> framework. In @bingham2024, this framework consists of six domensions, frequently referred as "levels", but let's use only three levels for our demonstration because these three levels are most relevant to the case of classroom instructions.<br><br>
+
+<img style ="display: block; margin-left: auto; margin-right: auto; width: 70%" src = "/resources/images/Ecological.png">
+<br>
+For our purpose, let's consider "microsystem," "mesosystem," and "exosystem." Microsystem is factors related classrooms such as teachers, students, and teaching media. Mesosystem is factors controlled by schools such as teacher training, principal management style, school policy, etc. Finally, exosystem covers factors beyond school's control such as funding from the government, curriculum, government-funded professional development, national policy, etc. These levels or dimensions are added to each dimension of the primary framework, as illustrated in the following figure.
+
+:::{.column-page-right}
+```{mermaid}
+flowchart LR
+  A(Research Question 1)
+  A --> B(Subject)
+  B --> I(Micro level)
+  B --> J(Meso level)
+  B --> K(Exo level)
+  A --> C(Object)
+  C --> L(Micro level)
+  C --> M(Meso level)
+  C --> N(Exo level)
+  A --> D(Mediating tools)
+  D --> O(Micro level)
+  D --> P(Meso level)
+  D --> Q(Exo level)
+  A --> E(Rules)
+  E --> R(Micro level)
+  E --> S(Meso level)
+  E --> T(Exo level)
+  A --> F(Community)
+  F --> U(Micro level)
+  F --> V(Meso level)
+  F --> W(Exo level)
+  A --> G(Division of labour)
+  G --> X(Micro level)
+  G --> Y(Meso level)
+  G --> Z(Exo level)
+  A --> H(Outcome)
+  H --> AA(Micro level)
+  H --> AB(Meso level)
+  H --> AC(Exo level)
+```
+:::
 
 ## Developing codebooks by mixing inductive and deductive approaches
 
+Finally, 
 
 
 
