@@ -1,5 +1,5 @@
 ---
-title: "Step 2 in Coding: Coding practice"
+title: "Step 3 in Coding: Inter-coder reliability"
 format: html
 title-block-banner: "#4097C2"
 title-block-banner-color: white
@@ -18,6 +18,20 @@ Coding protocol should cover what to find, where to look, what to code. First, t
 ## Sample size and selection
 
 There is no consensus on the number of articles or interviews to code for for inter-coder reliability purpose. @oconnor2020 <a href="/resources/papers/oconnor2020.pdf" target = "_blank"> <img src="download-icon.png" alt="O’Connor & Joffe (2022)" width="20" height="20"></a> propose a subset of 10-25% of papers or interviews, depending on the size of the data, but I also rarely found any papers reporting more than ten papers for inter-coder reliability. In my projects, I always use 10% with a maximum of 10 papers or interviews.
+
+Regarding the selection process of articles or interviews for inter-coder reliability purpose, @oconnor2020 <a href="/resources/papers/oconnor2020.pdf" target = "_blank"> <img src="download-icon.png" alt="O’Connor & Joffe (2022)" width="20" height="20"></a> propose that these papers are selected randomly. When there are two research questions and each research question consists of different papers, the same number of articles for each research question should be randomly selected. The random selection ensures that the selected papers represents all papers in the project.
+
+## Codebook preparation
+
+## Coding process
+
+## Calculating inter-coder reliability in QDA software
+
+## Calculating inter-coder reliability manually
+
+## Interpreting 
+
+## Dealing with low inter-coder reliability level
 
 
 

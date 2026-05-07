@@ -35,6 +35,8 @@ website:
         href: develop_codebook.qmd
       - text: Coding practice
         href: coding_practice.qmd
+      - text: Inter-coder reliability
+        href: icr.qmd
       - text: Roles or members
         href: roles.qmd
 
