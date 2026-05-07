@@ -7,4 +7,21 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
-Inter-coder reliability is a continuation of the coding practice process because it is used to show much 
+Inter-coder reliability is a continuation of the coding practice process because it determines how similar independent coders evaluate a characteristic of the same message and reach the same conclusion @tinsley2000. Therefore, the target of coding practice is to achieve as high inter-coder reliability as possible.
+
+## Coding protocol
+
+Coding potocol has been previously discussed in this book, but I think it is important to highlight it because this is a source of low inter-coder reliability level. This is especially the case when the coding process and inter-coder reliability are calculated in the QDA software such as NVIVO, ATLAS.ti, and Taguette. These softwares cannot interprete meaning of the coded sentences, and thus coding different sentence even with the same meaning will be considered "disagreement".
+
+Coding protocol should cover what to find, where to look, what to code. First, to make it easier, research questions can be broken down into subquestions, so it will be easier for the coders to find the information for each part of the research question. Similarly, the codebook can be assigned for each part of the research question. Second, the coding protocol should specify which parts of the article should be coded. For example, the research result can be found in abstract, finding, discussion, and conclusion sections. Therefore, to ensure that each coder code in the same section, the coding protocol should specify which section of the article to prioritize and whether another section needs to be considered when the information is not found in the prioritized section.
+
+## Sample size and selection
+
+There is no consensus on the number of articles or interviews to code for for inter-coder reliability purpose. @oconnor2020 <a href="/resources/papers/oconnor2020.pdf" target = "_blank"> <img src="download-icon.png" alt="O’Connor & Joffe (2022)" width="20" height="20"></a> propose a subset of 10-25% of papers or interviews, depending on the size of the data, but I also rarely found any papers reporting more than ten papers for inter-coder reliability. In my projects, I always use 10% with a maximum of 10 papers or interviews.
+
+
+
+### Notes
+
+@nili2020 propose that the discrepancies are resolved through through discussion to reach consensus.<br>
+@oconnor2020 found that some experts suggest to repeat the round until satisfactory inter-coder reliability level is reached.
