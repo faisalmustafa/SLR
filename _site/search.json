@@ -533,7 +533,7 @@
     "href": "icr.html",
     "title": "Step 3 in Coding: Inter-coder reliability",
     "section": "",
-    "text": "Inter-coder reliability is a continuation of the coding practice process because it determines how similar independent coders evaluate a characteristic of the same message and reach the same conclusion Tinsley & Weiss (2000). Therefore, the target of coding practice is to achieve as high inter-coder reliability as possible.",
+    "text": "Inter-coder reliability is a continuation of the coding practice process because it determines how similar independent coders evaluate a characteristic of the same message and reach the same conclusion Tinsley & Weiss (2000)   . Therefore, the target of coding practice is to achieve as high inter-coder reliability as possible.",
     "crumbs": [
       "Home",
       "Inter-coder reliability"
@@ -566,7 +566,7 @@
     "href": "icr.html#codebook-preparation",
     "title": "Step 3 in Coding: Inter-coder reliability",
     "section": "Codebook preparation",
-    "text": "Codebook preparation",
+    "text": "Codebook preparation\nWhen the inter-coder reliability is calculated using QDA software, all coders need to use the same codebook. Therefore, a file needs to be prepared by one coder to be distributed to the others. Upon receiving the file, the user in the file needs to be resetted and set to the current coder. Otherwise, some QDA softwares such as NVIVO, will not be able to display the inter-coder reliability level accurately. These files are later merged to calculate the inter-coder reliability level. Each QDA software has a detailed instruction on how to show the inter-coder reliability. In our coding demonstration, we will use Taguette because it is an open source application, accessed remotely (https://app.taguette.org). In this software, one codebook prepared by one coder, and then this coder can invite the other coders to work on the same codebook.\nWhen the intercoder reliability is calculated manually, the codebook preparation can be more flexible because the data will be moved manually to a spreadsheet. However, moving this data is much easier when the files can me merged and a record of “who codes which” is available.",
     "crumbs": [
       "Home",
       "Inter-coder reliability"

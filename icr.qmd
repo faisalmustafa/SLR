@@ -7,7 +7,7 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
-Inter-coder reliability is a continuation of the coding practice process because it determines how similar independent coders evaluate a characteristic of the same message and reach the same conclusion @tinsley2000. Therefore, the target of coding practice is to achieve as high inter-coder reliability as possible.
+Inter-coder reliability is a continuation of the coding practice process because it determines how similar independent coders evaluate a characteristic of the same message and reach the same conclusion @tinsley2000 <a href="/resources/papers/tinsley2000.pdf" target = "_blank"> <img src="download-icon.png" alt="Tinsley and Weiss (2000)" width="20" height="20"></a> . Therefore, the target of coding practice is to achieve as high inter-coder reliability as possible.
 
 ## Coding protocol
 
@@ -17,11 +17,15 @@ Coding protocol should cover what to find, where to look, what to code. First, t
 
 ## Sample size and selection
 
-There is no consensus on the number of articles or interviews to code for for inter-coder reliability purpose. @oconnor2020 <a href="/resources/papers/oconnor2020.pdf" target = "_blank"> <img src="download-icon.png" alt="O’Connor & Joffe (2022)" width="20" height="20"></a> propose a subset of 10-25% of papers or interviews, depending on the size of the data, but I also rarely found any papers reporting more than ten papers for inter-coder reliability. In my projects, I always use 10% with a maximum of 10 papers or interviews.
+There is no consensus on the number of articles or interviews to code for for inter-coder reliability purpose. @oconnor2020 <a href="/resources/papers/oconnor2020.pdf" target = "_blank"> <img src="download-icon.png" alt="O’Connor and Joffe (2022)" width="20" height="20"></a> propose a subset of 10-25% of papers or interviews, depending on the size of the data, but I also rarely found any papers reporting more than ten papers for inter-coder reliability. In my projects, I always use 10% with a maximum of 10 papers or interviews.
 
-Regarding the selection process of articles or interviews for inter-coder reliability purpose, @oconnor2020 <a href="/resources/papers/oconnor2020.pdf" target = "_blank"> <img src="download-icon.png" alt="O’Connor & Joffe (2022)" width="20" height="20"></a> propose that these papers are selected randomly. When there are two research questions and each research question consists of different papers, the same number of articles for each research question should be randomly selected. The random selection ensures that the selected papers represents all papers in the project.
+Regarding the selection process of articles or interviews for inter-coder reliability purpose, @oconnor2020 <a href="/resources/papers/oconnor2020.pdf" target = "_blank"> <img src="download-icon.png" alt="O’Connor and Joffe (2022)" width="20" height="20"></a> propose that these papers are selected randomly. When there are two research questions and each research question consists of different papers, the same number of articles for each research question should be randomly selected. The random selection ensures that the selected papers represents all papers in the project.
 
 ## Codebook preparation
+
+When the inter-coder reliability is calculated using QDA software, all coders need to use the same codebook. Therefore, a file needs to be prepared by one coder to be distributed to the others. Upon receiving the file, the user in the file needs to be resetted and set to the current coder. Otherwise, some QDA softwares such as NVIVO, will not be able to display the inter-coder reliability level accurately. These files are later merged to calculate the inter-coder reliability level. Each QDA software has a detailed instruction on how to show the inter-coder reliability. In our coding demonstration, we will use Taguette because it is an open source application, accessed remotely (<a href="https://app.taguette.org" target = "_blank" style="text-decoration:none">https://app.taguette.org</a>). In this software, one codebook prepared by one coder, and then this coder can invite the other coders to work on the same codebook.
+
+When the intercoder reliability is calculated manually, the codebook preparation can be more flexible because the data will be moved manually to a spreadsheet. However, moving this data is much easier when the files can me merged and a record of "who codes which" is available.
 
 ## Coding process
 
