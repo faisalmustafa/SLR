@@ -56,3 +56,7 @@ format:
       - brand
     css: styles.css
     toc: true
+
+citeproc: true
+bibliography: references.bib
+csl: apa.csl
