@@ -1,0 +1,10 @@
+---
+title: "Step 2 in Coding: Coding practice"
+format: html
+title-block-banner: "#4097C2"
+title-block-banner-color: white
+bibliography: references.bib
+csl: apa.csl
+---
+
+Inter-coder reliability is a continuation of the coding practice process because it is used to show much 
