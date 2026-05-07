@@ -145,7 +145,53 @@ flowchart LR
 
 ## Developing codebooks by mixing inductive and deductive approaches
 
-Finally, 
+Finally, the inductive coding (creating themes from the data) and inductive coding (using established framework) can be combined to cover all possible themes which can emerge from the data. This process is almost similar to combining primary and supplementary frameworks. In this case, the primary or supplementary framework is replaced by themes emerged from the data. 
 
+### Inductive coding for supplementary themes
+In this case, the primary themes are based on an established framework but for each dimension of this framework is extended by themes emerging from the data. Therefore, the second layer will not be uniform because the data determines the themes to supplement each dimension. To demonstrate this in the following figure, let's borrow the three dimensions from @bronfenbrenner2001 framework.
 
+:::{.column-page-right}
+```{mermaid}
+flowchart LR
+  A(Research Question 1)
+  A --> B(Micro level)
+  B --> E(......)
+  B --> F(......)
+  B --> G(......)
+  B --> H(......)
+  A --> C(Meso level)
+  C --> I(......)
+  C --> J(......)
+  A --> D(Mexo level)
+  D --> K(......)
+  D --> L(......)
+  D --> M(......)
+```
+:::
 
+### Deductive coding for supplementary themes
+
+Another option is to use the emerging themes as the primary themes and extend these themes with dimensions of an established framework. This method enables reseachers to explore the themes from the data without any restrictions, but they intend to explain these emerging themes more systematically. Let's use @bronfenbrenner2001 framework again to illustrate this type of codebook development.
+
+:::{.column-page-right}
+```{mermaid}
+flowchart LR
+  A(Research Question 1)
+  A --> B(............)
+  B --> E(Micro level)
+  B --> F(Meso level)
+  B --> G(Mexo level)
+  A --> H(............)
+  H --> I(Micro level)
+  H --> J(Meso level)
+  H --> K(Mexo level)
+  A --> L(............)
+  L --> M(Micro level)
+  L --> N(Meso level)
+  L --> O(Mexo level)
+  A --> P(............)
+  P --> Q(Micro level)
+  P --> R(Meso level)
+  P --> S(Mexo level)
+```
+:::
