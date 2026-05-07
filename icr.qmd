@@ -7,7 +7,7 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
-Inter-coder reliability is a continuation of the coding practice process because it determines how similar independent coders evaluate a characteristic of the same message and reach the same conclusion @tinsley2000 <a href="/resources/papers/tinsley2000.pdf" target = "_blank"> <img src="download-icon.png" alt="Tinsley and Weiss (2000)" width="20" height="20"></a> . Therefore, the target of coding practice is to achieve as high inter-coder reliability as possible.
+Inter-coder reliability is a continuation of the coding practice process because it determines how similar independent coders evaluate a characteristic of the same message and reach the same conclusion [@tinsley2000] <a href="/resources/papers/tinsley2000.pdf" target = "_blank"> <img src="download-icon.png" alt="Tinsley and Weiss (2000)" width="20" height="20"></a> . Therefore, the target of coding practice is to achieve as high inter-coder reliability as possible.
 
 ## Coding protocol
 
