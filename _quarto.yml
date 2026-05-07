@@ -41,12 +41,14 @@ website:
         href: roles.qmd
   page-footer:
     left: "Copyright 2026, Faisal Mustafa"
-    center: Mustafa, F. (2025). <em> A practical guide to conducting a robust systematic literature review research </em>. Github. https://faisalmustafa.github.io/SLR-Book/
+    center: "Cite in APA: <br> Mustafa, F. (2025). <em> A practical guide to conducting a robust systematic literature review research </em>. Github. https://faisalmustafa.github.io/SLR-Book/"
     right:
       - icon: github
-        href: https://github.com/
-      - icon: bluesky
-        href: https://bsky.app/
+        href: https://github.com/faisalmustafa/SLR-Book
+      - icon: globe
+        href: https://fsd.usk.ac.id/faisal.mustafa
+      - icon: instagram
+        href: https://www.instagram.com/faisal_mstf
     background: "#4097C2"
 
 format:
