@@ -59,6 +59,69 @@ To use this formula, we will need the following details:
     <li> Number of sentences NOT coded by either Coder A and Coder B </li>
 </ol>
 
+### Step 1. Total number of sentences
+
+The total number of sentences is calculated by adding the number of sentences in all papers coded for the inter-coder reliability purpose.
+
+```{r cache = TRUE}
+icr_data <- data.frame(Article_ID = c(paste0("Article_", 1:7), "Article_9", "Article_10"),
+                         No_of_sentences = c(435, 467, 472, 412, 511, 457, 481, 502, 400))
+icr_data
+sum(icr_data$No_of_sentences)                       
+```
+Based on the calculation, the total number of sentences is `4,137`.
+
+### Step 2. Number of sentences not coded
+
+Number of sentences not coded by Coder A is calculated using this formula:
+
+$$ \text{Coder } A^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder A only}) $$
+$$ \text{Coder } A^- = 4,137 - (12 + 7) = 4,118 $$
+
+Number of sentences not coded by Coder B is calculated using this formula:
+
+$$ \text{Coder } B^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder B only}) $$
+$$ \text{Coder } B^- = 4,137 - (12 + 4) = 4,121 $$
+
+Number of sentences not coded by either Coder A and Coder B is calculated using this formula:
+$$ \text{Coder } A^- \text{and } B^-= \text{Total} - (\text{Coder A and B} + \text{Coder A only} + \text{Coder B only}) $$
+$$ \text{Coder } A^- \text{and } B^-= 4,137 - (12 + 7 + 4) = 4,114 $$
+
+### Step 3. Breaking down NVIVO Cohen's Kappa coefficient
+
+The Cohen's Kappa coefficient, as shown above, requires calculation of P<sub>o</sub> and P<sub>e</sub>. The formula for these variables are given below.
+
+$$ P_o = \frac{\text{Coder} A \text{ and } B + \text{Coder } A^- \text{ or } B^-}{\text{Total}} = \frac{12 + 4,114}{4,137} = 0.997$$
+
+Meanwhile, the formula to calculate P<sub>e</sub> requires the calculation of some probabilities.
+$$ P_e = (P_A x P_B) + (P_A^- x B_B^-)$$
+
+Where:
+<ul>
+    <li> P<sub>A</sub> = The probability that only Coder A would code </li>
+    <li> P<sub>B</sub> = The probability that only Coder B would code </li>
+    <li>P<sub>A</sub><sup>--</sup> = The probability that only coder A would not code </li>
+    <li>P<sub>B</sub><sup>--</sup> = The probability that only coder B would not code </li>
+</ul>
+
+The formula and calculation of these variables as as follows:
+
+$$P_A = \frac{\text{Coder} A \text{ and } B + \text{Coder } A} {\text{Total}} = \frac{12 + 7}{4,137} = 0.00459$$
+
+$$P_B = \frac{\text{Coder} A \text{ and } B + \text{Coder } B} {\text{Total}} = \frac{12 + 4}{4,137} = 0.00387$$
+
+$$P_A^- = \frac{\text{Coder} A^-} {\text{Total}} = \frac{4,118}{4,137} = 0.995$$
+
+$$P_B^- = \frac{\text{Coder} B^-} {\text{Total}} = \frac{4,121}{4,137} = 0.996$$
+
+Using the results above, P<sub>e</sub> can now be calculated:
+
+$$ P_e = (P_A x P_B) + (P_A^- x B_B^-) = (0.00459 x 0.00387) + (0.995 x 0.996) = 0.991$$
+
+Finally, the Cohen's Kappa can be calculated:
+
+$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.997 - 0.991} {1 - 0.991} = 0.667$$
+
 ## Interpreting inter-coder reliability
 
 

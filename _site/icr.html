@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -300,7 +335,12 @@ window.Quarto = {
   <li><a href="#codebook-preparation" id="toc-codebook-preparation" class="nav-link" data-scroll-target="#codebook-preparation">Codebook preparation</a></li>
   <li><a href="#coding-process" id="toc-coding-process" class="nav-link" data-scroll-target="#coding-process">Coding process</a></li>
   <li><a href="#calculating-inter-coder-reliability-in-qda-software" id="toc-calculating-inter-coder-reliability-in-qda-software" class="nav-link" data-scroll-target="#calculating-inter-coder-reliability-in-qda-software">Calculating inter-coder reliability in QDA software</a></li>
-  <li><a href="#calculating-inter-coder-reliability-manually" id="toc-calculating-inter-coder-reliability-manually" class="nav-link" data-scroll-target="#calculating-inter-coder-reliability-manually">Calculating inter-coder reliability manually</a></li>
+  <li><a href="#calculating-inter-coder-reliability-manually" id="toc-calculating-inter-coder-reliability-manually" class="nav-link" data-scroll-target="#calculating-inter-coder-reliability-manually">Calculating inter-coder reliability manually</a>
+  <ul class="collapse">
+  <li><a href="#step-1.-total-number-of-sentences" id="toc-step-1.-total-number-of-sentences" class="nav-link" data-scroll-target="#step-1.-total-number-of-sentences">Step 1. Total number of sentences</a></li>
+  <li><a href="#step-2.-number-of-sentences-not-coded" id="toc-step-2.-number-of-sentences-not-coded" class="nav-link" data-scroll-target="#step-2.-number-of-sentences-not-coded">Step 2. Number of sentences not coded</a></li>
+  <li><a href="#step-3.-breaking-down-nvivo-cohens-kappa-coefficient" id="toc-step-3.-breaking-down-nvivo-cohens-kappa-coefficient" class="nav-link" data-scroll-target="#step-3.-breaking-down-nvivo-cohens-kappa-coefficient">Step 3. Breaking down NVIVO Cohen’s Kappa coefficient</a></li>
+  </ul></li>
   <li><a href="#interpreting-inter-coder-reliability" id="toc-interpreting-inter-coder-reliability" class="nav-link" data-scroll-target="#interpreting-inter-coder-reliability">Interpreting inter-coder reliability</a></li>
   <li><a href="#dealing-with-low-inter-coder-reliability-level" id="toc-dealing-with-low-inter-coder-reliability-level" class="nav-link" data-scroll-target="#dealing-with-low-inter-coder-reliability-level">Dealing with low inter-coder reliability level</a>
   <ul class="collapse">
@@ -370,6 +410,70 @@ Number of sentences NOT coded by Coder B
 Number of sentences NOT coded by either Coder A and Coder B
 </li>
 </ol>
+<section id="step-1.-total-number-of-sentences" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-total-number-of-sentences">Step 1. Total number of sentences</h3>
+<p>The total number of sentences is calculated by adding the number of sentences in all papers coded for the inter-coder reliability purpose.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>icr_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Article_ID =</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">"Article_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>), <span class="st">"Article_9"</span>, <span class="st">"Article_10"</span>),</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">No_of_sentences =</span> <span class="fu">c</span>(<span class="dv">435</span>, <span class="dv">467</span>, <span class="dv">472</span>, <span class="dv">412</span>, <span class="dv">511</span>, <span class="dv">457</span>, <span class="dv">481</span>, <span class="dv">502</span>, <span class="dv">400</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>icr_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Article_ID No_of_sentences
+1  Article_1             435
+2  Article_2             467
+3  Article_3             472
+4  Article_4             412
+5  Article_5             511
+6  Article_6             457
+7  Article_7             481
+8  Article_9             502
+9 Article_10             400</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(icr_data<span class="sc">$</span>No_of_sentences)                       </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4137</code></pre>
+</div>
+</div>
+<p>Based on the calculation, the total number of sentences is <code>4,137</code>.</p>
+</section>
+<section id="step-2.-number-of-sentences-not-coded" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-number-of-sentences-not-coded">Step 2. Number of sentences not coded</h3>
+<p>Number of sentences not coded by Coder A is calculated using this formula:</p>
+<p><span class="math display">\[ \text{Coder } A^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder A only}) \]</span> <span class="math display">\[ \text{Coder } A^- = 4,137 - (12 + 7) = 4,118 \]</span></p>
+<p>Number of sentences not coded by Coder B is calculated using this formula:</p>
+<p><span class="math display">\[ \text{Coder } B^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder B only}) \]</span> <span class="math display">\[ \text{Coder } B^- = 4,137 - (12 + 4) = 4,121 \]</span></p>
+<p>Number of sentences not coded by either Coder A and Coder B is calculated using this formula: <span class="math display">\[ \text{Coder } A^- \text{and } B^-= \text{Total} - (\text{Coder A and B} + \text{Coder A only} + \text{Coder B only}) \]</span> <span class="math display">\[ \text{Coder } A^- \text{and } B^-= 4,137 - (12 + 7 + 4) = 4,114 \]</span></p>
+</section>
+<section id="step-3.-breaking-down-nvivo-cohens-kappa-coefficient" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-breaking-down-nvivo-cohens-kappa-coefficient">Step 3. Breaking down NVIVO Cohen’s Kappa coefficient</h3>
+<p>The Cohen’s Kappa coefficient, as shown above, requires calculation of P<sub>o</sub> and P<sub>e</sub>. The formula for these variables are given below.</p>
+<p><span class="math display">\[ P_o = \frac{\text{Coder} A \text{ and } B + \text{Coder } A^- \text{ or } B^-}{\text{Total}} = \frac{12 + 4,114}{4,137} = 0.997\]</span></p>
+<p>Meanwhile, the formula to calculate P<sub>e</sub> requires the calculation of some probabilities. <span class="math display">\[ P_e = (P_A x P_B) + (P_A^- x B_B^-)\]</span></p>
+Where:
+<ul>
+<li>
+P<sub>A</sub> = The probability that only Coder A would code
+</li>
+<li>
+P<sub>B</sub> = The probability that only Coder B would code
+</li>
+<li>
+P<sub>A</sub><sup>–</sup> = The probability that only coder A would not code
+</li>
+<li>
+P<sub>B</sub><sup>–</sup> = The probability that only coder B would not code
+</li>
+</ul>
+<p>The formula and calculation of these variables as as follows:</p>
+<p><span class="math display">\[P_A = \frac{\text{Coder} A \text{ and } B + \text{Coder } A} {\text{Total}} = \frac{12 + 7}{4,137} = 0.00459\]</span></p>
+<p><span class="math display">\[P_B = \frac{\text{Coder} A \text{ and } B + \text{Coder } B} {\text{Total}} = \frac{12 + 4}{4,137} = 0.00387\]</span></p>
+<p><span class="math display">\[P_A^- = \frac{\text{Coder} A^-} {\text{Total}} = \frac{4,118}{4,137} = 0.995\]</span></p>
+<p><span class="math display">\[P_B^- = \frac{\text{Coder} B^-} {\text{Total}} = \frac{4,121}{4,137} = 0.996\]</span></p>
+<p>Using the results above, P<sub>e</sub> can now be calculated:</p>
+<p><span class="math display">\[ P_e = (P_A x P_B) + (P_A^- x B_B^-) = (0.00459 x 0.00387) + (0.995 x 0.996) = 0.991\]</span></p>
+<p>Finally, the Cohen’s Kappa can be calculated:</p>
+<p><span class="math display">\[ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.997 - 0.991} {1 - 0.991} = 0.667\]</span></p>
+</section>
 </section>
 <section id="interpreting-inter-coder-reliability" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-inter-coder-reliability">Interpreting inter-coder reliability</h2>
