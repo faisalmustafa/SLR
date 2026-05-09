@@ -31,9 +31,33 @@ After the codebook is prepared, each coder work independently. During this proce
 
 ## Calculating inter-coder reliability in QDA software
 
-After completing this coding process, depending on the QDA software used, all files may need to be merged. When we used an online QDA software which enables collaboration, the inter-coder reliability may be calculated immediately. 
+After completing this coding process, depending on the QDA software you use, all files may need to be merged. When we used an online QDA software which enables collaboration, the inter-coder reliability may be calculated immediately. 
+
+In NVIVO, the files are merged by importing project, where the project is the file coded by another coder. This feature can be accessed from "Import" and select "Project." Later, we need to choose "merge" in the option. 
+
+
+
 
 ## Calculating inter-coder reliability manually
+One of the shortcomings in using QDA software to calculate inter-coder reliability is that this software cannot determine "agreement" and "disagreement" based on meaning. Therefore, when two coders code a different sentence in a text, the software consider it as "disagreement" even when the meaning is similar. In this section, I will replicate the calculation of inter-coder reliability using Cohen's Kappa coefficient in NVIVO outside the software. The Cohen's Kappa calculation used to calculate the intercoder reliabilty in NVIVO is different to the conventional calculation because NVIVO include disagreement in the calculation. For demonstration, we will use the following data.
+
+```{=html}
+<embed src="/resources/pdf_images/icr_data.pdf" width="800px" height="300px" />
+```
+
+The formula to calculate Cohen's Kappa for the inter-coder reliability is similar to the formula we used in determining reliability in abstract screening.
+$$ \kappa = \frac{p_o - p_e}{1 - p_e} $$
+
+To use this formula, we will need the following details:
+<ol>
+    <li> Total number of sentences in all coded articles/intervierws</li>
+    <li> Number of sentences coded by both Coder A and Coder B</li>
+    <li> Number of sentences coded by Coder A only </li>
+    <li> Number of sentences coded by Coder B only </li>
+    <li> Number of sentences NOT coded by Coder A </li>
+    <li> Number of sentences NOT coded by Coder B </li>
+    <li> Number of sentences NOT coded by either Coder A and Coder B </li>
+</ol>
 
 ## Interpreting inter-coder reliability
 

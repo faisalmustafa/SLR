@@ -588,7 +588,7 @@
     "href": "icr.html#calculating-inter-coder-reliability-in-qda-software",
     "title": "Step 3 in Coding: Inter-coder reliability",
     "section": "Calculating inter-coder reliability in QDA software",
-    "text": "Calculating inter-coder reliability in QDA software\nAfter completing this coding process, depending on the QDA software used, all files may need to be merged. When we used an online QDA software which enables collaboration, the inter-coder reliability may be calculated immediately.",
+    "text": "Calculating inter-coder reliability in QDA software\nAfter completing this coding process, depending on the QDA software you use, all files may need to be merged. When we used an online QDA software which enables collaboration, the inter-coder reliability may be calculated immediately.\nIn NVIVO, the files are merged by importing project, where the project is the file coded by another coder. This feature can be accessed from “Import” and select “Project.” Later, we need to choose “merge” in the option.",
     "crumbs": [
       "Home",
       "Inter-coder reliability"
@@ -599,7 +599,7 @@
     "href": "icr.html#calculating-inter-coder-reliability-manually",
     "title": "Step 3 in Coding: Inter-coder reliability",
     "section": "Calculating inter-coder reliability manually",
-    "text": "Calculating inter-coder reliability manually",
+    "text": "Calculating inter-coder reliability manually\nOne of the shortcomings in using QDA software to calculate inter-coder reliability is that this software cannot determine “agreement” and “disagreement” based on meaning. Therefore, when two coders code a different sentence in a text, the software consider it as “disagreement” even when the meaning is similar. In this section, I will replicate the calculation of inter-coder reliability using Cohen’s Kappa coefficient in NVIVO outside the software. The Cohen’s Kappa calculation used to calculate the intercoder reliabilty in NVIVO is different to the conventional calculation because NVIVO include disagreement in the calculation. For demonstration, we will use the following data.\n\nThe formula to calculate Cohen’s Kappa for the inter-coder reliability is similar to the formula we used in determining reliability in abstract screening. \\[ \\kappa = \\frac{p_o - p_e}{1 - p_e} \\]\nTo use this formula, we will need the following details:\n\n\nTotal number of sentences in all coded articles/intervierws\n\n\nNumber of sentences coded by both Coder A and Coder B\n\n\nNumber of sentences coded by Coder A only\n\n\nNumber of sentences coded by Coder B only\n\n\nNumber of sentences NOT coded by Coder A\n\n\nNumber of sentences NOT coded by Coder B\n\n\nNumber of sentences NOT coded by either Coder A and Coder B",
     "crumbs": [
       "Home",
       "Inter-coder reliability"
