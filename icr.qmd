@@ -44,6 +44,12 @@ One of the shortcomings in using QDA software to calculate inter-coder reliabili
 ```{=html}
 <embed src="/resources/pdf_images/icr_data.pdf" width="800px" height="300px" />
 ```
+Based on the table above, we know that:
+<ol>
+    <li> The number of sentences coded by both Coders A and B is <strong> 12 </strong> </li>
+    <li> The number of sentences coded by Coder A only is <strong> 7 </strong> </li>
+    <li> The number of sentences coder by Coder B only is <strong> 4 </strong>
+</ol>
 
 The formula to calculate Cohen's Kappa for the inter-coder reliability is similar to the formula we used in determining reliability in abstract screening.
 $$ \kappa = \frac{p_o - p_e}{1 - p_e} $$
@@ -51,12 +57,12 @@ $$ \kappa = \frac{p_o - p_e}{1 - p_e} $$
 To use this formula, we will need the following details:
 <ol>
     <li> Total number of sentences in all coded articles/intervierws</li>
-    <li> Number of sentences coded by both Coder A and Coder B</li>
+    <li> Number of sentences coded by both Coders A and B</li>
     <li> Number of sentences coded by Coder A only </li>
     <li> Number of sentences coded by Coder B only </li>
     <li> Number of sentences NOT coded by Coder A </li>
     <li> Number of sentences NOT coded by Coder B </li>
-    <li> Number of sentences NOT coded by either Coder A and Coder B </li>
+    <li> Number of sentences NOT coded by either Coder A or B </li>
 </ol>
 
 ### Step 1. Total number of sentences
@@ -76,7 +82,7 @@ Based on the calculation, the total number of sentences is `4,137`.
 Number of sentences not coded by Coder A is calculated using this formula:
 
 \begin{multline*}
-\text{Coder } A^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder A only})
+\text{Coder } A^- = \text{Total} - (\text{Coders A and B} + \text{Coder A only})
 \end{multline*}
 
 \begin{multline*}
@@ -86,17 +92,17 @@ Number of sentences not coded by Coder A is calculated using this formula:
 Number of sentences not coded by Coder B is calculated using this formula:
 
 \begin{multline*}
-\text{Coder } B^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder B only})
+\text{Coder } B^- = \text{Total} - (\text{Coders A and B} + \text{Coder B only})
 \end{multline*}
 
 \begin{multline*}
 \text{Coder } B^- = 4,137 - (12 + 4) = 4,121
 \end{multline*}
 
-Number of sentences not coded by either Coder A and Coder B is calculated using this formula:
+Number of sentences not coded by either Coder A or Coder B is calculated using this formula:
 
 \begin{multline*}
-\text{Coder } A^- \text{and } B^-= \text{Total} - (\text{Coder A and B} + \text{Coder A only} + \text{Coder B only})
+\text{Coder } A^- \text{and } B^-= \text{Total} - (\text{Coders A and B} + \text{Coder A only} + \text{Coder B only})
 \end{multline*}
 
 \begin{multline*}
@@ -105,10 +111,20 @@ Number of sentences not coded by either Coder A and Coder B is calculated using 
 
 ### Step 3. Breaking down NVIVO Cohen's Kappa coefficient
 
-The Cohen's Kappa coefficient, as shown above, requires calculation of P<sub>o</sub> and P<sub>e</sub>. The formula for these variables are given below.
+Now we have all the information we need:
+<ol>
+    <li> The number of sentences coded by both Coders A and B (```Coders A and B```) = <strong>12</strong> </li>
+    <li> The number of sentences coded by Coder A only (```Coder A```) = <strong>7</strong> </li>
+    <li> The number of sentences coded by Coder B only (```Coder B```) = <strong>4</strong> </li>
+    <li> The number of sentences not coded by Coder A (`Coder A`<sup>--</sup>) = <strong>4,118</strong> </li>
+    <li> The number of sentences not coded by Coder A (`Coder B`<sup>--</sup>) = <strong>4,121</strong> </li>
+    <li> The number of sentences not coded by either Coder A or B (`Coder A`<sup>--</sup> `or B`<sup>--</sup>) = <strong>4,114</strong> (although we do not need this information)</li>
+</ol>
+
+The Cohen's Kappa coefficient formula, ($\kappa = \frac{p_o - p_e}{1 - p_e}$), requires calculation of P<sub>o</sub> and P<sub>e</sub>. The formula for these variables are given below.
 
 \begin{multline*}
-P_o = \frac{\text{Coder } A \text{ and } B + \text{Coder } A^- \text{ or } B^-}{\text{Total}} = \frac{12 + 4,114}{4,137} = 0.997
+P_o = \frac{\text{Coders } A \text{ and } B + \text{Coder } A^- \text{ or } B^-}{\text{Total}} = \frac{12 + 4,114}{4,137} = 0.997
 \end{multline*}
 
 Meanwhile, the formula to calculate P<sub>e</sub> requires the calculation of some probabilities.
@@ -129,11 +145,11 @@ The formula and calculation of these variables as as follows:
 
 \begin{multline*}
 
-P_A = \frac{\text{Coder} A \text{ and } B + \text{Coder } A} {\text{Total}} = \frac{12 + 7}{4,137} = 0.00459
+P_A = \frac{\text{Coders } A \text{ and } B + \text{Coder } A} {\text{Total}} = \frac{12 + 7}{4,137} = 0.00459
 
 \end{multline*} \begin{multline*}
 
-P_B = \frac{\text{Coder} A \text{ and } B + \text{Coder } B} {\text{Total}} = \frac{12 + 4}{4,137} = 0.00387
+P_B = \frac{\text{Coders } A \text{ and } B + \text{Coder } B} {\text{Total}} = \frac{12 + 4}{4,137} = 0.00387
 
 \end{multline*} \begin{multline*}
 
