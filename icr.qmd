@@ -127,14 +127,6 @@ Where:
 
 The formula and calculation of these variables as as follows:
 
-\begin{ceqn}
-\begin{align}
-a &= b \\
-&= c \\
-&= d.
-\end{align}
-\end{ceqn}
-
 \begin{multline*}
 
 P_A = \frac{\text{Coder} A \text{ and } B + \text{Coder } A} {\text{Total}} = \frac{12 + 7}{4,137} = 0.00459
