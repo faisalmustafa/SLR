@@ -58,6 +58,10 @@ format:
       - brand
     css: styles.css
     toc: true
+    include-in-header:
+      - text: |
+          \usepackage{amsmath}
+          \usepackage[fleqn]{nccmath}
 
 citeproc: true
 bibliography: references.bib

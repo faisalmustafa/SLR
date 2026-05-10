@@ -75,26 +75,47 @@ Based on the calculation, the total number of sentences is `4,137`.
 
 Number of sentences not coded by Coder A is calculated using this formula:
 
-$$ \text{Coder } A^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder A only}) $$
-$$ \text{Coder } A^- = 4,137 - (12 + 7) = 4,118 $$
+\begin{multline*}
+\text{Coder } A^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder A only})
+\end{multline*}
+
+\begin{multline*}
+\text{Coder } A^- = 4,137 - (12 + 7) = 4,118
+\end{multline*}
 
 Number of sentences not coded by Coder B is calculated using this formula:
 
-$$ \text{Coder } B^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder B only}) $$
-$$ \text{Coder } B^- = 4,137 - (12 + 4) = 4,121 $$
+\begin{multline*}
+\text{Coder } B^- = \text{Total} - (\text{Coder A and Coder B} + \text{Coder B only})
+\end{multline*}
+
+\begin{multline*}
+\text{Coder } B^- = 4,137 - (12 + 4) = 4,121
+\end{multline*}
 
 Number of sentences not coded by either Coder A and Coder B is calculated using this formula:
-$$ \text{Coder } A^- \text{and } B^-= \text{Total} - (\text{Coder A and B} + \text{Coder A only} + \text{Coder B only}) $$
-$$ \text{Coder } A^- \text{and } B^-= 4,137 - (12 + 7 + 4) = 4,114 $$
+
+\begin{multline*}
+\text{Coder } A^- \text{and } B^-= \text{Total} - (\text{Coder A and B} + \text{Coder A only} + \text{Coder B only})
+\end{multline*}
+
+\begin{multline*}
+\text{Coder } A^- \text{and } B^-= 4,137 - (12 + 7 + 4) = 4,114
+\end{multline*}
 
 ### Step 3. Breaking down NVIVO Cohen's Kappa coefficient
 
 The Cohen's Kappa coefficient, as shown above, requires calculation of P<sub>o</sub> and P<sub>e</sub>. The formula for these variables are given below.
 
-$$ P_o = \frac{\text{Coder} A \text{ and } B + \text{Coder } A^- \text{ or } B^-}{\text{Total}} = \frac{12 + 4,114}{4,137} = 0.997$$
+\begin{multline*}
+P_o = \frac{\text{Coder} A \text{ and } B + \text{Coder } A^- \text{ or } B^-}{\text{Total}} = \frac{12 + 4,114}{4,137} = 0.997
+\end{multline*}
 
 Meanwhile, the formula to calculate P<sub>e</sub> requires the calculation of some probabilities.
-$$ P_e = (P_A x P_B) + (P_A^- x B_B^-)$$
+
+\begin{multline*}
+P_e = (P_A x P_B) + (P_A^- x B_B^-)
+\end{multline*}
 
 Where:
 <ul>
@@ -106,24 +127,50 @@ Where:
 
 The formula and calculation of these variables as as follows:
 
-$$P_A = \frac{\text{Coder} A \text{ and } B + \text{Coder } A} {\text{Total}} = \frac{12 + 7}{4,137} = 0.00459$$
+\begin{ceqn}
+\begin{align}
+a &= b \\
+&= c \\
+&= d.
+\end{align}
+\end{ceqn}
 
-$$P_B = \frac{\text{Coder} A \text{ and } B + \text{Coder } B} {\text{Total}} = \frac{12 + 4}{4,137} = 0.00387$$
+\begin{multline*}
 
-$$P_A^- = \frac{\text{Coder} A^-} {\text{Total}} = \frac{4,118}{4,137} = 0.995$$
+P_A = \frac{\text{Coder} A \text{ and } B + \text{Coder } A} {\text{Total}} = \frac{12 + 7}{4,137} = 0.00459
 
-$$P_B^- = \frac{\text{Coder} B^-} {\text{Total}} = \frac{4,121}{4,137} = 0.996$$
+\end{multline*} \begin{multline*}
+
+P_B = \frac{\text{Coder} A \text{ and } B + \text{Coder } B} {\text{Total}} = \frac{12 + 4}{4,137} = 0.00387
+
+\end{multline*} \begin{multline*}
+
+P_A^- = \frac{\text{Coder} A^-} {\text{Total}} = \frac{4,118}{4,137} = 0.995
+
+\end{multline*} \begin{multline*}
+
+P_B^- = \frac{\text{Coder} B^-} {\text{Total}} = \frac{4,121}{4,137} = 0.996
+
+\end{multline*}
 
 Using the results above, P<sub>e</sub> can now be calculated:
 
-$$ P_e = (P_A x P_B) + (P_A^- x B_B^-) = (0.00459 x 0.00387) + (0.995 x 0.996) = 0.991$$
+\begin{multline*}
+P_e = (P_A x P_B) + (P_A^- x B_B^-) = (0.00459 x 0.00387) + (0.995 x 0.996) = 0.991
+\end{multline*}
+
 
 Finally, the Cohen's Kappa can be calculated:
 
-$$ \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.997 - 0.991} {1 - 0.991} = 0.667$$
+\begin{multline*}
+\kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.997 - 0.991} {1 - 0.991} = \mathbf{0.667}
+\end{multline*}
+
+The calculation above yields Cohen's Kappa coefficient = <strong>0.667</strong>, which can be interpreted in the next section.
 
 ## Interpreting inter-coder reliability
 
+There are some tables which are frequently used to interprete Kappa coefficient. 
 
 ## Dealing with low inter-coder reliability level
 
