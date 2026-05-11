@@ -1,0 +1,9 @@
+---
+title: "Learning to code in Qualitative Data Analysis (QDA) software"
+format: html
+title-block-banner: "#4097C2"
+title-block-banner-color: white
+---
+## Using NVIVO - Commercial software
+
+## Using Taguette (Tag it) - Opensource software

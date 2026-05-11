@@ -31,6 +31,8 @@ website:
         href: pdf-screening.qmd
       - text: Introduction to coding qualitative data
         href: intro_coding.qmd
+      - text: Learning to code in QDA
+        href: how_to_code.qmd
       - text: Developing codebooks
         href: develop_codebook.qmd
       - text: Coding practice

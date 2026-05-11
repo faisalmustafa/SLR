@@ -83,3 +83,5 @@ flowchart LR
   E --> K(Electricity problem)
   E --> L(Unreable internet)
   ```
+
+  Now we have learned theoritically what coding is, and the next section will show technical guideline on how to code using Qualitative Data Analysis (QDA) softwares. Researchers used to code the data manually or using generic software such as spreadsheet (Microsoft Excel, LibreOffice Writer, Apple Number, etc.); however, they rarely use this tool anymore today. Therefore, this book will not include a guideline for this conventional coding process, and <em> honestly I don't really know how to do it :). </em>

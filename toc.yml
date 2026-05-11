@@ -58,6 +58,12 @@
     Text data such as interview transcrips and research papers consist of a bunch of statements. Coding is a process of assigning themes to parts of these texts to be able to make sense of them and summarize them into a manageable representation. Consider the following part of interview transcript, with the relevant parts that I have highlighted. In this case, let’s find out “what are the problems experienced by senior teachers in using technology for teaching.”
   date: 04/26/2026
 
+- title: Learning to code in QDA
+  path: how_to_code.html
+  description: >
+    ...
+  date: 005/12/2026
+
 - title: Developing codebooks
   path: develop_codebook.html
   description: >
